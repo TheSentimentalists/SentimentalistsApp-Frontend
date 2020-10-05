@@ -5,11 +5,11 @@ import Button from "@material-ui/core/Button";
 /*error toggle needs implementing*/
 
 function URLInput() {
+const [text, setText] = useState("");
 
-  const handleAnalyseInput = () => {
-    
-  }
-  
+const handleTextChange = (event) => {
+  setText(event.target.value);
+}
   
 return (
 <div>
@@ -21,13 +21,14 @@ return (
               required
               variant="outlined"
               label="Input URL"
+              value = { text }
+              onChange={ handleTextChange }
             ></Textfield>
           </Grid>
           <Button
             size="large"
             variant="contained"
             color="primary"
-            onClick={ handleAnalyseInput }
             disableElevation
           >
             Analyse
