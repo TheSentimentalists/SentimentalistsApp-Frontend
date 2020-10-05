@@ -6,12 +6,24 @@ import Button from "@material-ui/core/Button";
 
 function URLInput() {
   return (
+
+const handleTextChange = event => {
+  setText(event.target.value)
+}
+
+
     <div>
-      <Grid container direction="column"
-      style={{ border: "1px solid red" }}>
+      <Grid container direction="column" style={{ border: "1px solid red" }}>
         <form>
           <Grid item xs={12}>
-          <Textfield fullWidth required variant="outlined" label="Input URL"></Textfield>
+            <Textfield
+              fullWidth
+              required
+              variant="outlined"
+              label="Input URL"
+              onChange={ handleTextChange }
+              value = { text }
+            ></Textfield>
           </Grid>
           <Button
             size="large"
