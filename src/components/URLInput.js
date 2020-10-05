@@ -11,6 +11,10 @@ const handleTextChange = event => {
   setText(event.target.value)
 }
 
+const handleAnalyseClick = () => {
+  addURL(text);
+  setText("");
+}
 
     <div>
       <Grid container direction="column" style={{ border: "1px solid red" }}>
@@ -29,6 +33,7 @@ const handleTextChange = event => {
             size="large"
             variant="contained"
             color="primary"
+            onClick ={ handleAnalyseClick }
             disableElevation
           >
             Analyse
