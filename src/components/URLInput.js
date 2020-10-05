@@ -6,10 +6,12 @@ import Button from '@material-ui/core/Button';
 
 function URLInput() {
   return (
+    <div style={{border: "1px solid red"}}>
   <form>
     <Textfield required variant="outlined" label="Input URL"></Textfield>
-    <Button>Analyse</Button>
+    <Button variant="contained" color="primary">Analyse</Button>
   </form>  
+  </div>
   )
 }
 
