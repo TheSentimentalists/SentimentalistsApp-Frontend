@@ -9,7 +9,7 @@ function URLInput() {
     <div style={{border: "1px solid red"}}>
   <form>
     <Textfield required variant="outlined" label="Input URL"></Textfield>
-    <Button variant="contained" color="primary">Analyse</Button>
+    <Button variant="contained" color="primary" disableElevation>Analyse</Button>
   </form>  
   </div>
   )
