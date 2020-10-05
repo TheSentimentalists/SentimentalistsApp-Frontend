@@ -5,15 +5,15 @@ import URLInput from './components/URLInput'
 
 function App() {
 
-const getURL = () =>{
-  console.log("I am getting a URL");
+const getURL = (text) =>{
+  console.log(text);
 }
 
 
   return (
     <div className="App">
       <Header />
-      <URLInput />
+      <URLInput getURL={ getURL } />
     </div>
   );
 }

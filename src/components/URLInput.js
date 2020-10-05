@@ -4,11 +4,16 @@ import Textfield from "@material-ui/core/Textfield";
 import Button from "@material-ui/core/Button";
 /*error toggle needs implementing*/
 
-function URLInput() {
+function URLInput(props) {
 const [text, setText] = useState("");
 
 const handleTextChange = (event) => {
   setText(event.target.value);
+}
+
+
+const handleClick = () => {
+  props.getURL(text);
 }
   
 return (
@@ -29,6 +34,7 @@ return (
             size="large"
             variant="contained"
             color="primary"
+            onClick={ handleClick }
             disableElevation
           >
             Analyse
