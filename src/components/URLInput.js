@@ -7,9 +7,12 @@ import Button from "@material-ui/core/Button";
 function URLInput() {
   return (
     <div>
-      <Grid style={{ border: "1px solid red" }}>
+      <Grid container direction="column"
+      style={{ border: "1px solid red" }}>
         <form>
-          <Textfield required variant="outlined" label="Input URL"></Textfield>
+          <Grid item xs={12}>
+          <Textfield fullWidth required variant="outlined" label="Input URL"></Textfield>
+          </Grid>
           <Button
             size="large"
             variant="contained"
