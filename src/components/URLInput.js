@@ -6,15 +6,8 @@ import Button from "@material-ui/core/Button";
 
 function URLInput() {
 
-  const [text, setText]
-
-  const handleTextChange = event => {
-    setText(event.target.value)
-  }
-  
-  const handleAnalyseClick = () => {
-    addURL(text);
-    setText("");
+  const handleAnalyseInput = () => {
+    
   }
   
   
@@ -28,15 +21,13 @@ return (
               required
               variant="outlined"
               label="Input URL"
-              onChange={ handleTextChange }
-              value = { text }
             ></Textfield>
           </Grid>
           <Button
             size="large"
             variant="contained"
             color="primary"
-            onClick ={ handleAnalyseClick }
+            onClick={ handleAnalyseInput }
             disableElevation
           >
             Analyse
