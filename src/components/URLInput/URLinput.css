@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 
-
-
-
-.App {
-  text-align: center;
+body {
+    font-family: 'Graduate', sans-serif;
 }
