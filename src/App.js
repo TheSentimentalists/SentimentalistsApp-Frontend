@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header'
-import URLInput from './components/URLInput'
+import URLInput from './components/URLInput/URLInput'
 
 function App() {
 
