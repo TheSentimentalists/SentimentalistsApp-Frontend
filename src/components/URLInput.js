@@ -4,7 +4,7 @@ import { TextField, Button, Grid, Container } from '@material-ui/core'
 function URLInput() {
   return (
   <form>
-    <TextField variant="outlined"></TextField>
+    <TextField required variant="outlined" label=""></TextField>
   </form>  
   )
 }
