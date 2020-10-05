@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react"; 
 import Grid from "@material-ui/core/Grid";
 import Textfield from "@material-ui/core/Textfield";
 import Button from "@material-ui/core/Button";
 /*error toggle needs implementing*/
 
 function URLInput() {
-  return (
 
-const handleTextChange = event => {
-  setText(event.target.value)
-}
+  const [text, setText]
 
-const handleAnalyseClick = () => {
-  addURL(text);
-  setText("");
-}
-
-    <div>
+  const handleTextChange = event => {
+    setText(event.target.value)
+  }
+  
+  const handleAnalyseClick = () => {
+    addURL(text);
+    setText("");
+  }
+  
+  
+return (
+<div>
       <Grid container direction="column" style={{ border: "1px solid red" }}>
         <form>
           <Grid item xs={12}>
