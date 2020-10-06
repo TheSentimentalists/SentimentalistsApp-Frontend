@@ -13,13 +13,16 @@ const useStyles = makeStyles({
 })
 
 
-function Header() {
+function Header() { 
 const classes = useStyles();
 
   return (
     <Grid container justify="center">
     <Grid item xs={8} sm={6} md={4}>
     <img src={Logo} alt="The Sentimentalists Logo" className={classes.mainLogo}/>
+    <Grid item>
+      <h1>Analysing Media Sentiment Since 2020</h1>
+    </Grid>
     </Grid>
     </Grid>
   );
