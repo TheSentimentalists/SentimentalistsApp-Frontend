@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     display: 'block',
     width: '100%',
     height: 'auto',
+    padding: '10px',
   }
 })
 
