@@ -13,7 +13,7 @@ function Header() {
 const classes = useStyles();
 
   return (
-    <
+    
     <img src={Logo} alt="The Sentimentalists Logo" className={classes.mainLogo}/>
   );
 }
