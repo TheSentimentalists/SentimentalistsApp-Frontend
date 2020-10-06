@@ -6,17 +6,16 @@ import { makeStyles } from '@material-ui/core';
 import './URLinput.css';
 /* resolve CSS */
  /*error toggle needs implementing*/
+ /*Button onClick needs to hide input and open results*/
 
 
  const useStyles = makeStyles(() => ({
       inputURLArea : {
-        border: '3px solid red',
         paddingTop: '25px',
         paddingBottom: '55px'
       },
 
       inputBox : {
-        border: '5px solid #bba5ac',
         textAlign: 'center',
         marginBottom: '30px',
         fontFamily: 'Graduate, sans-serif',
@@ -25,7 +24,8 @@ import './URLinput.css';
       inputButton : {
         background: '#6bb26d',
         borderRadius: 0,
-        fontFamily: 'Graduate,'
+        fontFamily: 'Graduate,',
+        fontSize: '20px',
       },
     }))
 
@@ -54,12 +54,12 @@ const classes = useStyles();
               variant="outlined"
               value={text}
               onChange={handleTextChange}
+              color="secondary"
             ></Textfield>
           </Grid>
           <Button style={{fontFamily: "Graduate"}} className={classes.inputButton}
             size="large"
             variant="contained"
-            
             onClick={handleClick}
             disableElevation
           >
