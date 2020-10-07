@@ -39,6 +39,14 @@ const classes = useStyles();
 
   const handleClick = () => {
     props.getURL(text);
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: text })
+  };
+  fetch('https://62rh34zihe.execute-api.us-west-2.amazonaws.com/exp/analysis', requestOptions)
+      .then(response => response.json())
+      .then(data => alert(JSON.parse(data.body)['requestid']));
   };
 
   return (
