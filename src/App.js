@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 function App() {
 const classes = useStyles();
 
- //requestID
+ //request
  const [request, setRequest] = useState("");
 
   return (
@@ -42,7 +42,9 @@ const classes = useStyles();
 
       <Grid container className={classes.footer}>
        <Grid item xs={12}>
-         <h3>{request}</h3>
+         <h3>{request.requestid}</h3>
+         <h3>{request.url}</h3>
+         <h3>{request.status}</h3>
          <h5>The Sentimentalists &copy; 2020</h5>
        </Grid>
         </Grid>

@@ -56,8 +56,7 @@ const classes = useStyles();
             return Promise.reject(error);
         }
         
-        let requestid = JSON.parse(data)["requestid"]
-        props.setRequest(requestid)
+        props.setRequest(JSON.parse(data))
     })
     .catch(error => {
         console.error('There was an error!', error);
