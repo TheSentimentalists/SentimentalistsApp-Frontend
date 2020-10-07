@@ -37,14 +37,21 @@ const classes = useStyles();
     <div className="App">
       <Container fixed>
       <div className={classes.containerStyle}>
-      
+    
+    {!request
+    ?
       <URLInput getURL={ getURL } setRequest={ setRequest }/>
+    :
+      <div>
+      <h3>{request.requestid}</h3>
+      <h3>{request.url}</h3>
+      <h3>{request.status}</h3>
+      <h3>{JSON.stringify(request.results)}</h3>
+      </div>
+    }
 
       <Grid container className={classes.footer}>
        <Grid item xs={12}>
-         <h3>{request.requestid}</h3>
-         <h3>{request.url}</h3>
-         <h3>{request.status}</h3>
          <h5>The Sentimentalists &copy; 2020</h5>
        </Grid>
         </Grid>
