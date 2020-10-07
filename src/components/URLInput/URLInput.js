@@ -43,10 +43,25 @@ const classes = useStyles();
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: text })
-  };
-  fetch('https://62rh34zihe.execute-api.us-west-2.amazonaws.com/exp/analysis', requestOptions)
-      .then(response => response.json())
-      .then(data => alert(JSON.parse(data.body)['requestid']));
+    };
+
+    fetch('https://62rh34zihe.execute-api.us-west-2.amazonaws.com/exp/analysis', requestOptions)
+    .then(async response => {
+        const data = await response.json();
+
+        // check for error response
+        if (!response.ok) {
+            // get error message from body or default to response status
+            const error = (data && data.message) || response.status;
+            return Promise.reject(error);
+        }
+        
+        let requestid = JSON.parse(data)["requestid"]
+        props.setRequest(requestid)
+    })
+    .catch(error => {
+        console.error('There was an error!', error);
+    });
   };
 
   return (

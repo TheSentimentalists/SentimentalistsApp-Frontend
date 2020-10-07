@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,15 +30,19 @@ const useStyles = makeStyles({
 function App() {
 const classes = useStyles();
 
+ //requestID
+ const [request, setRequest] = useState("");
+
   return (
     <div className="App">
       <Container fixed>
       <div className={classes.containerStyle}>
       
-      <URLInput getURL= { getURL }/>
+      <URLInput getURL={ getURL } setRequest={ setRequest }/>
 
       <Grid container className={classes.footer}>
        <Grid item xs={12}>
+         <h3>{request}</h3>
          <h5>The Sentimentalists &copy; 2020</h5>
        </Grid>
         </Grid>
