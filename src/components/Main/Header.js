@@ -1,7 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Logo from '../../assets/images/Sentimentalists Logo.png';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import '../../App.css';
 
 const useStyles = makeStyles({
   mainLogo: {
@@ -9,6 +11,9 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
     padding: '10px',
+  },
+  mainHeading: {
+    fontSize: '30px',
   }
 })
 
@@ -21,7 +26,7 @@ const classes = useStyles();
     <Grid item xs={8} sm={6} md={4}>
     <img src={Logo} alt="The Sentimentalists Logo" className={classes.mainLogo}/>
     <Grid item>
-      <h1>Analysing Media Sentiment Since 2020</h1>
+      <Typography variant="h1"className={classes.mainHeading}>Analysing Media Sentiment Since 2020</Typography>
     </Grid>
     </Grid>
     </Grid>
