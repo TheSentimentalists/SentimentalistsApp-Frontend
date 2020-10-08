@@ -24,7 +24,6 @@ const useStyles = makeStyles({
 
  const getURL = (text) => {
    inputData.url = text;
-   console.log(inputData);
  }
 
 function App() {
