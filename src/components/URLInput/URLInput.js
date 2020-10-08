@@ -39,6 +39,28 @@ const classes = useStyles();
 
   const handleClick = () => {
     props.getURL(text);
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: text })
+    };
+
+    fetch('https://62rh34zihe.execute-api.us-west-2.amazonaws.com/exp/analysis', requestOptions)
+    .then(async response => {
+        const data = await response.json();
+
+        // check for error response
+        if (!response.ok) {
+            // get error message from body or default to response status
+            const error = (data && data.message) || response.status;
+            return Promise.reject(error);
+        }
+        
+        props.setRequest(JSON.parse(data))
+    })
+    .catch(error => {
+        console.error('There was an error!', error);
+    });
   };
 
   return (
