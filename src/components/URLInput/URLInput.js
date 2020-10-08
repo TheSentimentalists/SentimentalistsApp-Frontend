@@ -45,7 +45,7 @@ const classes = useStyles();
       body: JSON.stringify({ url: text })
     };
 
-    fetch('https://62rh34zihe.execute-api.us-west-2.amazonaws.com/exp/analysis', requestOptions)
+    fetch('https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis', requestOptions)
     .then(async response => {
         const data = await response.json();
 
