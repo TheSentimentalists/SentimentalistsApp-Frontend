@@ -3,7 +3,7 @@ import "./App.css";
 import { Container, Grid } from "@material-ui/core/";
 import Header from "./components/Main/Header";
 import { makeStyles } from "@material-ui/core/styles";
-import URLInput from "./components/URLInput";
+
 
 const useStyles = makeStyles({
   containerStyle: {
@@ -25,7 +25,7 @@ function App() {
       <Container fixed>
         <div className={classes.containerStyle}>
           <Header />
-
+          
           <Grid container className={classes.footer}>
             <Grid item xs={12}>
               <h5>The Sentimentalists &copy; 2020</h5>
