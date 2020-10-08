@@ -3,7 +3,6 @@ import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import URLInput from './components/URLInput/URLInput';
-Iimport displayResults from './components/Results/displayResults';
 
 //styles
 const useStyles = makeStyles({
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
 })
 
 //getUrl
- const inputData = {  
+ const inputData = {
    url: "",
  };
 
@@ -38,24 +37,18 @@ const classes = useStyles();
       <Container fixed>
       <div className={classes.containerStyle}>
     
-    { !request
+    {!request
     ?
       <URLInput getURL={ getURL } setRequest={ setRequest }/>
     :
-
-      
       <div>
-      <h3></h3>
       <h3>{request.requestid}</h3>
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>
       <h3>{JSON.stringify(request.results)}</h3>
-      
       </div>
-
-
     }
-      
+
       <Grid container className={classes.footer}>
        <Grid item xs={12}>
          <h5>The Sentimentalists &copy; 2020</h5>
