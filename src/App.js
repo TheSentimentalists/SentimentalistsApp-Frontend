@@ -47,6 +47,7 @@ const classes = useStyles();
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>
       <h3>{JSON.stringify(request.results)}</h3>
+      <h3>{request.error}</h3>
       </div>
     }
 
