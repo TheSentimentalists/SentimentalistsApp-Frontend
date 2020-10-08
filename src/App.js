@@ -3,7 +3,7 @@ import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import URLInput from './components/URLInput/URLInput';
-Iimport displayResults from './components/Results/displayResults';
+import displayResults from './components/Results/displayResults';
 
 //styles
 const useStyles = makeStyles({
