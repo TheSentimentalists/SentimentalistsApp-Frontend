@@ -3,6 +3,7 @@ import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import URLInput from './components/URLInput/URLInput';
+import displayResults from './components/Results/displayResults';
 
 //styles
 const useStyles = makeStyles({
@@ -46,6 +47,7 @@ const classes = useStyles();
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>
       <h3>{JSON.stringify(request.results)}</h3>
+      <h3>{request.error}</h3>
       </div>
     }
 
@@ -55,6 +57,7 @@ const classes = useStyles();
        </Grid>
         </Grid>
       </div>
+      
       </Container> 
     </div>
   );
