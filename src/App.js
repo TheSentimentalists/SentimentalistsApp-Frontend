@@ -3,7 +3,7 @@ import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import URLInput from './components/URLInput/URLInput';
-import displayResults from './components/Results/displayResults';
+import DisplayResults from './components/Results/displayResults';
 
 //styles
 const useStyles = makeStyles({
@@ -42,7 +42,9 @@ const classes = useStyles();
     ?
       <URLInput getURL={ getURL } setRequest={ setRequest }/>
     :
+    
       <div>
+      <DisplayResults displayResults={JSON.stringify(request.results)} />
       <h3>{request.requestid}</h3>
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>
