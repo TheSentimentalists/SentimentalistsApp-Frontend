@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import GaugeChart from "react-gauge-chart";
+
 
 function DisplayResults(props) {
   const resultsObj = JSON.parse(props.displayResults);
@@ -7,6 +8,10 @@ function DisplayResults(props) {
   // accesses score from credibility analysis, assigns it to a variable, 
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
 
+  const [ supportingText, setSupportingText ] = useState("");
+
+  
+  
   return (
     <div>
       <h5>Credibility Score</h5>
@@ -15,12 +20,11 @@ function DisplayResults(props) {
         percent={credibilityScore}
         hideText={false}
         textColor="black"
-        nrOfLevels={20}
+        nrOfLevels={3}
         colors={["#ee445e", "#6bb26d"]}
       />
-
-      <h5>This source is fairly credible but you might want to be wary because it has a tendency towards speculation and Fake News</h5>
-    </div>
+      <p onLoad={() => setSupportingText()}></p>
+</div>
   );
 }
 
