@@ -1,3 +1,14 @@
+
+/*import fonts from Google*/
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Roboto:wght@500&display=swap');
+
 .App {
-  text-align: center;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: black;
+}
+
+.App h5{
+  font-family: Graduate, sans-serif;
+  margin-left: 10px;
 }
