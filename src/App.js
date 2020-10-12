@@ -42,7 +42,7 @@ const classes = useStyles();
     ?
       <URLInput getURL={ getURL } setRequest={ setRequest }/>
     :
-    
+    //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} />
       <h3>{request.requestid}</h3>

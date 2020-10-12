@@ -7,19 +7,19 @@ function DisplayResults(props) {
   // accesses score from credibility analysis, assigns it to a variable, 
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
 
-  console.log(credibilityScore);
-
   return (
     <div>
-      <h5>Some results</h5>
-      <p>{props.displayResults}</p>
+      <h5>Credibility Score</h5>
       <GaugeChart
         id="main-gauge"
         percent={credibilityScore}
-        hideText={true}
+        hideText={false}
         textColor="black"
-        nrOfLevels={10}
+        nrOfLevels={20}
+        colors={["#ee445e", "#6bb26d"]}
       />
+
+      <h5>This source is fairly credible but you might want to be wary because it has a tendency towards speculation and Fake News</h5>
     </div>
   );
 }
