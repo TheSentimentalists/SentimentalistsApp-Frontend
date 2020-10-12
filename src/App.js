@@ -36,13 +36,19 @@ const classes = useStyles();
   return (
     <div className="App">
       <Container fixed>
+    <div> 
+      <div>
+        <img src="/SentimentalistsTN.png" alt="SentimentalistsLogo"/>
+      </div>
+      <div>
+        <h4> The Sentimentalis is an open souce Web Application indicating credibility of Newspaper article. Paste-in the News Article URL and press 'Analyse' button to view a response</h4>
+      </div>
+    </div>
       <div className={classes.containerStyle}>
-    
     {!request
     ?
       <URLInput getURL={ getURL } setRequest={ setRequest }/>
     :
-    
       <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} />
       <h3>{request.requestid}</h3>
