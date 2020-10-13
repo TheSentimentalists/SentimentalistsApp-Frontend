@@ -12,6 +12,10 @@ const useStyles = makeStyles({
     paddingTop: "20px",
     paddingBottom: "40px",
     textAlign: "center",  
+    },
+
+    mainGauge : {
+      border: "1px solid red",  
     }
 })
 
@@ -22,6 +26,7 @@ function DisplayResults(props) {
   const credibilityScore = (resultsObj[0].score / 100);
   // accesses score from credibility analysis, assigns it to a variable, 
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
+  
 
 
   return (
@@ -30,16 +35,18 @@ function DisplayResults(props) {
       <Grid item xs={12} sm={10}>
       <Typography variant="h5" className={classes.mainGaugeHeading}>Credibility Score</Typography>
       </Grid>
+      <Grid item xs={12} sm={10} md={8} lg={6}>
       <GaugeChart 
+        className={classes.mainGauge}      
         id="main-gauge"
         percent={credibilityScore}
         hideText={false}
-        textColor="black"
-        nrOfLevels={10}
-        colors={["#ee445e", "#6bb26d"]}
+        textColor="#000000"
+        nrOfLevels={3}
+        colors={["#ee445e", "#f8ce94", "#6bb26d"]}
       />
-       
-       
+       </Grid>
+  <Typography variant="body2"></Typography>
        </Grid> 
 </div>
   );
