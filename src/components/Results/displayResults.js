@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GaugeChart from "react-gauge-chart";
 
 
@@ -8,7 +8,7 @@ function DisplayResults(props) {
   // accesses score from credibility analysis, assigns it to a variable, 
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
 
-  const [ supportingText, setSupportingText ] = useState("");
+  
 
   
   
@@ -23,7 +23,7 @@ function DisplayResults(props) {
         nrOfLevels={3}
         colors={["#ee445e", "#6bb26d"]}
       />
-      <p onLoad={() => setSupportingText()}></p>
+      <p>{props.displaySupportingText}</p>
 </div>
   );
 }

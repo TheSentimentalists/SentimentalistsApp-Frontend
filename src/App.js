@@ -33,6 +33,9 @@ const classes = useStyles();
  //request
  const [request, setRequest] = useState("");
 
+ //supporting text
+ const [ supportingText, setSupportingText ] = useState("This is a credible source");
+
   return (
     <div className="App">
       <Container fixed>
@@ -44,7 +47,7 @@ const classes = useStyles();
     :
     //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
-      <DisplayResults displayResults={JSON.stringify(request.results)} />
+      <DisplayResults displayResults={JSON.stringify(request.results)} displaySupportingText={supportingText} />
       <h3>{request.requestid}</h3>
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>
