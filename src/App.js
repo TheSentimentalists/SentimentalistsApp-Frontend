@@ -4,6 +4,7 @@ import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
+import CredibleResults from './components/Results/CredibleResults';
 
 //styles
 const useStyles = makeStyles({
@@ -34,8 +35,9 @@ const classes = useStyles();
  const [request, setRequest] = useState("");
 
  //supporting text
- const [ supportingText, setSupportingText ] = useState("This is a credible source");
-
+ 
+ 
+ 
   return (
     <div className="App">
       <Container fixed>
@@ -47,7 +49,7 @@ const classes = useStyles();
     :
     //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
-      <DisplayResults displayResults={JSON.stringify(request.results)} displaySupportingText={supportingText} />
+      <DisplayResults displayResults={JSON.stringify(request.results)} />
       <h3>{request.requestid}</h3>
       <h3>{request.url}</h3>
       <h3>{request.status}</h3>

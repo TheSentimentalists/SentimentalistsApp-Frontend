@@ -1,5 +1,6 @@
 import React from "react";
 import GaugeChart from "react-gauge-chart";
+import Typography from '@material-ui/core/Typography';
 
 
 function DisplayResults(props) {
@@ -8,9 +9,6 @@ function DisplayResults(props) {
   // accesses score from credibility analysis, assigns it to a variable, 
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
 
-  
-
-  
   
   return (
     <div>
@@ -23,7 +21,7 @@ function DisplayResults(props) {
         nrOfLevels={3}
         colors={["#ee445e", "#6bb26d"]}
       />
-      <p>{props.displaySupportingText}</p>
+      <p></p>
 </div>
   );
 }
