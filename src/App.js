@@ -38,7 +38,7 @@ const classes = useStyles();
   return (
     <div className="App">
       <Container fixed>
-      <div className={classes.containerStyle}>
+        <div className={classes.containerStyle}>
     
     {!request
     ?
@@ -46,7 +46,7 @@ const classes = useStyles();
     :
     //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
-      <DisplayResults displayResults={JSON.stringify(request.results)} />
+      <DisplayResults displayResults={JSON.stringify(request.results)} displayURL={request.url}/>
       
       <p>{request.requestid}</p>
       <p>{request.url}</p>
