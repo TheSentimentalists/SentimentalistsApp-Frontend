@@ -1,6 +1,6 @@
 import React from "react";
 import BarChart from "gradient-barchart";
-import 
+
 
 function DisplayResults(props) {
   const resultsObj = JSON.parse(props.displayResults);
