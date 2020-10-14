@@ -37,7 +37,7 @@ function URLInput(props) {
   };
 
   const handleClick = () => {
-    props.getURL(text);
+    
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

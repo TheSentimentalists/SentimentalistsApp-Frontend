@@ -21,7 +21,6 @@ const useStyles = makeStyles({
 
   resultsHeading: {
     fontFamily: "Graduate, sans-serif",
-    
   },
 
   resultsText: {
@@ -60,7 +59,12 @@ function DisplayResults(props) {
           />
         </Grid>
         <Grid item xs={12} sm={10} md={8} lg={8}>
-          <Grid container justify="center" alignItems="center" className={classes.resultsTable}>
+          <Grid
+            container
+            justify="center"
+            alignItems="center"
+            className={classes.resultsTable}
+          >
             <Grid item xs={12} sm={6}>
               <Typography
                 variant="subtitle1"

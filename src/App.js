@@ -19,14 +19,6 @@ const useStyles = makeStyles({
   }
 })
 
-//getUrl
- const inputData = {
-   url: "",
- };
-
- const getURL = (text) => {
-   inputData.url = text;
- }
 
 function App() {
 const classes = useStyles();
@@ -42,16 +34,13 @@ const classes = useStyles();
     
     {!request
     ?
-      <URLInput getURL={ getURL } setRequest={ setRequest }/>
+      <URLInput setRequest={ setRequest }/>
     :
     //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} displayURL={request.url}/>
       
-      <p>{request.requestid}</p>
-      <p>{request.url}</p>
-      <p>{request.status}</p>
-      <p>{JSON.stringify(request.results)}</p>
+    
       <p>{request.error}</p>
       </div>
     }
