@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Textfit from 'react-textfit';
 import "../../App.css";
 
 const useStyles = makeStyles({
@@ -45,12 +46,23 @@ function DisplayResults(props) {
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
           />
         </Grid>
-        <Grid item xs={12}>
-          <Typography variant="body2">{analysedURL}</Typography>
-        </Grid>
-
-        <Typography variant="body2">{source}</Typography>
-        <Typography variant="body2">{category}</Typography>
+        <Grid item xs={12} style={{border: "1px solid red"}}>
+          <Grid container justify="flex-start">
+            <Grid item xs>
+          <Typography variant="subtitle1">Your URL</Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Textfit mode="single">
+          {analysedURL}
+          </Textfit>
+          </Grid>
+        
+          <Typography variant="body2">{source}</Typography>
+        
+        
+          <Typography variant="body2">{category}</Typography>
+          </Grid>
+      </Grid>
       </Grid>
     </div>
   );
