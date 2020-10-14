@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './App.css';
 import { Container, Grid } from '@material-ui/core/';
@@ -36,6 +37,7 @@ const classes = useStyles();
   return (
     <div className="App">
       <Container fixed>
+
     <div> 
       <div>
         <img src="/SentimentalistsTN.png" alt="SentimentalistsLogo"/>
@@ -65,6 +67,7 @@ const classes = useStyles();
       </div>
       
       </Container> 
+
     </div>
   );
 }
