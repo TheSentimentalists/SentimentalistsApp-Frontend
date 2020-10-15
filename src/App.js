@@ -39,7 +39,7 @@ const classes = useStyles();
     //what to do with the stuff that comes back below? Can we hide it? Put them somewhere else?
       <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} displayURL={request.url}/>
-      
+    
     
       <p>{request.error}</p>
       </div>

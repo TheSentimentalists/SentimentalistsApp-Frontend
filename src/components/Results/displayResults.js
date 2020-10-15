@@ -103,6 +103,7 @@ function DisplayResults(props) {
               <Typography variant="body2" className={classes.resultsText}>
                 {category}
               </Typography>
+  
             </Grid>
           </Grid>
         </Grid>
