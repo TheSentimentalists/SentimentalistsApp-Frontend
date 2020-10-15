@@ -27,10 +27,12 @@ const classes = useStyles();
  const [request, setRequest] = useState("");
  
  
+
   return (
     <div className="App">
       <Container fixed>
         <div className={classes.containerStyle}>
+          <Header />
     
     {!request
     ?
@@ -53,6 +55,15 @@ const classes = useStyles();
       </div>
       
       </Container> 
+          
+          
+          <Grid container className={classes.footer}>
+            <Grid item xs={12}>
+              <h5>The Sentimentalists &copy; 2020</h5>
+            </Grid>
+          </Grid>
+        </div>
+      </Container>
     </div>
   );
 }

@@ -1,8 +1,15 @@
+URLInput_v02_with_react-gauge-chart
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-
 .App {
-  text-align: center;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: black;
+}
+
+.App h5{
+  font-family: Graduate, sans-serif;
+  margin-left: 10px;
 }
