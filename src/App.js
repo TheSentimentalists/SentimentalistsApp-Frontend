@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
+import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
 
@@ -55,15 +56,6 @@ const classes = useStyles();
       </div>
       
       </Container> 
-          
-          
-          <Grid container className={classes.footer}>
-            <Grid item xs={12}>
-              <h5>The Sentimentalists &copy; 2020</h5>
-            </Grid>
-          </Grid>
-        </div>
-      </Container>
     </div>
   );
 }
