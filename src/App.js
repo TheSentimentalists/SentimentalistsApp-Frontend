@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import { Container, Grid } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
-import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
 
@@ -10,8 +9,14 @@ import DisplayResults from './components/Results/displayResults';
 //styles
 const useStyles = makeStyles({
   containerStyle : {
+    padding: '10px'
+  },
+
+  innerContainer : {
+    
     boxShadow: '8px 8px #d9d9d9',
     background: '#ffffff',
+   
   },
 
   footer: {
@@ -33,8 +38,7 @@ const classes = useStyles();
     <div className="App">
       <Container fixed>
         <div className={classes.containerStyle}>
-          
-    
+          <div className={classes.innerContainer}>
     {!request
     ?
       <URLInput setRequest={ setRequest }/>
@@ -53,9 +57,13 @@ const classes = useStyles();
          <h5>The Sentimentalists &copy; 2020</h5>
        </Grid>
         </Grid>
+
+
+        </div>
+    
       </div>
       
-      </Container> 
+      </Container>
     </div>
   );
 }

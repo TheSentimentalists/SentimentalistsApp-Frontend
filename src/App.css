@@ -4,12 +4,12 @@
 
 
 .App {
-  padding: 10px;
-  padding-bottom: 30px;
   background-color: black;
+  text-align: center;
 }
 
 .App h5{
   font-family: Graduate, sans-serif;
   margin-left: 10px;
 }
+
