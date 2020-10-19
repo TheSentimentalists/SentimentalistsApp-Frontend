@@ -2,9 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+html, body {
+   position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: black;
+}
 
 .App {
-  background-color: black;
+  
   text-align: center;
 }
 
