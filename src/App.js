@@ -33,7 +33,7 @@ const classes = useStyles();
     <div className="App">
       <Container fixed>
         <div className={classes.containerStyle}>
-          <Header />
+          
     
     {!request
     ?
