@@ -37,7 +37,7 @@ function URLInput(props) {
     setText(event.target.value);
   };
 
-  const handleClick = () => {
+  const handleSubmit = () => {
     
     const requestOptions = {
       method: "POST",
@@ -91,7 +91,7 @@ function URLInput(props) {
             className={classes.inputButton}
             size="large"
             variant="contained"
-            onClick={handleClick}
+            onClick={handleSubmit}
             disableElevation
           >
             Analyse
