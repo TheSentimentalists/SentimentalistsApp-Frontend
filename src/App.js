@@ -42,8 +42,6 @@ const classes = useStyles();
     
       <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} displayURL={request.url}/>
-    
-    
       <p>{request.error}</p>
       </div>
     }
