@@ -4,7 +4,7 @@ import Textfield from "@material-ui/core/Textfield";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
-import Header from '../Main/Header';
+import URLInputHeader from './URLInputHeader';
 /* resolve CSS */
 /*error toggle needs implementing*/
 /*Button onClick needs to hide input and open results*/
@@ -65,7 +65,7 @@ function URLInput(props) {
 
   return (
     <div>
-      <Header />
+      <URLInputHeader />
       <Grid
         container
         direction="column"

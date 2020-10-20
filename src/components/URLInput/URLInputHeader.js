@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Header() {
+function URLInputHeader() {
   const classes = useStyles();
 
   return (
@@ -57,4 +57,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default URLInputHeader;
