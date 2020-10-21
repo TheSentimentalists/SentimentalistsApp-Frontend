@@ -5,12 +5,18 @@ import Grid from '@material-ui/core/Grid';
 
 function BProgressBar(){
   return(
-    <div style={{border: "2px solid red"}}>
-    <Grid container>
-    <Grid item xs={10}>
+    <div>
+    <Grid container justify ="center" 
+    alignItems = "center"
+    border = "2px solid #F8CE94">
+    <Grid alignItems = "center"
+    item xs ={10} sm={10} md={10} lg={10} >
+      BiasScore
+    </Grid>
+    <Grid item xs ={10} sm={10} md={10} lg={10}>
     <ProgressBar
     percent={75}
-    filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"/>
+    filledBackground="linear-gradient(to right, #6BB26D, #EE445E)"/>
     </Grid>
     </Grid>
     </div>
