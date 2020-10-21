@@ -6,8 +6,8 @@ class ProgressBar extends React.Component {
   render() {
     return(
       <ProgressBar
-      percent = {}
-      filledBackground="linear-gradient(to right,#6bb26d, #ee445e)"
+        percent = {}
+        filledBackground="linear-gradient(to right,#6bb26d, #ee445e)"
       />
     )
   }
