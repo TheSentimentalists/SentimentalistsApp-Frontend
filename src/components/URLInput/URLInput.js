@@ -74,7 +74,7 @@ function URLInput(props) {
         className={classes.inputURLArea}
       >
         <form>
-          <Grid item xs={10} sm={8} md={6} lg={4}>
+          <Grid item xs={10} sm={8} md={6} lg={3}>
             <Textfield
               className={classes.inputBox}
               fullWidth

@@ -9,11 +9,11 @@ import DisplayResults from './components/Results/displayResults';
 //styles
 const useStyles = makeStyles({
   containerStyle : {
-    padding: '10px'
+    paddingTop: '20px',
+    paddingBottom:'25px',
   },
 
   innerContainer : {
-    
     boxShadow: '8px 8px #d9d9d9',
     background: '#ffffff',
    
