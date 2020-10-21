@@ -4,7 +4,7 @@ import Textfield from "@material-ui/core/Textfield";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
-import URLInputHeader from './URLInputHeader';
+import URLInputHeader from "./URLInputHeader";
 /* resolve CSS */
 /*error toggle needs implementing*/
 /*Button onClick needs to hide input and open results*/
@@ -38,15 +38,17 @@ function URLInput(props) {
   };
 
   const handleSubmit = () => {
-    
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: text }),
     };
 
-    fetch('https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis', requestOptions)
-    .then(async response => {
+    fetch(
+      "https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis",
+      requestOptions
+    )
+      .then(async (response) => {
         const data = await response.json();
 
         // check for error response
