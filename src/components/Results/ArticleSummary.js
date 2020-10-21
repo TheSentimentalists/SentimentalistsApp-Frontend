@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core/";
 import "../../App.css";
 import TruncateMarkup from 'react-truncate-markup';
+//Truncate  & Textfit need to be updated, throwing unsafe errors
 
 
 const useStyles = makeStyles({
@@ -32,7 +33,7 @@ function ArticleSummary() {
 
   return (
     <div>
-      <Grid container justify="flex-start" direction="column"   className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
+      <Grid container justify="flex-start" direction="column"   className={classes.ArticleSummaryText}>
         <Grid item xs={12} > 
           <Typography variant="h4" className={classes.ArticleTitle}>
             Greater Manchester to get tier 3 Covid restrictions imposed after
