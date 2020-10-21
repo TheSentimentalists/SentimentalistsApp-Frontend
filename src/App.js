@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
-import BiasIndicator from './components/BiasIndicator/BiasIndicator';
 
 //styles
 const useStyles = makeStyles({
