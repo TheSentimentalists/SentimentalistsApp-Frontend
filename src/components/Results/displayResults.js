@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Textfit from "react-textfit";
 import "../../App.css";
-import BProgressBar from './components/ProgressBar/BProgressBar';
+import BProgressBar from '../ProgressBar/BProgressBar';
 
 const useStyles = makeStyles({
   mainGaugeHeading: {
