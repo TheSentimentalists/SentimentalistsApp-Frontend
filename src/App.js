@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
-import ProgressBar from './components/ProgressBar/ProgressBar';
+import BProgressBar from './components/ProgressBar/BProgressBar';
 
 //styles
 const useStyles = makeStyles({
