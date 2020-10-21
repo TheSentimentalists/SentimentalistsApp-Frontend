@@ -6,20 +6,20 @@ import "../../App.css";
 const useStyles = makeStyles({
     ArticleSummaryText : {
         fontFamily: "Roboto, sans-serif",
-        textAlign: "left",
+        padding: "10px",
+        textAlign: "left"
     }, 
   ArticleTitle: {
     fontSize: "20px",
     fontWeight: "700",
-    marginTop: "10px",
-    marginBottom: "15px"
+   
   },
   ArticleURL : {
     fontSize: "2vw",
-    margin: "10px"
+    
   }, 
   SummaryText : {
-    margin: "10px"
+   
   }
 });
 
@@ -28,8 +28,8 @@ function ArticleSummary() {
 
   return (
     <div>
-      <Grid container justify="center" className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
-        <Grid item xs={10}> 
+      <Grid container justify="flex-start" direction="column"  alignItems="center" className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
+        <Grid item xs={12}> 
           <Typography variant="h4" className={classes.ArticleTitle}>
             Greater Manchester to get tier 3 Covid restrictions imposed after
             talks fail
@@ -42,13 +42,17 @@ function ArticleSummary() {
           
         </Typography>
         </Grid>
+        <Grid item xs={12}>
         <Typography variant="body2" className={classes.SummaryText}>
           The summary of the article.The summary of the article.The summary of
           the article.The summary of the article.The summary of the article.
         </Typography>
+        </Grid>
+        <Grid item xs={12}>
         <Typography variant="body1">
           Keywords: Boris Johnson, Brexit, Economy
         </Typography>
+        </Grid>
       </Grid>
     </div>
   )
