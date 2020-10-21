@@ -7,19 +7,21 @@ const useStyles = makeStyles({
     ArticleSummaryText : {
         fontFamily: "Roboto, sans-serif",
         padding: "10px",
-        textAlign: "left"
+        textAlign: "left",
+
     }, 
   ArticleTitle: {
     fontSize: "20px",
     fontWeight: "700",
-   
+   marginBottom: "18px"
   },
   ArticleURL : {
     fontSize: "2vw",
+    marginBottom: "10px"
     
   }, 
   SummaryText : {
-   
+   marginBottom: "12px"
   }
 });
 
