@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
-import BiasIndicator from './components/BiasIndicator/BiasIndicator';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 //styles
 const useStyles = makeStyles({
@@ -40,7 +40,7 @@ const classes = useStyles();
       <URLInput setRequest={ setRequest }/>
     :
     
-      <div>
+          <div>
       <DisplayResults displayResults={JSON.stringify(request.results)} displayURL={request.url}/>
       <p>{request.error}</p>
       </div>
