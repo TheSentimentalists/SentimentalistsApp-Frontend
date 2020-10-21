@@ -15,8 +15,8 @@ function BProgressBar(){
     </Grid>
     <Grid item xs ={10} sm={10} md={10} lg={10}>
     <ProgressBar
-    percent={75}
-    filledBackground="linear-gradient(to right, #6BB26D, #EE445E)"/>
+    percent={30}
+    unfilledBackground="linear-gradient(to right, #6BB26D, #EE445E)"/>
     </Grid>
     </Grid>
     </div>
