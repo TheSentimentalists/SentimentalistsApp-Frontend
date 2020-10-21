@@ -13,7 +13,9 @@
     "react-gauge-chart": "^0.2.5",
     "react-scripts": "3.4.3",
     "react-textfit": "^1.1.0",
-    "textfit": "^2.4.0"
+    "react-truncate-markup": "^5.0.1",
+    "textfit": "^2.4.0",
+    "truncate": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

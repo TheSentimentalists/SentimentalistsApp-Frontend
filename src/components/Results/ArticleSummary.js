@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core/";
 import "../../App.css";
+import TruncateMarkup from 'react-truncate-markup';
 
 
 const useStyles = makeStyles({
@@ -16,12 +17,13 @@ const useStyles = makeStyles({
    marginBottom: "18px"
   },
   ArticleURL : {
-    fontSize: "2vw",
+    fontSize: "12px",
     marginBottom: "10px"
     
   }, 
   SummaryText : {
-   marginBottom: "12px"
+   marginBottom: "12px",
+   fontSize: "16px"
   }
 });
 
@@ -30,19 +32,21 @@ function ArticleSummary() {
 
   return (
     <div>
-      <Grid container justify="flex-start" direction="column"  alignItems="center" className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
-        <Grid item xs={12}> 
+      <Grid container justify="flex-start" direction="column"   className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
+        <Grid item xs={12} > 
           <Typography variant="h4" className={classes.ArticleTitle}>
             Greater Manchester to get tier 3 Covid restrictions imposed after
             talks fail
           </Typography>
         </Grid>
         <Grid item xs={12}>
+        <TruncateMarkup lines={1}>
         <Typography variant="body1" className={classes.ArticleURL}>
           
-          https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
-          
+         https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
+         
         </Typography>
+        </TruncateMarkup>
         </Grid>
         <Grid item xs={12}>
         <Typography variant="body2" className={classes.SummaryText}>
