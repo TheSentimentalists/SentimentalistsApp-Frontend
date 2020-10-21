@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import ReactBootstrapStyle from '@bit/react-bootstrap.react-bootstrap.internal.style-links';
-import ProgressBar from '@bit/react-bootstrap.react-bootstrap.progress-bar';
-// Biasscore to replace 60//
-class Example extends Component {
-	render() {
-		return (
-			<div style={{ width: 400 }}>
-				<ProgressBar now={60} /> 
-			</div>
-		);
-	}
+import React from 'react';
+import "react-step-progress-bar.css";
+import { ProgressBar } from "react-step-progress-bar";
+
+class ProgressBar extends React.Component {
+  render() {
+    return(
+      <ProgressBar
+      percent = {}
+      filledBackground="linear-gradient(to right,#6bb26d, #ee445e)"
+      />
+    )
+  }
 }
-export default () => (
-	<div>
-		<ReactBootstrapStyle />
-		<Example />
-	</div>
-);
