@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     margin: "10px"
   }, 
   SummaryText : {
-    
+    margin: "10px"
   }
 });
 
@@ -28,18 +28,20 @@ function ArticleSummary() {
 
   return (
     <div>
-      <Grid container justify="center" className={classes.ArticleSummaryText}>
-        <Grid item xs={10}>
+      <Grid container justify="center" className={classes.ArticleSummaryText} style={{border: "3px solid red"}}>
+        <Grid item xs={10}> 
           <Typography variant="h4" className={classes.ArticleTitle}>
             Greater Manchester to get tier 3 Covid restrictions imposed after
             talks fail
           </Typography>
         </Grid>
-        <Typography variant="body1" xs={10} className={classes.ArticleURL}>
+        <Grid item xs={12}>
+        <Typography variant="body1" className={classes.ArticleURL}>
           
           https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
           
         </Typography>
+        </Grid>
         <Typography variant="body2" className={classes.SummaryText}>
           The summary of the article.The summary of the article.The summary of
           the article.The summary of the article.The summary of the article.
