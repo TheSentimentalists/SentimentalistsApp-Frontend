@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core/";
 import "../../App.css";
 
+
 const useStyles = makeStyles({
     ArticleSummaryText : {
         fontFamily: "Roboto, sans-serif",
@@ -10,7 +11,16 @@ const useStyles = makeStyles({
   ArticleTitle: {
     fontSize: "20px",
     fontWeight: "700",
+    marginTop: "10px",
+    marginBottom: "15px"
   },
+  ArticleURL : {
+    fontSize: "2vw",
+    margin: "10px"
+  }, 
+  SummaryText : {
+    
+  }
 });
 
 function ArticleSummary() {
@@ -25,10 +35,12 @@ function ArticleSummary() {
             talks fail
           </Typography>
         </Grid>
-        <Typography variant="body1" className={classes.ArticleURL}>
+        <Typography variant="body1" xs={10} className={classes.ArticleURL}>
+          
           https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
+          
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" className={classes.SummaryText}>
           The summary of the article.The summary of the article.The summary of
           the article.The summary of the article.The summary of the article.
         </Typography>
@@ -37,7 +49,7 @@ function ArticleSummary() {
         </Typography>
       </Grid>
     </div>
-  );
+  )
 }
 
 export default ArticleSummary;
