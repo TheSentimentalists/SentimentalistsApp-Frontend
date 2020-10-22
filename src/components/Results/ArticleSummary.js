@@ -1,8 +1,7 @@
 import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core/";
 import "../../App.css";
-import TruncateMarkup from "react-truncate-markup";
-//Truncate  & Textfit need to be updated, throwing unsafe errors
+
 
 const useStyles = makeStyles({
   ArticleSummaryText: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles({
     marginBottom: "18px",
   },
   ArticleURL: {
-    fontSize: "12px",
+    fontSize: "14px",
     marginBottom: "10px",
   },
   SummaryText: {
@@ -42,12 +41,14 @@ function ArticleSummary() {
             talks fail
           </Typography>
         </Grid>
+        
+        
         <Grid item xs={12}>
-          <TruncateMarkup lines={1}>
-            <Typography variant="body1" className={classes.ArticleURL}>
+          
+            <Typography variant="body1" className={classes.ArticleURL} noWrap>
               https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
             </Typography>
-          </TruncateMarkup>
+          
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body2" className={classes.SummaryText}>
