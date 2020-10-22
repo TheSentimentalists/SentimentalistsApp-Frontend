@@ -61,9 +61,16 @@ function URLInput(props) {
         props.setRequest(JSON.parse(data));
       })
       .catch((error) => {
-        console.error("There was an error!", error);
+        //console.error("There was an error!", error);
+        console.log("ERROR")
+        handleError();
       });
   };
+
+
+  const handleError = () =>{
+    alert("Please enter a valid URL")
+  }
 
   return (
     <div>
@@ -86,6 +93,7 @@ function URLInput(props) {
               value={text}
               onChange={handleTextChange}
               color="secondary"
+              error id="standard-error" 
             ></Textfield>
           </Grid>
           <Button
