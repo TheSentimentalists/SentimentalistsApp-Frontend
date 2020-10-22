@@ -11,12 +11,13 @@ function BProgressBar(){
       justify ="center" 
       alignItems = "center"
       >
-      <Grid 
+      <Grid
         item align = "center"
         item xs ={5} sm={5} md={5} lg={5} >
         Bias Score
       </Grid>
       <Grid 
+        style={{border: "2px solid red",borderRadius:"2000px"}}
         item xs ={10} sm={10} md={10} lg={10}>
         <ProgressBar
         percent={30}
