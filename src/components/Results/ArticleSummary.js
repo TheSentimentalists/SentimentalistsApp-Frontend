@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, makeStyles } from "@material-ui/core/";
+import { Grid, Typography, makeStyles, Chip } from "@material-ui/core/";
 import "../../App.css";
 
 
@@ -22,6 +22,11 @@ const useStyles = makeStyles({
     marginBottom: "12px",
     fontSize: "16px",
   },
+
+  keywordChip : {
+    backgroundColor: "#f8ce94",
+    margin: "3px"
+  }
 });
 
 function ArticleSummary() {
@@ -58,8 +63,9 @@ function ArticleSummary() {
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body1">
-            Keywords: Boris Johnson, Brexit, Economy
-          </Typography>
+            Keywords: 
+            <Chip label="Boris Johnson" className={classes.keywordChip}/><Chip label="Brexit" className={classes.keywordChip}/><Chip label="Economy" className={classes.keywordChip}/>
+            </Typography>
         </Grid>
       </Grid>
     </div>

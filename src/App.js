@@ -59,6 +59,6 @@ function App() {
   );
 }
 
-Summary
+
 export default App; 
 
