@@ -4,6 +4,7 @@ import { Container, Grid } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import URLInput from "./components/URLInput/URLInput";
 import DisplayResults from "./components/Results/displayResults";
+import ErrorBoundary from "./components/URLInput/ErrorBoundary";
 
 //styles
 const useStyles = makeStyles({
@@ -38,12 +39,14 @@ function App() {
               <URLInput setRequest={setRequest} />
             ) : (
               <div>
+                <ErrorBoundary handleError={request.error}>
                 <DisplayResults
                   displayResults={JSON.stringify(request.results)}
                   displayURL={request.url}
                 />
 
                 <p>{request.error}</p>
+                </ErrorBoundary >
               </div>
             )}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ErrorBoundary(){
+function ErrorBoundary(props){
     return(
         
     )
