@@ -55,7 +55,7 @@ function ArticleSummary() {
             </Typography>
           
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} lg={9}>
           <Typography variant="body2" className={classes.SummaryText}>
             The summary of the article.The summary of the article.The summary of
             the article.The summary of the article.The summary of the article.
