@@ -63,14 +63,10 @@ function URLInput(props) {
       .catch((error) => {
         //console.error("There was an error!", error);
         console.log("ERROR")
-        handleError();
+        
       });
   };
 
-
-  const handleError = () =>{
-    alert("Please enter a valid URL")
-  }
 
   return (
     <div>

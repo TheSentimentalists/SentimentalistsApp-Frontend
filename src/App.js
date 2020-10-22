@@ -4,7 +4,7 @@ import { Container, Grid } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import URLInput from "./components/URLInput/URLInput";
 import DisplayResults from "./components/Results/displayResults";
-import ErrorBoundary from "./components/URLInput/ErrorBoundary";
+import {ErrorBoundary} from 'react-error-boundary';
 
 //styles
 const useStyles = makeStyles({
@@ -25,10 +25,22 @@ const useStyles = makeStyles({
 });
 
 function App() {
-  const classes = useStyles();
+  const classes = useStyles();  
 
   //request
   const [request, setRequest] = useState("");
+
+  const ErrorComponent = ( resetErrorBoundary ) => {
+    return (
+      <div role="alert">
+        <URLInput/>
+        <p>Please enter a valid URL</p>
+    
+        <button onClick={resetErrorBoundary}>Try again</button>
+      </div>
+    )
+
+  }
 
   return (
     <div className="App">
@@ -37,16 +49,14 @@ function App() {
           <div className={classes.innerContainer}>
             {!request ? (
               
-              <URLInput setRequest={setRequest} />
+              <URLInput setRequest={setRequest} />  
               
             ) : (
               <div>
-                <ErrorBoundary handleError={request.error}>
+                <ErrorBoundary FallbackComponent={ErrorComponent} >
                 <DisplayResults displayResults={JSON.stringify(request.results)}
                   displayURL={request.url}
                 />
-
-                <p>{request.error}</p>
                 </ErrorBoundary>
                 
               </div>
