@@ -1,17 +1,23 @@
 import React from 'react';
 
-function ErrorBoundary(props){
-    console.log(props.handleError);
+class ErrorBoundary extends React.Component {
+    constructor(props){
+    super(props);
+    this.state = { hasError: false };
+    }
 
- 
+    static getDerivedStateFromError(error){
+        return { hasError: true };
+    }
 
-    return(
-    <p>{props.handleError}</p> 
+    render(){
+        if(this.state.hasError){
+    return <p>This an invalid URL</p>
+    }
 
-    )
+    return this.props.children
 }
-
-
+}
 
 
 export default ErrorBoundary;
