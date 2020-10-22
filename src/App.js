@@ -36,17 +36,19 @@ function App() {
         <div className={classes.containerStyle}>
           <div className={classes.innerContainer}>
             {!request ? (
+              
               <URLInput setRequest={setRequest} />
+              
             ) : (
               <div>
                 <ErrorBoundary handleError={request.error}>
-                <DisplayResults
-                  displayResults={JSON.stringify(request.results)}
+                <DisplayResults displayResults={JSON.stringify(request.results)}
                   displayURL={request.url}
                 />
 
                 <p>{request.error}</p>
-                </ErrorBoundary >
+                </ErrorBoundary>
+                
               </div>
             )}
 
