@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from './components/Main/Header';
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
+import BProgressBar from './components/Progressbar/BProgressBar';
 
 //styles
 const useStyles = makeStyles({
@@ -36,7 +37,10 @@ const classes = useStyles();
     
     {!request
     ?
+    <div>
+      <BProgressBar/>
       <URLInput setRequest={ setRequest }/>
+      </div>
     :
     
       <div>
