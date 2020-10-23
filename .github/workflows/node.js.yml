@@ -16,15 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-   # - name: Use Node.js 14.6.0
-   #   uses: actions/setup-node@v1
-   #   with:
-   #     node-version: 14.6.0
-   # - run: npm ci -verbose
-   # - run: npm run build
-    - run: | 
-        mkdir build
-        echo "This is a test $GITHUB_SHA" >> build/test.txt
+    - name: Use Node.js 14.6.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.6.0
+    - run: npm ci -verbose
+    - run: npm run build
+   # - run: | 
+   #     mkdir build
+   #     echo "This is a test $GITHUB_SHA" >> build/test.txt
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
