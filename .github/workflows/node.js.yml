@@ -25,16 +25,11 @@ jobs:
     - run: | 
         mkdir build
         echo "This is a test $GITHUB_SHA" >> build/test.txt
-    - name: Commit files
-      run: |
-        cd build
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    - name: Push Changes
+      uses: johno/actions-push-subdirectories@master
+      env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: 'test'
-        repository: 'thesentimentalists.github.io'
+          args: build action@github.com
     
