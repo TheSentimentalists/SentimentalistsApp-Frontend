@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
@@ -29,12 +29,13 @@ const useStyles = makeStyles(() => ({
 }));
 
 function URLInput(props) {
-  const [text, setText] = useState("");
+  let text = ""
+  //const [text, setText] = useState("");
   const classes = useStyles();
 
-  const handleTextChange = (event) => {
-    setText(event.target.value);
-  };
+  //const handleTextChange = (event) => {
+  //  setText(event.target.value);
+  //};
 
   const handleSubmit = () => {
     const requestOptions = {
