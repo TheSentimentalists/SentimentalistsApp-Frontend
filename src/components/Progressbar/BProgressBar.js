@@ -1,32 +1,38 @@
 import React from "react";
 import "react-step-progress-bar/styles.css";
-import { ProgressBar } from "react-step-progress-bar";
+import { ProgressBar,  } from "react-step-progress-bar";
 import Grid from '@material-ui/core/Grid';
 
 function BProgressBar(){
+
+let percentage = 80
+let fgcolor
+ 
+if (percentage < 30) {
+  fgcolor = "linear-gradient(to right, #e60202, #7d1225)";
+} else if(percentage >= 30 && percentage < 70) {
+  fgcolor = "linear-gradient(to right, #ffcf53, #e79b37)";
+} else {
+  fgcolor = "linear-gradient(to right, #396f5c, #5ba45b)";
+}
+
   return(
     <div>
-      <Grid container 
-      spacing = {1}
-      justify ="center" 
-      alignItems = "center"
-      >
-      <Grid
-        item align = "center"
-        item xs ={5} sm={5} md={5} lg={5}>
-        Bias Score
-      </Grid>
-      <Grid 
-        style={{border: "2px solid red",borderRadius:"2000px"}}
-        item xs ={10} sm={10} md={10} lg={10}>
-        <ProgressBar
-        percent={49.5}
-        // filledBackground="linear-gradient(to right, #6BB26D, #EE445E)"
-        filledBackground="linear-gradient(to right, #FFBFBF, #FF6060)"
-        unfilledBackground="#FFF8CE94"
-        />
-      </Grid>
-      </Grid>
+    <Grid container justify ="center" 
+    alignItems = "center"
+    border = "2px solid #F8CE94">
+    <Grid alignItems = "center"
+    item xs ={10} sm={10} md={10} lg={10} >
+      TrustScore
+    </Grid>
+    <Grid item xs ={10} sm={10} md={10} lg={10}>
+    <ProgressBar
+    percent={percentage}
+    unfilledBackground="lightgrey"
+    filledBackground={fgcolor} />
+    </Grid>
+    </Grid>
+
     </div>
   )
 }
