@@ -42,9 +42,9 @@ function DisplayResults(props) {
 
   return (
     <div>
-      <ArticleSummary />
+      
       <Grid container justify="center">
-  
+      <ArticleSummary />
         <Grid item xs={12} sm={10}>
           <Typography variant="h5" className={classes.mainGaugeHeading}>
             Credibility Score
