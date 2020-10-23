@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { makeStyles, TextField } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
 import URLInputHeader from "./URLInputHeader";
 /* resolve CSS */
@@ -76,16 +76,7 @@ function URLInput(props) {
       >
         <form>
           <Grid item xs={10} sm={8} md={6} lg={3}>
-            <Textfield
-              className={classes.inputBox}
-              fullWidth
-              required
-              label="Input URL"
-              variant="outlined"
-              value={text}
-              onChange={handleTextChange}
-              color="secondary"
-            ></Textfield>
+ test
           </Grid>
           <Button
             style={{ fontFamily: "Graduate" }}
