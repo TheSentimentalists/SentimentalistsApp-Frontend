@@ -16,9 +16,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 14.6.0
-      uses: actions/setup-node@v1
+   # - name: Use Node.js 14.6.0
+   #   uses: actions/setup-node@v1
+   #   with:
+   #     node-version: 14.6.0
+   # - run: npm ci -verbose
+   # - run: npm run build
+    - run: | 
+        mkdir build
+        echo "This is a test $GITHUB_SHA" >> build/test.txt
+    - name: Commit files
+      run: |
+        cd build
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        node-version: 14.6.0
-    - run: npm ci -verbose
-    - run: npm run build
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'test'
+        repository: 'thesentimentalists.github.io'
+    
