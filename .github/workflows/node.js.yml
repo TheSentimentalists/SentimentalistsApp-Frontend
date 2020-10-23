@@ -20,6 +20,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.6.0
-    - run: |
-        npm install
-        npm run build
+    - run: npm ci -verbose
+    - run: npm run build
+   # - run: | 
+   #     mkdir build
+   #     echo "This is a test $GITHUB_SHA" >> build/test.txt
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: TheSentimentalists/thesentimentalists.github.io
+        publish_branch: master
+        publish_dir: ./build
+    
