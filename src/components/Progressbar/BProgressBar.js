@@ -32,6 +32,7 @@ if (percentage < 30) {
     filledBackground={fgcolor} />
     </Grid>
     </Grid>
+
     </div>
   )
 }
