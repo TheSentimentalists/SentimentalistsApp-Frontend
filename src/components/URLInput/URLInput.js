@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
+import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
@@ -29,13 +30,12 @@ const useStyles = makeStyles(() => ({
 }));
 
 function URLInput(props) {
-  let text = ""
-  //const [text, setText] = useState("");
+  const [text, setText] = useState("");
   const classes = useStyles();
 
-  //const handleTextChange = (event) => {
-  //  setText(event.target.value);
-  //};
+  const handleTextChange = (event) => {
+    setText(event.target.value);
+  };
 
   const handleSubmit = () => {
     const requestOptions = {
@@ -77,7 +77,16 @@ function URLInput(props) {
       >
         <form>
           <Grid item xs={10} sm={8} md={6} lg={3}>
- test
+            <Textfield
+              className={classes.inputBox}
+              fullWidth
+              required
+              label="Input URL"
+              variant="outlined"
+              value={text}
+              onChange={handleTextChange}
+              color="secondary"
+            ></Textfield>
           </Grid>
           <Button
             style={{ fontFamily: "Graduate" }}
