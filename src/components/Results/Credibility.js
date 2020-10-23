@@ -18,6 +18,10 @@ const useStyles = makeStyles({
     fontFamily: "Graduate, sans-serif",
   },
 
+  categoryGauge: {
+      marginTop: "15px",
+  },
+
   categoryTitle: {
     fontFamily: "Roboto, sans-serif",
     textAlign: "left",
@@ -47,11 +51,11 @@ function Credibility(props) {
         container
         justify="center"
         direction="column"
-        style={{ border: "2px solid red" }}
       >
-        <Grid item xs={12}>
+          
+        <Grid item xs={12} md={4}>
           <GaugeChart
-            className={classes.mainGauge}
+            className={classes.categoryGauge}
             id="main-gauge"
             percent={props.credibilityScore}
             hideText={false}
@@ -60,24 +64,25 @@ function Credibility(props) {
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <Typography variant="h5" className={classes.credibilityGaugeHeading}>
             Credibility
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Category:{" "}
             <Chip label={props.category} className={classes.categoryChip} />
           </Typography>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <Typography variant="body1" className={classes.categoryText}>
             The definition of a credible source can change depending on the
             discipline, but in general, a credible source
             is one that is unbiased and is backed up with evidence. 
           </Typography>
+        
         </Grid>
       </Grid>
     </div>
