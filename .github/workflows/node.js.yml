@@ -25,11 +25,11 @@ jobs:
     - run: | 
         mkdir build
         echo "This is a test $GITHUB_SHA" >> build/test.txt
-    - name: Push Changes
-      uses: johno/actions-push-subdirectories@master
-      env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-          args: build TheSentimentalists thesentimentalists.github.io
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: TheSentimentalist/thesentimentalists.github.io
+        publish_branch: master
+        publish_dir: ./build
     
