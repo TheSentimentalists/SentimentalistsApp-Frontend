@@ -58,16 +58,13 @@ function DisplayResults(props) {
   /*const source = resultsObj[0].source;
   const category = resultsObj[0].category;
   const analysedURL = props.displayURL;*/
-  console.log(JSON.parse(props.displayResults))
+  console.log(JSON.parse(props.displayResults));
 
   return (
     <div>
-      <Grid container justify="center">
-        <Grid item >
-        <ArticleSummary />
-        </Grid>
-        <Credibility score={credibilityScore} category={category}/>
-      </Grid>
+      <ArticleSummary />
+
+      <Credibility score={credibilityScore} category={category} />
     </div>
   );
 }
