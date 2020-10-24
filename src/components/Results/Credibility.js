@@ -35,6 +35,16 @@ const useStyles = makeStyles({
     fontFamily: "Roboto, sans-serif",
   },
 
+  sourceChip : {
+    background: "#f8ce94",
+    fontFamily: "Roboto, sans-serif",
+    cursor: "pointer"
+  },
+
+  chipLink: {
+    textDecoration: "none",
+  },
+
   categoryText: {
     paddingLeft: "45px",
     textAlign: "left",
@@ -122,7 +132,12 @@ function Credibility(props) {
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Source:{" "}
-            <Chip label={props.source} className={classes.categoryChip} />
+            <a
+              href="https://mediabiasfactcheck.com/"
+              className={classes.chipLink}
+            >
+              <Chip label={props.source} className={classes.sourceChip} />
+            </a>
           </Typography>
         </Grid>
 
