@@ -23,14 +23,42 @@ const useStyles = makeStyles({
     fontSize: "16px",
   },
 
-  keywordChip : {
+  keywordChip: {
     backgroundColor: "#f8ce94",
-    margin: "3px"
-  }
+    margin: "3px",
+  },
 });
 
-function ArticleSummary() {
+function ArticleSummary(props) {
+  let keywordArr = [
+    "low",
+    "admits",
+    "covid",
+    "results",
+    "contacts",
+    
+  ] ;
+  
+
+
   const classes = useStyles();
+
+  let articleTitle;
+  let articleSummary;
+  
+
+  const generateSummaryText = () => {
+    if (props.displayArticle.hasOwnProperty("error")) {
+      articleTitle = "The Article Title could not be generated.";
+      articleSummary = "The article summary could not be generated.";
+    } else {
+      articleTitle = props.displayArticle.header;
+      articleSummary = props.displayArticle.summary;
+    }
+  };
+  generateSummaryText();
+
+  
 
   return (
     <div>
@@ -42,30 +70,27 @@ function ArticleSummary() {
       >
         <Grid item xs={12}>
           <Typography variant="h4" className={classes.ArticleTitle}>
-            Greater Manchester to get tier 3 Covid restrictions imposed after
-            talks fail
+            {articleTitle}
           </Typography>
         </Grid>
-        
-        
+
         <Grid item xs={12}>
-          
-            <Typography variant="body1" className={classes.ArticleURL} noWrap>
-              https://www.theguardian.com/world/2020/oct/20/government-fails-to-reach-deal-with-manchester-over-tier-3-covid-restrictions
-            </Typography>
-          
+          <Typography variant="body1" className={classes.ArticleURL} noWrap>
+            {props.displayURL}
+          </Typography>
         </Grid>
         <Grid item xs={12} lg={9}>
           <Typography variant="body2" className={classes.SummaryText}>
-            The summary of the article.The summary of the article.The summary of
-            the article.The summary of the article.The summary of the article.
+            {articleSummary}
           </Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body1">
-            Keywords: 
-            <Chip label="Boris Johnson" className={classes.keywordChip}/><Chip label="Brexit" className={classes.keywordChip}/><Chip label="Economy" className={classes.keywordChip}/>
-            </Typography>
+            Keywords:
+  <div>{keywordArr.map(word => (<p>{word}</p>))}</div>
+            <Chip label="Brexit" className={classes.keywordChip} />
+            <Chip label="Economy" className={classes.keywordChip} />
+          </Typography>
         </Grid>
       </Grid>
     </div>

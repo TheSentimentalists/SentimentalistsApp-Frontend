@@ -34,7 +34,11 @@ function DisplayResults(props) {
   const classes = useStyles();
   const resultsObj = props.displayResults;
   const analysedURL = resultsObj.url;
-  console.log(resultsObj)
+  console.log(resultsObj);
+
+  
+const article = resultsObj.article;
+console.log(article);
 
   // temporary code to support credibility score while it's here
   const credibilityScore = resultsObj.results[0].outcome.score / 100
@@ -43,7 +47,7 @@ function DisplayResults(props) {
 
   return (
     <div>
-      <ArticleSummary />
+      <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
       <Grid container justify="center">
   
         <Grid item xs={12} sm={10}>
