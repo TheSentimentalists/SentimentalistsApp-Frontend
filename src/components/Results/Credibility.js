@@ -26,6 +26,8 @@ const useStyles = makeStyles({
     fontFamily: "Roboto, sans-serif",
     textAlign: "left",
     paddingLeft: "45px",
+    fontWeight: "600",
+    marginBottom: "5px  ",
   },
 
   categoryChip: {
@@ -43,6 +45,54 @@ const useStyles = makeStyles({
 
 function Credibility(props) {
   const classes = useStyles();
+
+  let categoryText = () => {
+    switch (props.category) {
+      case "Left Center":
+        categoryText = `These media sources have a slight to moderate liberal bias. 
+        They often publish factual information that utilizes loaded words 
+        (wording that attempts to influence an audience by using appeal to emotion or stereotypes)
+         to favor liberal causes. These sources are generally trustworthy for information, but
+        may require further investigation.`;
+        break;
+      case "Left":
+        categoryText = `These media sources are moderately to strongly biased toward liberal causes through
+          story selection and/or political affiliation. They may utilize strong loaded words 
+          (wording that attempts to influence an audience by using appeal to emotion or stereotypes),
+          publish misleadingreports and omit reporting of information that may damage liberal causes.
+          Some sources in this category may be untrustworthy.`;
+        break;
+      case "Right Center":
+        categoryText = `These media sources are slightly to moderately conservative in bias. 
+          They often publish factual information that utilizes loaded words (wording that attempts
+             to influence an audience by using appeal to emotion or stereotypes) to favor conservative
+              causes. These sources are generally trustworthy for information, but may require further investigation.`;
+        break;
+      case "Right":
+        categoryText = `These media sources are moderately to strongly biased toward conservative causes through
+           story selection and/or political affiliation. They may utilize strong loaded words (wording that attempts 
+            to influence an audience by using appeal to emotion or stereotypes), publish misleading reports and omit 
+            reporting of information that may damage conservative causes. Some sources in this category may be untrustworthy`;
+        break;
+      case "Conspiracy":
+        categoryText = `Sources in the Conspiracy-Pseudoscience category may publish unverifiable information that is
+              not always supported by evidence. These sources maybe untrustworthy for credible/verifiable information, 
+              therefore fact checking and further investigation is recommended on a per article basis when obtaining information
+              from these sources`;
+        break;
+      case "Fake News":
+        categoryText = `A questionable source exhibits one or more of the following: extreme bias, consistent promotion of 
+                propaganda/conspiracies, poor or no sourcing to credible information, a complete lack of transparency and/or 
+                is fake news. Fake News is the deliberate attempt to publish hoaxes and/or disinformation for the purpose of
+                 profit or influence. Sources listed in the Questionable Category maybe very untrustworthy and should be fact 
+                 checked on a per article basis. Please note sources on this listare not considered fake news unless specifically
+                 written in the reasoning section for that source.`;
+        break;
+      default:
+        categoryText = `Not enough about this source exists to calculate a score`;
+    }
+  };
+  categoryText();
 
   return (
     <div>
@@ -69,12 +119,16 @@ function Credibility(props) {
             <Chip label={props.category} className={classes.categoryChip} />
           </Typography>
         </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography variant="subtitle2" className={classes.categoryTitle}>
+            Source:{" "}
+            <Chip label={props.source} className={classes.categoryChip} />
+          </Typography>
+        </Grid>
 
         <Grid item xs={12} md={4}>
           <Typography variant="body1" className={classes.categoryText}>
-            The definition of a credible source can change depending on the
-            discipline, but in general, a credible source is one that is
-            unbiased and is backed up with evidence.
+            {categoryText}
           </Typography>
         </Grid>
       </Grid>

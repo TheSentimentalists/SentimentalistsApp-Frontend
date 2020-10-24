@@ -38,7 +38,7 @@ function DisplayResults(props) {
         outcome: {
           score: 100.0,
           source: "Media Bias/Fact Check",
-          category: "Left Center",
+          category: "Fake News",
         },
       },
       { type: "polarity", outcome: { score: 0.11155073461891642 } },
@@ -50,6 +50,7 @@ function DisplayResults(props) {
   // accesses score from credibility analysis, assigns it to a variable,
   //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
   const category = resultsObj.results[0].outcome.category;
+  const source = resultsObj.results[0].outcome.source;
   /*const source = resultsObj[0].source;
   const category = resultsObj[0].category;
   const analysedURL = props.displayURL;*/
@@ -59,7 +60,7 @@ function DisplayResults(props) {
     <div>
       <ArticleSummary />
 
-      <Credibility score={credibilityScore} category={category} />
+      <Credibility score={credibilityScore} category={category} source={source} />
     </div>
   );
 }
