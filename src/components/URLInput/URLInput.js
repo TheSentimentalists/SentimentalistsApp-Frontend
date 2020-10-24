@@ -60,8 +60,7 @@ function URLInput(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-
-        props.setRequest(JSON.parse(data));
+        props.setRequest(data);
       })
       .catch((error) => {
         console.error("There was an error!", error);
