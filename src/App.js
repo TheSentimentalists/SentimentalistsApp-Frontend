@@ -3,6 +3,7 @@ import "./App.css";
 import { Container, Grid, Backdrop } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import URLInput from "./components/URLInput/URLInput";
+import Loading from "./components/Loading/Loading";
 import DisplayResults from "./components/Results/displayResults";
 
 //styles
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     background: "#ffffff",
   },
 
-  loading_shadow: {
+  loading: {
     zIndex: 999,
     color: '#fff',
   },
@@ -59,8 +60,8 @@ function App() {
             </Grid>
           </div>
         </div>
-        <Backdrop className={classes.loading_shadow} open={loading}>
-          Loading
+        <Backdrop className={classes.loading} open={loading}>
+          <Loading />
         </Backdrop>
       </Container>
     </div>
