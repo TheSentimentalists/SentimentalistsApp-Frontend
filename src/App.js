@@ -39,8 +39,7 @@ function App() {
             ) : (
               <div>
                 <DisplayResults
-                  displayResults={JSON.stringify(request.results)}
-                  displayURL={request.url}
+                  displayResults={(request)}
                 />
 
                 <p>{request.error}</p>

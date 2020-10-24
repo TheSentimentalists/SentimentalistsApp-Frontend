@@ -32,13 +32,14 @@ const useStyles = makeStyles({
 
 function DisplayResults(props) {
   const classes = useStyles();
-  const resultsObj = JSON.parse(props.displayResults);
-  const credibilityScore = resultsObj[0].score / 100;
-  // accesses score from credibility analysis, assigns it to a variable,
-  //the score is divided by 100 to provide the format required forthe percent prop on the gauge.
-  const source = resultsObj[0].source;
-  const category = resultsObj[0].category;
-  const analysedURL = props.displayURL;
+  const resultsObj = props.displayResults;
+  const analysedURL = resultsObj.url;
+  console.log(resultsObj)
+
+  // temporary code to support credibility score while it's here
+  const credibilityScore = resultsObj.results[0].outcome.score / 100
+  const source = resultsObj.results[0].outcome.source
+  const category = resultsObj.results[0].outcome.category
 
   return (
     <div>

@@ -45,7 +45,7 @@ function URLInput(props) {
     };
 
     fetch(
-      "https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis",
+      "https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/prod/analysis",
       requestOptions
     )
       .then(async (response) => {
