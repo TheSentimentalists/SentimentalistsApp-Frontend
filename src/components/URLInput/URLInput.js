@@ -61,8 +61,10 @@ function URLInput(props) {
           return Promise.reject(error);
         }
         props.setRequest(data);
+        props.setLoading(false);
       })
       .catch((error) => {
+        props.setLoading(false);
         console.error("There was an error!", error);
       });
   };
