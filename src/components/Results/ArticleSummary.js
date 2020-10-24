@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Typography, makeStyles, Chip } from "@material-ui/core/";
 import "../../App.css";
 
-
 const useStyles = makeStyles({
   ArticleSummaryText: {
     fontFamily: "Roboto, sans-serif",
@@ -26,6 +25,7 @@ const useStyles = makeStyles({
   keywordChip: {
     backgroundColor: "#f8ce94",
     margin: "3px",
+    fontWeight: "700"
   },
 });
 
@@ -36,16 +36,24 @@ function ArticleSummary(props) {
     "covid",
     "results",
     "contacts",
-    
-  ] ;
-  
-
+    "test",
+    "week",
+    "failings",
+    "hours",
+    "previous",
+    "contacttracing",
+    "reached",
+    "hits",
+    "system",
+    "englands",
+    "times",
+    "testing",
+  ];
 
   const classes = useStyles();
 
   let articleTitle;
   let articleSummary;
-  
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
@@ -57,8 +65,6 @@ function ArticleSummary(props) {
     }
   };
   generateSummaryText();
-
-  
 
   return (
     <div>
@@ -84,12 +90,13 @@ function ArticleSummary(props) {
             {articleSummary}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={8}>
           <Typography variant="body1">
             Keywords:
-  <div>{keywordArr.map(word => (<p>{word}</p>))}</div>
-            <Chip label="Brexit" className={classes.keywordChip} />
-            <Chip label="Economy" className={classes.keywordChip} />
+            {keywordArr.map((word) => (
+              
+              <Chip label={word.charAt(0).toUpperCase() + word.slice(1)} className={classes.keywordChip} />
+            ))}
           </Typography>
         </Grid>
       </Grid>
