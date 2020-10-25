@@ -6,7 +6,12 @@ import Credibility from "./Credibility";
 function DisplayResults(props) {
   const resultsObj = props.displayResults;
 
+  const analysedURL = resultsObj.url;
   console.log(resultsObj);
+
+  
+const article = resultsObj.article;
+
 
   // temporary code to support credibility score while it's here
   const credibilityScore = resultsObj.results[0].outcome.score / 100;
@@ -15,13 +20,16 @@ function DisplayResults(props) {
 
   return (
     <div>
-      <ArticleSummary />
 
+
+      <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
+      
       <Credibility
         score={credibilityScore}
         category={category}
         source={source}
       />
+
     </div>
   );
 }
