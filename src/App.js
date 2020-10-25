@@ -30,10 +30,9 @@ function App() {
   //request
   const [request, setRequest] = useState("");
 
-  const ErrorComponent = ( resetErrorBoundary ) => {
+  const ErrorComponent = ( {resetErrorBoundary} ) => {
     return (
       <div role="alert">
-        <URLInput/>
         <p>Please enter a valid URL</p>
     
         <button onClick={resetErrorBoundary}>Try again</button>
@@ -49,14 +48,15 @@ function App() {
           <div className={classes.innerContainer}>
             {!request ? (
               
+              
               <URLInput setRequest={setRequest} />  
               
             ) : (
               <div>
-                <ErrorBoundary FallbackComponent={ErrorComponent} >
+              <ErrorBoundary FallbackComponent={ErrorComponent} onReset={() => {setRequest('')}} resetKeys={[request]} >
                 <DisplayResults displayResults={JSON.stringify(request.results)}
-                  displayURL={request.url}
-                />
+                  displayURL={request.url}/>  
+                
                 </ErrorBoundary>
                 
               </div>
