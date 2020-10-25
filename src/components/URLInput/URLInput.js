@@ -38,6 +38,9 @@ function URLInput(props) {
   };
 
   const handleSubmit = () => {
+
+    props.setLoading(true);
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -57,10 +60,12 @@ function URLInput(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-
         props.setRequest(data);
+        props.setLoading(false);
+
       })
       .catch((error) => {
+        props.setLoading(false);
         console.error("There was an error!", error);
       });
   };
