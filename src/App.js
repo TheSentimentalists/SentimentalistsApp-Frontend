@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Container, Grid } from "@material-ui/core/";
+import { Container, Grid, Backdrop } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import URLInput from "./components/URLInput/URLInput";
 import Logo from "./assets/images/Sentimentalists_Logo_270X273.png";
+import Loading from "./components/Loading/Loading";
 import DisplayResults from "./components/Results/displayResults";
 import { ErrorBoundary } from "react-error-boundary";
 
@@ -35,6 +36,11 @@ const useStyles = makeStyles({
     border: "none",
     padding: "15px",
     cursor: "pointer",
+
+  loading: {
+    zIndex: 999,
+    color: '#fff',
+
   },
 
   footer: {
@@ -48,6 +54,7 @@ function App() {
 
   //request
   const [request, setRequest] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const ErrorComponent = ({ resetErrorBoundary }) => {
     return (
@@ -69,7 +76,7 @@ function App() {
         <div className={classes.containerStyle}>
           <div className={classes.innerContainer}>
             {!request ? (
-              <URLInput setRequest={setRequest} />
+              <URLInput setRequest={setRequest} setLoading={setLoading} />
             ) : (
               <div>
                 <ErrorBoundary
@@ -84,6 +91,11 @@ function App() {
                     displayURL={request.url}
                   />
                 </ErrorBoundary>
+
+                <DisplayResults
+                  displayResults={(request)} />
+
+                <p>{request.error}</p>
               </div>
             )}
 
@@ -94,6 +106,9 @@ function App() {
             </Grid>
           </div>
         </div>
+        <Backdrop className={classes.loading} open={loading}>
+          <Loading />
+        </Backdrop>
       </Container>
     </div>
   );

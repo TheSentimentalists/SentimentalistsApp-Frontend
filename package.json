@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@kennethormandy/react-fittext": "^0.6.0",
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -12,7 +14,10 @@
     "react-error-boundary": "^3.0.2",
     "react-gauge-chart": "^0.2.5",
     "react-scripts": "3.4.3",
-    "react-textfit": "^1.1.0"
+    "react-textfit": "^1.1.0",
+    "react-truncate-markup": "^5.0.1",
+    "textfit": "^2.4.0",
+    "truncate": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
