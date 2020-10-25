@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import Textfield from "@material-ui/core/Textfield";
+import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
@@ -38,6 +38,9 @@ function URLInput(props) {
   };
 
   const handleSubmit = () => {
+
+    props.setLoading(true);
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,7 +48,7 @@ function URLInput(props) {
     };
 
     fetch(
-      "https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis",
+      "https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/prod/analysis",
       requestOptions
     )
       .then(async (response) => {
@@ -57,13 +60,13 @@ function URLInput(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
+        props.setRequest(data);
+        props.setLoading(false);
 
-        props.setRequest(JSON.parse(data));
       })
       .catch((error) => {
-        //console.error("There was an error!", error);
-        console.log("ERROR")
-        
+        props.setLoading(false);
+        console.error("There was an error!", error);
       });
   };
 
