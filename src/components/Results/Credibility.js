@@ -56,14 +56,22 @@ const useStyles = makeStyles({
 
 function Credibility(props) {
   const classes = useStyles();
-  const score = props.score;
+  let score;
+  let category;
+  let source;
 
   const handleError = () =>{
-    if (isNaN(score)){
-      console.log("Cannot calculate score")
-    }
+    if (isNaN(props.score)){
+      score = 0;
+      category = 'No Category Available';
+      source = "No Source Available";
+      } else {
+        score = props.score;
+        category = props.category;
+        source = props.source;
+      }
   }
-
+handleError()
 
   let categoryText = () => {
     switch (props.category) {
@@ -120,7 +128,7 @@ function Credibility(props) {
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
-            percent={props.score}
+            percent={score}
             hideText={false}
             textColor="#000000"
             nrOfLevels={3}
@@ -135,7 +143,7 @@ function Credibility(props) {
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Category:{" "}
-            <Chip label={props.category} className={classes.categoryChip} /> 
+            <Chip label={category} className={classes.categoryChip} /> 
             <Tooltip title={categoryText}>
               <HelpIcon color="primary" />
             </Tooltip>
@@ -148,7 +156,7 @@ function Credibility(props) {
               href="https://mediabiasfactcheck.com/"
               className={classes.chipLink}
             >
-              <Chip label={props.source} className={classes.sourceChip} />
+              <Chip label={source} className={classes.sourceChip} />
             </a>
           </Typography>
         </Grid>
