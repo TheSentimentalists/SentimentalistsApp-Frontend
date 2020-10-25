@@ -47,7 +47,7 @@ const useStyles = makeStyles({
     background: "#6bb26d",
     padding: "7px",
   },
-})
+  }});
 
 function App() {
   const classes = useStyles();
