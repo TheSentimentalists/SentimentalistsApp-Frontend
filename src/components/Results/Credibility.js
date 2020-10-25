@@ -112,7 +112,7 @@ function Credibility(props) {
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
-            percent={props.credibilityScore}
+            percent={props.score}
             hideText={false}
             textColor="#000000"
             nrOfLevels={3}
