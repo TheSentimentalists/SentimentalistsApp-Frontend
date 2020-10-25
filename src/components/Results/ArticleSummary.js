@@ -93,9 +93,9 @@ function ArticleSummary(props) {
         <Grid item xs={12} md={8}>
           <Typography variant="body1">
             Keywords:
-            {keywordArr.map((word) => (
+            {keywordArr.map((word, index) => (
               
-              <Chip label={word.charAt(0).toUpperCase() + word.slice(1)} className={classes.keywordChip} />
+              <Chip key={index} label={word.charAt(0).toUpperCase() + word.slice(1)} className={classes.keywordChip} />
             ))}
           </Typography>
         </Grid>
