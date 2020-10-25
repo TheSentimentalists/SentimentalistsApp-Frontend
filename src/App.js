@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Container, Grid } from "@material-ui/core/";
+import { Container, Grid, Backdrop } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import URLInput from "./components/URLInput/URLInput";
+import Loading from "./components/Loading/Loading";
 import DisplayResults from "./components/Results/displayResults";
 
 //styles
@@ -17,6 +18,11 @@ const useStyles = makeStyles({
     background: "#ffffff",
   },
 
+  loading: {
+    zIndex: 999,
+    color: '#fff',
+  },
+
   footer: {
     background: "#6bb26d",
     padding: "7px",
@@ -28,6 +34,7 @@ function App() {
 
   //request
   const [request, setRequest] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="App">
@@ -35,7 +42,7 @@ function App() {
         <div className={classes.containerStyle}>
           <div className={classes.innerContainer}>
             {!request ? (
-              <URLInput setRequest={setRequest} />
+              <URLInput setRequest={setRequest} setLoading={setLoading} />
             ) : (
               <div>
                 <DisplayResults
@@ -53,6 +60,9 @@ function App() {
             </Grid>
           </div>
         </div>
+        <Backdrop className={classes.loading} open={loading}>
+          <Loading />
+        </Backdrop>
       </Container>
     </div>
   );
