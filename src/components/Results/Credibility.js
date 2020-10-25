@@ -56,6 +56,14 @@ const useStyles = makeStyles({
 
 function Credibility(props) {
   const classes = useStyles();
+  const score = props.score;
+
+  const handleError = () =>{
+    if (isNaN(score)){
+      console.log("Cannot calculate score")
+    }
+  }
+
 
   let categoryText = () => {
     switch (props.category) {
