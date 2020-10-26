@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
 function URLInput(props) {
   const [text, setText] = useState("");
-  const classes = useStyles();
+  const classes = useStyles();  
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -44,7 +44,7 @@ function URLInput(props) {
       body: JSON.stringify({ url: text }),
     };
 
-    fetch('https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis', requestOptions)
+    fetch('https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/test/analysis', requestOptions)
     .then(async response => {
         const data = await response.json();
 
@@ -55,7 +55,7 @@ function URLInput(props) {
           return Promise.reject(error);
         }
 
-        props.setRequest(JSON.parse(data));
+        props.setRequest(data);
       })
       .catch((error) => {
         console.error("There was an error!", error);

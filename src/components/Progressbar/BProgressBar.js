@@ -12,7 +12,6 @@ function BProgressBar(){
       alignItems = "center"
       >
       <Grid
-        item align = "center"
         item xs ={5} sm={5} md={5} lg={5}>
         Bias Score
       </Grid>
