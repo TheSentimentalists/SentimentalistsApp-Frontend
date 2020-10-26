@@ -1,6 +1,7 @@
 import React from "react";
 import "../../App.css";
 import ArticleSummary from "./ArticleSummary";
+import Grid from "@material-ui/core/Grid";
 import Credibility from "./Credibility";
 import Objectivity from "./Objectivity";
 
@@ -23,17 +24,20 @@ const objectivityScore = resultsObj.results[2].outcome.score;
 
   return (
     <div>
-
+<Grid container>
 
       <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
-      
+      <Grid item xs={12} md={4}>
       <Credibility
         score={credibilityScore}
         category={category}
         source={source}
       />
-
+</Grid>
+<Grid item xs={12} md={4}>
       <Objectivity displayObjectivity={objectivityScore}/>
+      </Grid>
+      </Grid>
     </div>
   );
 }

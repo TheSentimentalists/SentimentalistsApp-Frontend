@@ -108,7 +108,7 @@ function Credibility(props) {
   return (
     <div>
       <Grid container justify="center" direction="column">
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
@@ -119,12 +119,12 @@ function Credibility(props) {
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <Typography variant="h5" className={classes.credibilityGaugeHeading}>
             Credibility
           </Typography>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Category:{" "}
             <Chip label={props.category} className={classes.categoryChip} /> 
@@ -133,7 +133,7 @@ function Credibility(props) {
             </Tooltip>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Source:{" "}
             <a
