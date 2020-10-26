@@ -1,10 +1,14 @@
+
+import URLInput from './components/URLInput/URLInput';
+import DisplayResults from './components/Results/displayResults';
+import BProgressBar from './components/Progressbar/BProgressBar';
 import React, { useState } from "react";
 import "./App.css";
 import { Container, Grid, Backdrop } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
-import URLInput from "./components/URLInput/URLInput";
 import Loading from "./components/Loading/Loading";
-import DisplayResults from "./components/Results/displayResults";
+
+
 
 //styles
 const useStyles = makeStyles({
@@ -40,7 +44,8 @@ function App() {
     <div className="App">
       <Container fixed>
         <div className={classes.containerStyle}>
-          <div className={classes.innerContainer}>
+         
+             <div className={classes.innerContainer}>
             {!request ? (
               <URLInput setRequest={setRequest} setLoading={setLoading} />
             ) : (
@@ -64,6 +69,7 @@ function App() {
           <Loading />
         </Backdrop>
       </Container>
+
     </div>
   );
 }

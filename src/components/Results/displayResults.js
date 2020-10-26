@@ -1,7 +1,9 @@
 import React from "react";
 import "../../App.css";
+import BProgressBar from '../Progressbar/BProgressBar';
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
+
 
 function DisplayResults(props) {
   const resultsObj = props.displayResults;
@@ -22,14 +24,15 @@ const article = resultsObj.article;
   return (
     <div>
 
+      <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
+      <BProgressBar/>
 
-      <ArticleSummary displayURL={analysedURL} displayArticle={article} />
-      
       <Credibility
         score={credibilityScore}
         category={category}
         source={source}
       />
+
 
     </div>
   );
