@@ -7,6 +7,7 @@ const useStyles = makeStyles({
     fontFamily: "Roboto, sans-serif",
     padding: "10px",
     textAlign: "left",
+    marginBottom: "25px",
   },
   ArticleTitle: {
     fontSize: "20px",

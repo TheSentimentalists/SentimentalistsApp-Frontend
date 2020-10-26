@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   objectivityText: {
     textAlign: "left",
     paddingLeft: "35px",
+    fontSize: "16px",
   },
 });
 
