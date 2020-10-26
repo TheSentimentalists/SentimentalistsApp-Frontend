@@ -1,8 +1,11 @@
 import React from 'react';
 
-function Objectivity(){
+function Objectivity(props){
     return(
-        
+        <div>
+        <p>Objectivity</p>
+        <p>{props.displayObjectivity}</p>
+        </div>
     )
 }
 

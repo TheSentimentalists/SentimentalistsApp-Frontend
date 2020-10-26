@@ -2,6 +2,7 @@ import React from "react";
 import "../../App.css";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
+import Objectivity from "./Objectivity";
 
 function DisplayResults(props) {
   const resultsObj = props.displayResults;
@@ -11,6 +12,8 @@ function DisplayResults(props) {
 
   
 const article = resultsObj.article;
+
+const objectivityScore = resultsObj.results[2].outcome.score;
 
 
   // temporary code to support credibility score while it's here
@@ -30,6 +33,7 @@ const article = resultsObj.article;
         source={source}
       />
 
+      <Objectivity displayObjectivity={objectivityScore}/>
     </div>
   );
 }
