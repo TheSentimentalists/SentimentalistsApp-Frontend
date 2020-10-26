@@ -25,31 +25,11 @@ const useStyles = makeStyles({
   keywordChip: {
     backgroundColor: "#f8ce94",
     margin: "3px",
-    fontWeight: "700"
+    fontWeight: "700",
   },
 });
 
 function ArticleSummary(props) {
-  let keywordArr = [
-    "low",
-    "admits",
-    "covid",
-    "results",
-    "contacts",
-    "test",
-    "week",
-    "failings",
-    "hours",
-    "previous",
-    "contacttracing",
-    "reached",
-    "hits",
-    "system",
-    "englands",
-    "times",
-    "testing",
-  ];
-
   const classes = useStyles();
 
   let articleTitle;
@@ -60,7 +40,7 @@ function ArticleSummary(props) {
     if (props.displayArticle.hasOwnProperty("error")) {
       articleTitle = "The Article Title could not be generated.";
       articleSummary = "The article summary could not be generated.";
-      keywords = "No keywords"
+      keywords = "No keywords";
     } else {
       articleTitle = props.displayArticle.header;
       articleSummary = props.displayArticle.summary;
@@ -68,6 +48,16 @@ function ArticleSummary(props) {
     }
   };
   generateSummaryText();
+
+  const truncateSummaryText = () => {
+    let truncatedSummary;
+    if (articleSummary.length > 350) {
+      truncatedSummary = articleSummary.slice(0, 350) + "...";
+    }
+    articleSummary = truncatedSummary;
+  };
+
+  truncateSummaryText();
 
   return (
     <div>
@@ -97,8 +87,10 @@ function ArticleSummary(props) {
           <Typography variant="body1">
             Keywords:
             {keywords.map((word) => (
-              
-              <Chip label={word.charAt(0).toUpperCase() + word.slice(1)} className={classes.keywordChip} />
+              <Chip
+                label={word.charAt(0).toUpperCase() + word.slice(1)}
+                className={classes.keywordChip}
+              />
             ))}
           </Typography>
         </Grid>
