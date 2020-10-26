@@ -1,7 +1,8 @@
 import React from "react";
 import GaugeChart from "react-gauge-chart";
-import { Grid, Typography } from "@material-ui/core/";
+import { Grid, Typography, Tooltip } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
+import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles({
   objectivityGaugeHeading: {
@@ -20,6 +21,14 @@ const useStyles = makeStyles({
     textAlign: "left",
     paddingLeft: "35px",
     fontSize: "16px",
+  },
+
+  objectivityTooltip: {
+    fontSize: "40px",
+  },
+
+  objectivityHelp: {
+    color: "#6bb26d",
   },
 });
 
@@ -47,14 +56,21 @@ function Objectivity(props) {
             className={classes.objectivityGaugeHeading}
           >
             Objectivity
-          </Typography>
-        </Grid>
-
-        <Grid item xs={12}>
-          <Typography variant="body2" className={classes.objectivityText}>
-            Quantifies the amount of factual information X personal opinion
-            contained in the text. The higher objectivity means that the text
-            contains factual information rather than personal opinion.
+            <Tooltip
+              placement="bottom"
+              arrow
+              className={classes.objectivityTooltip}
+              title={
+                <p style={{ fontSize: "16px" }}>
+                  Quantifies the amount of factual information X personal
+                  opinion contained in the text. The higher objectivity means
+                  that the text contains factual information rather than
+                  personal opinion.
+                </p>
+              }
+            >
+              <HelpIcon className={classes.objectivityHelp} />
+            </Tooltip>
           </Typography>
         </Grid>
       </Grid>
