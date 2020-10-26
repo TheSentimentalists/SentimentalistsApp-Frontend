@@ -63,7 +63,6 @@ function URLInput(props) {
         props.setRequest(data);
         props.setLoading(false);
 
-        props.setRequest(data);
       })
       .catch((error) => {
         props.setLoading(false);
