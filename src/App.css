@@ -2,14 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+html, body {/*
+   */
+    background-color: black;
+}
 
 .App {
-  padding: 10px;
-  padding-bottom: 30px;
-  background-color: black;
+  text-align: center;
 }
 
 .App h5{
   font-family: Graduate, sans-serif;
   margin-left: 10px;
+}
+
+@media only screen and (min-width: 800px) {
+html, body { 
+  height: 100%;
+  width: 100%;
+}
 }
