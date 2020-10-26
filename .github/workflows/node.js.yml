@@ -1,0 +1,36 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.6.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.6.0
+    - run: npm ci -verbose
+    - run: npm run build
+   # - run: | 
+   #     mkdir build
+   #     echo "This is a test $GITHUB_SHA" >> build/test.txt
+    - name: Deploy
+      if: github.event_name == 'push' #This prevnts deploy from running unless it's a merge/push
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: TheSentimentalists/thesentimentalists.github.io
+        publish_branch: master
+        publish_dir: ./build
+    

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import Textfield from "@material-ui/core/Textfield";
+import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
+import URLInputHeader from "./URLInputHeader";
 /* resolve CSS */
 /*error toggle needs implementing*/
 /*Button onClick needs to hide input and open results*/
@@ -36,16 +37,21 @@ function URLInput(props) {
     setText(event.target.value);
   };
 
-  const handleClick = () => {
-    
+  const handleSubmit = () => {
+
+    props.setLoading(true);
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: text }),
     };
 
-    fetch('https://q4udqluuqd.execute-api.eu-west-2.amazonaws.com/test/analysis', requestOptions)
-    .then(async response => {
+    fetch(
+      "https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/prod/analysis",
+      requestOptions
+    )
+      .then(async (response) => {
         const data = await response.json();
 
         // check for error response
@@ -54,16 +60,19 @@ function URLInput(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
+        props.setRequest(data);
+        props.setLoading(false);
 
-        props.setRequest(JSON.parse(data));
       })
       .catch((error) => {
+        props.setLoading(false);
         console.error("There was an error!", error);
       });
   };
 
   return (
     <div>
+      <URLInputHeader />
       <Grid
         container
         direction="column"
@@ -72,7 +81,7 @@ function URLInput(props) {
         className={classes.inputURLArea}
       >
         <form>
-          <Grid item xs={10} sm={8} md={6} lg={4}>
+          <Grid item xs={10} sm={8} md={6} lg={3}>
             <Textfield
               className={classes.inputBox}
               fullWidth
@@ -89,7 +98,7 @@ function URLInput(props) {
             className={classes.inputButton}
             size="large"
             variant="contained"
-            onClick={handleClick}
+            onClick={handleSubmit}
             disableElevation
           >
             Analyse
