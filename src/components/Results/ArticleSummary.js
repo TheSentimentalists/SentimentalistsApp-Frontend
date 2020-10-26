@@ -54,14 +54,17 @@ function ArticleSummary(props) {
 
   let articleTitle;
   let articleSummary;
+  let keywords;
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
       articleTitle = "The Article Title could not be generated.";
       articleSummary = "The article summary could not be generated.";
+      keywords = "No keywords"
     } else {
       articleTitle = props.displayArticle.header;
       articleSummary = props.displayArticle.summary;
+      keywords = props.displayArticle.keywords;
     }
   };
   generateSummaryText();
@@ -93,7 +96,7 @@ function ArticleSummary(props) {
         <Grid item xs={12} md={8}>
           <Typography variant="body1">
             Keywords:
-            {keywordArr.map((word) => (
+            {keywords.map((word) => (
               
               <Chip label={word.charAt(0).toUpperCase() + word.slice(1)} className={classes.keywordChip} />
             ))}
