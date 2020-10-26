@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
 import { Grid, Chip, Tooltip } from "@material-ui/core/";
 import Typography from "@material-ui/core/Typography";
-import HelpIcon from '@material-ui/icons/Help';
+import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
@@ -36,10 +36,10 @@ const useStyles = makeStyles({
     fontFamily: "Roboto, sans-serif",
   },
 
-  sourceChip : {
+  sourceChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
-    cursor: "pointer"
+    cursor: "pointer",
   },
 
   chipLink: {
@@ -51,6 +51,14 @@ const useStyles = makeStyles({
     textAlign: "left",
     paddingRight: "10px",
     marginBottom: "15px",
+  },
+
+  credibilityHelp: {
+    color: "#6bb26d",
+  },
+
+  credibilityTooltip: {
+    fontSize: "40px",
   },
 });
 
@@ -127,9 +135,14 @@ function Credibility(props) {
         <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Category:{" "}
-            <Chip label={props.category} className={classes.categoryChip} /> 
-            <Tooltip title={categoryText}>
-              <HelpIcon color="primary" />
+            <Chip label={props.category} className={classes.categoryChip} />
+            <Tooltip
+              placement="bottom"
+              arrow
+              title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
+              className={classes.credibilityTooltip}
+            >
+              <HelpIcon className={classes.credibilityHelp} />
             </Tooltip>
           </Typography>
         </Grid>
