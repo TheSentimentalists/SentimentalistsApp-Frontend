@@ -1,0 +1,8 @@
+
+.transitionStep {
+    filter: grayscale(1);
+  }
+  
+  .transitionStep.accomplished {
+    filter: grayscale(0);
+  }
