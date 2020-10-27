@@ -61,14 +61,14 @@ function Credibility(props) {
   let source;
 
   const handleError = () =>{
-    if (isNaN(props.score)){
+    if (props.outcome.hasOwnProperty('error')){
       score = 0;
       category = 'No Category Available';
       source = "No Source Available";
       } else {
-        score = props.score;
-        category = props.category;
-        source = props.source;
+        score = props.outcome.score / 100;
+        category = props.outcome.category;
+        source = props.outcome.source;
       }
   }
 handleError()

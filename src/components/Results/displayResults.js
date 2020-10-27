@@ -11,18 +11,12 @@ function DisplayResults(props) {
 
   const article = resultsObj.article;
 
-  const credibilityScore = resultsObj.results[0].outcome.score / 100;
-  const source = resultsObj.results[0].outcome.source;
-  const category = resultsObj.results[0].outcome.category;
-
   return (
     <div>
       <ArticleSummary displayURL={analysedURL} displayArticle={article} />
 
-      <Credibility
-        score={credibilityScore}
-        category={category}
-        source={source}
+      <Credibility outcome={resultsObj.results[0].outcome}
+        
       />
     </div>
   );
