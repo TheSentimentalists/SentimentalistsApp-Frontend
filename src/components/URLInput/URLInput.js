@@ -70,6 +70,7 @@ function URLInput(props) {
       });
   };
 
+
   return (
     <div>
       <URLInputHeader />
@@ -91,6 +92,7 @@ function URLInput(props) {
               value={text}
               onChange={handleTextChange}
               color="secondary"
+              error id="standard-error" 
             ></Textfield>
           </Grid>
           <Button
