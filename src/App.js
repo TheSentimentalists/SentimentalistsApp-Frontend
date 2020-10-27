@@ -1,13 +1,12 @@
-
-import URLInput from './components/URLInput/URLInput';
-import DisplayResults from './components/Results/displayResults';
 import React, { useState } from "react";
 import "./App.css";
 import { Container, Grid, Backdrop } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
+import URLInput from "./components/URLInput/URLInput";
+import Logo from "./assets/images/Sentimentalists_Logo_270X273.png";
 import Loading from "./components/Loading/Loading";
-
-
+import DisplayResults from "./components/Results/displayResults";
+import { ErrorBoundary } from "react-error-boundary";
 
 //styles
 const useStyles = makeStyles({
@@ -21,16 +20,34 @@ const useStyles = makeStyles({
     background: "#ffffff",
   },
 
+  errorDisplay: {
+    paddingTop: "15px",
+    paddingBottom: "50px",
+  },
+
+  errorText: {
+    fontSize: "25px",
+  },
+
+  tryAgainButton: {
+    background: "#f8ce94",
+    fontFamily: "Graduate, sans-serif",
+    fontSize: "20px",
+    border: "none",
+    padding: "15px",
+    cursor: "pointer",
+
   loading: {
     zIndex: 999,
     color: '#fff',
+
   },
 
   footer: {
     background: "#6bb26d",
     padding: "7px",
   },
-});
+  }});
 
 function App() {
   const classes = useStyles();
@@ -38,6 +55,20 @@ function App() {
   //request
   const [request, setRequest] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const ErrorComponent = ({ resetErrorBoundary }) => {
+    return (
+      <div role="alert" className={classes.errorDisplay}>
+        <img src={Logo} alt="The Sentimentalists Logo" />
+
+        <p className={classes.errorText}>Please enter a valid URL</p>
+
+        <button className={classes.tryAgainButton} onClick={resetErrorBoundary}>
+          Try again
+        </button>
+      </div>
+    );
+  };
 
   return (
     <div className="App">
@@ -49,9 +80,21 @@ function App() {
               <URLInput setRequest={setRequest} setLoading={setLoading} />
             ) : (
               <div>
+                <ErrorBoundary
+                  FallbackComponent={ErrorComponent}
+                  onReset={() => {
+                    setRequest("");
+                  }}
+                  resetKeys={[request]}
+                >
+                  <DisplayResults
+                    displayResults={JSON.stringify(request.results)}
+                    displayURL={request.url}
+                  />
+                </ErrorBoundary>
+
                 <DisplayResults
-                  displayResults={(request)}
-                />
+                  displayResults={(request)} />
 
                 <p>{request.error}</p>
               </div>
