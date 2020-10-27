@@ -1,7 +1,6 @@
 
 import URLInput from './components/URLInput/URLInput';
 import DisplayResults from './components/Results/displayResults';
-import BProgressBar from './components/Progressbar/BProgressBar';
 import React, { useState } from "react";
 import "./App.css";
 import { Container, Grid, Backdrop } from "@material-ui/core/";
