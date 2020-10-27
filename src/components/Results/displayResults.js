@@ -19,11 +19,12 @@ const article = resultsObj.article;
   const credibilityScore = resultsObj.results[0].outcome.score / 100;
   const source = resultsObj.results[0].outcome.source;
   const category = resultsObj.results[0].outcome.category;
+  const BiasScore = resultsObj.results[0].outcome.score;
 
   return (
     <div>
     <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
-      <BProgressBar/>
+      <BProgressBar Bscore={BiasScore}/>
       <Credibility
         score={credibilityScore}
         category={category}
@@ -36,3 +37,4 @@ const article = resultsObj.article;
 }
 
 export default DisplayResults;
+
