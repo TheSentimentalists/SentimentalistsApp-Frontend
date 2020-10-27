@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 
   objectivityTooltip: {
-    fontSize: "40px",
+    fontSize: "30px",
   },
 
   objectivityHelp: {
@@ -51,27 +51,33 @@ function Objectivity(props) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Typography
-            variant="subtitle2"
-            className={classes.objectivityGaugeHeading}
-          >
-            Objectivity
-            <Tooltip
-              placement="bottom"
-              arrow
-              className={classes.objectivityTooltip}
-              title={
-                <p style={{ fontSize: "16px" }}>
-                  Quantifies the amount of factual information X personal
-                  opinion contained in the text. The higher objectivity means
-                  that the text contains factual information rather than
-                  personal opinion.
-                </p>
-              }
-            >
-              <HelpIcon className={classes.objectivityHelp} />
-            </Tooltip>
-          </Typography>
+          <Grid container justify="flex-start" alignItems="flex-start">
+            <Grid item>
+              <Typography
+                variant="subtitle2"
+                className={classes.objectivityGaugeHeading}
+              >
+                Objectivity
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Tooltip
+                placement="bottom"
+                arrow
+                className={classes.objectivityTooltip}
+                title={
+                  <p style={{ fontSize: "16px" }}>
+                    Quantifies the amount of factual information X personal
+                    opinion contained in the text. The higher objectivity means
+                    that the text contains factual information rather than
+                    personal opinion.
+                  </p>
+                }
+              >
+                <HelpIcon className={classes.objectivityHelp} />
+              </Tooltip>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>

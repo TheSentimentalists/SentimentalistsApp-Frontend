@@ -34,6 +34,7 @@ const useStyles = makeStyles({
   categoryChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
+    fontWeight: "600"
   },
 
   sourceChip: {
@@ -58,7 +59,7 @@ const useStyles = makeStyles({
   },
 
   credibilityTooltip: {
-    fontSize: "40px",
+    fontSize: "30px",
   },
 });
 
@@ -133,18 +134,31 @@ function Credibility(props) {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="subtitle2" className={classes.categoryTitle}>
-            Category:{" "}
-            <Chip label={props.category} className={classes.categoryChip} />
-            <Tooltip
-              placement="bottom"
-              arrow
-              title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
-              className={classes.credibilityTooltip}
-            >
-              <HelpIcon className={classes.credibilityHelp} />
-            </Tooltip>
-          </Typography>
+          <Grid
+            container
+            justify="flex-start"
+            alignItems="flex-start"
+            style={{marginBottom: "7px"}}
+          >
+            <Grid item >
+              <Typography variant="subtitle2" className={classes.categoryTitle}>
+                Category:{" "}
+              </Typography>
+            </Grid>
+            <Grid item >
+              <Chip label={props.category} className={classes.categoryChip} />
+            </Grid>
+            <Grid item >
+              <Tooltip
+                placement="bottom"
+                arrow
+                title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
+                className={classes.credibilityTooltip}
+              >
+                <HelpIcon className={classes.credibilityHelp} />
+              </Tooltip>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
