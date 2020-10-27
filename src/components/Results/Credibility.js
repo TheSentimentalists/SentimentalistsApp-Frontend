@@ -69,14 +69,14 @@ function Credibility(props) {
   let source;
 
   const handleError = () =>{
-    if (props.outcome.hasOwnProperty('error')){
+    if (props.hasOwnProperty('error')){
       score = 0;
       category = 'No Category Available';
       source = "No Source Available";
       } else {
-        score = props.outcome.score / 100;
-        category = props.outcome.category;
-        source = props.outcome.source;
+        score = props.score / 100;
+        category = props.category;
+        source = props.source;
       }
   }
 handleError()
