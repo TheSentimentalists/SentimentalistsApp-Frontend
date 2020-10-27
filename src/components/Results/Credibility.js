@@ -66,7 +66,6 @@ const useStyles = makeStyles({
 function Credibility(props) {
   const classes = useStyles();
   let score;
-  let category;
   let source;
 
   const handleError = () =>{
