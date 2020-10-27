@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import BProgressBar from "../Progressbar/BProgressBar";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
 
@@ -13,11 +14,10 @@ function DisplayResults(props) {
 
   return (
     <div>
-      <ArticleSummary displayURL={analysedURL} displayArticle={article} />
+      <Credibility outcome={resultsObj.results[0].outcome} />
 
-      <Credibility outcome={resultsObj.results[0].outcome}
-        
-      />
+      <ArticleSummary displayURL={analysedURL} displayArticle={article} />
+      <BProgressBar />
     </div>
   );
 }
