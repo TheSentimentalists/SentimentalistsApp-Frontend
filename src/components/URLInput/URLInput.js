@@ -38,7 +38,6 @@ function URLInput(props) {
   };
 
   const handleSubmit = () => {
-
     props.setLoading(true);
 
     const requestOptions = {
@@ -62,13 +61,13 @@ function URLInput(props) {
         }
         props.setRequest(data);
         props.setLoading(false);
-
       })
       .catch((error) => {
         props.setLoading(false);
         console.error("There was an error!", error);
       });
   };
+
 
   return (
     <div>
@@ -91,6 +90,7 @@ function URLInput(props) {
               value={text}
               onChange={handleTextChange}
               color="secondary"
+              error id="standard-error" 
             ></Textfield>
           </Grid>
           <Button

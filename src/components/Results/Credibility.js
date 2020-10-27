@@ -65,6 +65,22 @@ const useStyles = makeStyles({
 
 function Credibility(props) {
   const classes = useStyles();
+  let score;
+  let category;
+  let source;
+
+  const handleError = () =>{
+    if (props.outcome.hasOwnProperty('error')){
+      score = 0;
+      category = 'No Category Available';
+      source = "No Source Available";
+      } else {
+        score = props.outcome.score / 100;
+        category = props.outcome.category;
+        source = props.outcome.source;
+      }
+  }
+handleError()
 
   let categoryText = () => {
     switch (props.category) {
@@ -121,7 +137,7 @@ function Credibility(props) {
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
-            percent={props.credibilityScore}
+            percent={score}
             hideText={false}
             textColor="#000000"
             nrOfLevels={3}
@@ -167,7 +183,7 @@ function Credibility(props) {
               href="https://mediabiasfactcheck.com/"
               className={classes.chipLink}
             >
-              <Chip label={props.source} className={classes.sourceChip} />
+              <Chip label={source} className={classes.sourceChip} />
             </a>
           </Typography>
         </Grid>
