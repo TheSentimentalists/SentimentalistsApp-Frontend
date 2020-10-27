@@ -9,7 +9,6 @@ function DisplayResults(props) {
 
   const analysedURL = resultsObj.url;
   console.log(resultsObj);
-
   const article = resultsObj.article;
 
   return (

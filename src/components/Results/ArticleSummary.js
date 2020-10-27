@@ -30,41 +30,34 @@ const useStyles = makeStyles({
 });
 
 function ArticleSummary(props) {
-  let keywordArr = [
-    "low",
-    "admits",
-    "covid",
-    "results",
-    "contacts",
-    "test",
-    "week",
-    "failings",
-    "hours",
-    "previous",
-    "contacttracing",
-    "reached",
-    "hits",
-    "system",
-    "englands",
-    "times",
-    "testing",
-  ];
-
   const classes = useStyles();
 
   let articleTitle;
   let articleSummary;
+  let keywords;
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
       articleTitle = "The Article Title could not be generated.";
       articleSummary = "The article summary could not be generated.";
+      keywords = "No keywords";
     } else {
       articleTitle = props.displayArticle.header;
       articleSummary = props.displayArticle.summary;
+      keywords = props.displayArticle.keywords;
     }
   };
   generateSummaryText();
+
+  const truncateSummaryText = () => {
+    let truncatedSummary;
+    if (articleSummary.length > 350) {
+      truncatedSummary = articleSummary.slice(0, 350) + "...";
+    }
+    articleSummary = truncatedSummary;
+  };
+
+  truncateSummaryText();
 
   return (
     <div>
@@ -92,7 +85,7 @@ function ArticleSummary(props) {
         </Grid>
         <Grid item xs={12} md={8}>
           <Typography variant="body1">Keywords:</Typography>
-          {keywordArr.map((word, index) => (
+          {keywords.map((word, index) => (
             <Chip
               key={index}
               label={word.charAt(0).toUpperCase() + word.slice(1)}
