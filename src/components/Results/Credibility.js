@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
 import { Grid, Chip, Tooltip } from "@material-ui/core/";
 import Typography from "@material-ui/core/Typography";
-import HelpIcon from '@material-ui/icons/Help';
+import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
@@ -34,12 +34,13 @@ const useStyles = makeStyles({
   categoryChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
+    fontWeight: "600"
   },
 
-  sourceChip : {
+  sourceChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
-    cursor: "pointer"
+    cursor: "pointer",
   },
 
   chipLink: {
@@ -52,6 +53,14 @@ const useStyles = makeStyles({
     paddingRight: "10px",
     marginBottom: "15px",
   },
+
+  credibilityHelp: {
+    color: "#6bb26d",
+  },
+
+  credibilityTooltip: {
+    fontSize: "30px",
+  },
 });
 
 function Credibility(props) {
@@ -61,14 +70,14 @@ function Credibility(props) {
   let source;
 
   const handleError = () =>{
-    if (props.outcome.hasOwnProperty('error')){
+    if (props.hasOwnProperty('error')){
       score = 0;
       category = 'No Category Available';
       source = "No Source Available";
       } else {
-        score = props.outcome.score / 100;
-        category = props.outcome.category;
-        source = props.outcome.source;
+        score = props.score / 100;
+        category = props.category;
+        source = props.source;
       }
   }
 handleError()
@@ -124,7 +133,7 @@ handleError()
   return (
     <div>
       <Grid container justify="center" direction="column">
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
@@ -135,21 +144,39 @@ handleError()
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <Typography variant="h5" className={classes.credibilityGaugeHeading}>
             Credibility
           </Typography>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Typography variant="subtitle2" className={classes.categoryTitle}>
-            Category:{" "}
-            <Chip label={category} className={classes.categoryChip} /> 
-            <Tooltip title={categoryText}>
-              <HelpIcon color="primary" />
-            </Tooltip>
-          </Typography>
+        <Grid item xs={12}>
+          <Grid
+            container
+            justify="flex-start"
+            alignItems="flex-start"
+            style={{marginBottom: "7px"}}
+          >
+            <Grid item >
+              <Typography variant="subtitle2" className={classes.categoryTitle}>
+                Category:{" "}
+              </Typography>
+            </Grid>
+            <Grid item >
+              <Chip label={category} className={classes.categoryChip} />
+            </Grid>
+            <Grid item >
+              <Tooltip
+                placement="bottom"
+                arrow
+                title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
+                className={classes.credibilityTooltip}
+              >
+                <HelpIcon className={classes.credibilityHelp} />
+              </Tooltip>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Source:{" "}
             <a
