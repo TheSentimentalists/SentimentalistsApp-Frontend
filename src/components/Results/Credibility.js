@@ -162,7 +162,7 @@ handleError()
               </Typography>
             </Grid>
             <Grid item >
-              <Chip label={props.category} className={classes.categoryChip} />
+              <Chip label={category} className={classes.categoryChip} />
             </Grid>
             <Grid item >
               <Tooltip
