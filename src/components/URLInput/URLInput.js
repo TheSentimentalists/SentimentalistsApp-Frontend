@@ -38,7 +38,6 @@ function URLInput(props) {
   };
 
   const handleSubmit = () => {
-
     props.setLoading(true);
 
     const requestOptions = {
@@ -48,7 +47,7 @@ function URLInput(props) {
     };
 
     fetch(
-      "https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/prod/analysis",
+      "https://1rrk3o1dq0.execute-api.eu-west-2.amazonaws.com/test/analysis",
       requestOptions
     )
       .then(async (response) => {
@@ -62,13 +61,13 @@ function URLInput(props) {
         }
         props.setRequest(data);
         props.setLoading(false);
-
       })
       .catch((error) => {
         props.setLoading(false);
         console.error("There was an error!", error);
       });
   };
+
 
   return (
     <div>
@@ -91,6 +90,7 @@ function URLInput(props) {
               value={text}
               onChange={handleTextChange}
               color="secondary"
+              error id="standard-error" 
             ></Textfield>
           </Grid>
           <Button
