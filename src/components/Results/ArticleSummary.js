@@ -85,7 +85,7 @@ function ArticleSummary(props) {
         </Grid>
         <Grid item xs={12} md={8}>
           <Typography variant="body1">Keywords:</Typography>
-          {keywordArr.map((word, index) => (
+          {keywords.map((word, index) => (
             <Chip
               key={index}
               label={word.charAt(0).toUpperCase() + word.slice(1)}
