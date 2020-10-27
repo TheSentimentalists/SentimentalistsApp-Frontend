@@ -26,6 +26,7 @@ jobs:
    #     mkdir build
    #     echo "This is a test $GITHUB_SHA" >> build/test.txt
     - name: Deploy
+      if: github.event_name == 'push' #This prevnts deploy from running unless it's a merge/push
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
