@@ -88,14 +88,9 @@ function App() {
                   resetKeys={[request]}
                 >
                   <DisplayResults
-                    displayResults={JSON.stringify(request.results)}
-                    displayURL={request.url}
+                    displayResults={request}
                   />
                 </ErrorBoundary>
-
-                <DisplayResults
-                  displayResults={(request)} />
-
                 <p>{request.error}</p>
               </div>
             )}
