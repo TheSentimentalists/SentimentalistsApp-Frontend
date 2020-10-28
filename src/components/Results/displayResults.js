@@ -14,10 +14,9 @@ function DisplayResults(props) {
 
 const article = resultsObj.article;
 
-const objectivityScore = resultsObj.results[2].outcome.score;
-const source = resultsObj.results[0].outcome.source;
-  const category = resultsObj.results[0].outcome.category;
-  const BiasScore = resultsObj.results[0].outcome;
+const objectivityScore = resultsObj[0].outcome.score;
+
+  const BiasScore = resultsObj[3].outcome;
 
 
   return (
@@ -28,7 +27,7 @@ const source = resultsObj.results[0].outcome.source;
       <ArticleSummary displayURL={analysedURL} displayArticle={article}/>
       <BProgressBar Bscore = {BiasScore}/>  
       <Grid item xs={12} md={4}>
-        <Credibility outcome={resultsObj.results[0].outcome} />
+        <Credibility outcome={resultsObj[0].outcome} />
       </Grid>
     
       <Grid item xs={12} md={4}>
