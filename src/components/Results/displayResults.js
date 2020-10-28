@@ -16,8 +16,7 @@ const article = resultsObj.article;
 
 const objectivityScore = resultsObj[0].outcome.score;
 
-  const BiasScore = resultsObj[3].outcome;
-
+const BiasScore = resultsObj[0].outcome;
 
   return (
     <div>
