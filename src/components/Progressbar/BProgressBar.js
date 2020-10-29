@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 function BProgressBar(props) {
   const classes = useStyles();
 
-  let percentage = 100 - props.Bscore;
+  let percentage = (100 - props.Bscore);
   let fgcolor;
 
   if (percentage < 30) {
