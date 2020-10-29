@@ -75,9 +75,9 @@ function Credibility(props) {
       category = 'No Category Available';
       source = "No Source Available";
       } else {
-        score = props.score / 100;
-        category = props.category;
-        source = props.source;
+        score = props.outcome.score / 100;
+        category = props.outcome.category;
+        source = props.outcome.source;
       }
   }
 handleError()
