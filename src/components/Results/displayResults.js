@@ -22,6 +22,18 @@ const useStyles = makeStyles({
     margin: "auto",
     padding: "10px",
   },
+
+  sentimentHeading : {
+    fontFamily: "Graduate, sans-serif",
+    marginTop: "5px",
+    marginBottom: "7px"
+
+  },
+
+  sentimentText : {
+    textAlign: "left",
+    fontFamily: "Roboto, sans-serif"
+  }
 });
 
 function DisplayResults(props) {
@@ -80,14 +92,32 @@ function DisplayResults(props) {
         >
           <BProgressBar Bscore={trustScore} />
         </Grid>
-        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
+        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef"}}>
           <Credibility outcome={credibilityObj} />
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Objectivity displayObjectivity={objectivityScore} />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Polarity displayPolarity={polarityScore} />
+
+        <Grid container direction="row" justify="center" md={8}>
+          <Grid item xs={12}>
+            <Typography variant="subtitle1" className={classes.sentimentHeading}>Sentiment Anaylysis</Typography>
+            </Grid>
+            <Grid item xs={10}>
+            <Typography variant="body2" className={classes.sentimentText}>
+              <strong>What?</strong> Sentiment Analysis the process of analysing online pieces of
+              writing to determine the tone they carry. 
+              <br/><strong>Why?</strong> When consuming
+              content it’s important to know the author’s attitude to something.
+              They might have negative views about something you feel positively
+              about, and vice versa. Knowing that this can influence what you
+              are reading provides you with powerful insight when assessingx`
+              whether or an article is fully factual.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Objectivity displayObjectivity={objectivityScore} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Polarity displayPolarity={polarityScore} />
+          </Grid>
         </Grid>
       </Grid>
     </div>
