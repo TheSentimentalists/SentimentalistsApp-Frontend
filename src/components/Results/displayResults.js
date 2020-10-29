@@ -93,7 +93,22 @@ function DisplayResults(props) {
           <BProgressBar Bscore={trustScore} />
         </Grid>
         <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef"}}>
+          <Grid container direction="row" justify="center">
+          <Grid item xs={12}>
+            <Typography variant="subtitle1" className={classes.sentimentHeading}>Source Credibility</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" className={classes.sentimentText}>
+            <strong>What?</strong> The credibility of a website is very important and we will tell you why.
+              <br/><strong>Why?</strong> Article context is very important, if you give us a chance we will tell you why.
+              More text....MoreMore text.... text....More text....More text....More text....More text....More text....More text....
+              More text....More text....More text....More text....More text....More text....
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
           <Credibility outcome={credibilityObj} />
+          </Grid>
+          </Grid>
         </Grid>
 
         <Grid container direction="row" justify="center" md={8}>
