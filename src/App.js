@@ -36,18 +36,19 @@ const useStyles = makeStyles({
     border: "none",
     padding: "15px",
     cursor: "pointer",
+  },
 
   loading: {
     zIndex: 999,
     color: '#fff',
-
+    backgroundColor: 'rgba(0, 0, 0, 0.8)'
   },
 
   footer: {
     background: "#6bb26d",
     padding: "7px",
   },
-  }});
+  });
 
 function App() {
   const classes = useStyles();
