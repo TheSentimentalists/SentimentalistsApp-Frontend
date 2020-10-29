@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     fontSize: "22px",
     textAlign: "center",
     fontFamily: "Graduate, sans-serif",
+    marginBottom: "50px"
   },
   appDescription: {
     textAlign: "left",
