@@ -93,7 +93,6 @@ function App() {
                     displayResults={request}
                   />
                 </ErrorBoundary>
-
                 <p>{request.error}</p>
               </div>
             )}

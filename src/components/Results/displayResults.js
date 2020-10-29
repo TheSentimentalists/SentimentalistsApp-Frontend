@@ -1,14 +1,16 @@
 import React from "react";
 import "../../App.css";
-import BProgressBar from "../Progressbar/BProgressBar";
+import { Grid } from "@material-ui/core/";
+import BProgressBar from '../Progressbar/BProgressBar';
 import ArticleSummary from "./ArticleSummary";
-import Grid from "@material-ui/core/Grid";
 import Credibility from "./Credibility";
 import Objectivity from "./Objectivity";
 import Polarity from "./Polarity";
 
+
 function DisplayResults(props) {
   const resultsObj = props.displayResults;
+
   const analysedURL = resultsObj.url;
   console.log(resultsObj);
 
@@ -40,6 +42,7 @@ function DisplayResults(props) {
     </Grid>
 
 </Grid>
+
     </div>
   );
 }
