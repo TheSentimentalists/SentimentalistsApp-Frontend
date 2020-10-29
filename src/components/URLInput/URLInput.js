@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
 import "./URLinput.css";
 import URLInputHeader from "./URLInputHeader";
+import Tooltip from "@material-ui/core/Tooltip";
+import HelpIcon from "@material-ui/icons/Help";
 /* resolve CSS */
 /*error toggle needs implementing*/
 /*Button onClick needs to hide input and open results*/
@@ -27,11 +29,22 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Graduate,",
     fontSize: "20px",
   },
+
+  infoText: {
+    fontSize: "16px"
+  },
+
+  info: {
+    color: "#6bb26d",
+    fontSize: "25px",
+  },
+
+  
 }));
 
 function URLInput(props) {
   const [text, setText] = useState("");
-  const classes = useStyles();  
+  const classes = useStyles();
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -68,7 +81,6 @@ function URLInput(props) {
       });
   };
 
-
   return (
     <div>
       <URLInputHeader />
@@ -81,17 +93,39 @@ function URLInput(props) {
       >
         <form>
           <Grid item xs={10} sm={8} md={6} lg={3}>
-            <Textfield
-              className={classes.inputBox}
-              fullWidth
-              required
-              label="Input URL"
-              variant="outlined"
-              value={text}
-              onChange={handleTextChange}
-              color="secondary"
-              error id="standard-error" 
-            ></Textfield>
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              align="center"
+            >
+              <Grid item xs={11}>
+                <Textfield
+                  className={classes.inputBox}
+                  fullWidth
+                  required
+                  label="Input URL"
+                  variant="outlined"
+                  value={text}
+                  onChange={handleTextChange}
+                  color="secondary"
+                  error
+                  id="standard-error"
+                ></Textfield>
+              </Grid>
+              <Grid item>
+                <Tooltip
+                  arrow
+                  placement="bottom"
+                  title={<p style={{ fontSize: "16px "}}>Have you ever wondered if you can trust what you read in the news?<br/>
+                        Are you ever baffled by bias and puzzled by politics?<br/>
+                        The Sentimentalists App is designed to help you make informed judgments/decisions/conclusions about the news content you consume online.<br/>
+                        To find out if what you’ve been reading is a worthwhile source, just enter a URL and click Analyse.</p>}
+                >
+                  <HelpIcon className={classes.info} />
+                </Tooltip>
+              </Grid>
+            </Grid>
           </Grid>
           <Button
             style={{ fontFamily: "Graduate" }}
