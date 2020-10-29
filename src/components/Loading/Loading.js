@@ -16,7 +16,7 @@ function Loading() {
   return (
     <div>
       <img src={heartgif} alt="Beating Heart" />
-     <h2><ReactRotatingText 
+     <h2> <ReactRotatingText 
      items={loadingMessages} 
      cursor={false}
      emptyPause={0}
