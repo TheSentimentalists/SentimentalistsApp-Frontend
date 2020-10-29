@@ -12,21 +12,21 @@ import { ErrorBoundary } from "react-error-boundary";
 const useStyles = makeStyles({
   containerStyle: {
     paddingTop: "20px",
-    paddingBottom: "25px",
+    paddingBottom: "25px"
   },
 
   innerContainer: {
     boxShadow: "8px 8px #d9d9d9",
-    background: "#ffffff",
+    background: "#ffffff"
   },
 
   errorDisplay: {
     paddingTop: "15px",
-    paddingBottom: "50px",
+    paddingBottom: "50px"
   },
 
   errorText: {
-    fontSize: "25px",
+    fontSize: "25px"
   },
 
   tryAgainButton: {
@@ -35,19 +35,19 @@ const useStyles = makeStyles({
     fontSize: "20px",
     border: "none",
     padding: "15px",
-    cursor: "pointer",
+    cursor: "pointer"
+  },
 
   loading: {
     zIndex: 999,
-    color: '#fff',
-
+    color: '#fff'
   },
 
   footer: {
     background: "#6bb26d",
-    padding: "7px",
-  },
-  }});
+    padding: "7px"
+  }
+  });
 
 function App() {
   const classes = useStyles();
@@ -88,13 +88,9 @@ function App() {
                   resetKeys={[request]}
                 >
                   <DisplayResults
-                    displayResults={JSON.stringify(request.results)}
-                    displayURL={request.url}
+                    displayResults={request}
                   />
                 </ErrorBoundary>
-
-                <DisplayResults
-                  displayResults={(request)} />
 
                 <p>{request.error}</p>
               </div>
