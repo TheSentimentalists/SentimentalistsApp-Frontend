@@ -12,7 +12,7 @@ import URLInputHeader from "./URLInputHeader";
 const useStyles = makeStyles(() => ({
   inputURLArea: {
     paddingTop: "25px",
-    paddingBottom: "55px",
+    paddingBottom: "85px",
   },
 
   inputBox: {
