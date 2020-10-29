@@ -39,10 +39,6 @@ function DisplayResults(props) {
       <Polarity displayPolarity={polarityScore}/>
     </Grid>
 
-      <Grid item xs={12} md={4}>
-        <Polarity displayPolarity={polarityScore}/>
-      </Grid>
-
 </Grid>
     </div>
   );
