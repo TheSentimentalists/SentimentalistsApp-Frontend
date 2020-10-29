@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   header: {
-    background: "#d9d9d9"
+    background: "#d9d9d9",
   },
   logo: {
     display: "block",
@@ -66,13 +66,21 @@ function DisplayResults(props) {
           </Grid>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ borderBottom: "1px solid #efefef" }}>
           <ArticleSummary displayURL={analysedURL} displayArticle={article} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          style={{
+            borderBottom: "1px solid #efefef",
+            paddingTop: "12px",
+            paddingBottom: "20px",
+          }}
+        >
           <BProgressBar Bscore={trustScore} />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
           <Credibility outcome={credibilityObj} />
         </Grid>
         <Grid item xs={12} md={4}>
