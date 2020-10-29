@@ -40,7 +40,9 @@ const useStyles = makeStyles({
 
   loading: {
     zIndex: 999,
-    color: '#fff'
+    color: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)'
+
   },
 
   footer: {
