@@ -61,6 +61,8 @@ function Polarity(props) {
             colors={["#e62a4c", "#d1d1d1", "#6bb26d"]}
             formatTextValue={() => polemoji}
             arcsLength={[0.45, 0.1, 0.45]}
+            needleColor="#d9d9d9"
+            
           />
         </Grid>
         <Grid item xs={12}>

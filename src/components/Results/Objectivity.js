@@ -44,6 +44,7 @@ function Objectivity(props) {
             hideText={false}
             nrOfLevels={3}
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
+            needleColor="#d9d9d9"
           />
         </Grid>
         <Grid item xs={12}>
