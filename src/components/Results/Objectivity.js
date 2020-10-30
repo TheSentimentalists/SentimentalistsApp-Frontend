@@ -13,10 +13,6 @@ const useStyles = makeStyles({
     paddingBottom: "10px",
   },
 
-  objectivityGauge: {
-    marginTop: "15px",
-  },
-
   objectivityText: {
     textAlign: "left",
     paddingLeft: "35px",
@@ -38,7 +34,7 @@ function Objectivity(props) {
 
   return (
     <div>
-      <Grid containerjustify="center" direction="column">
+      <Grid container justify="center" direction="column">
         <Grid item xs={12}>
           <GaugeChart
             className={classes.objectivityGauge}

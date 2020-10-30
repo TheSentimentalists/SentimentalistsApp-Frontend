@@ -19,9 +19,6 @@ const useStyles = makeStyles({
     fontFamily: "Graduate, sans-serif",
   },
 
-  categoryGauge: {
-    marginTop: "15px",
-  },
 
   categoryTitle: {
     fontFamily: "Roboto, sans-serif",
