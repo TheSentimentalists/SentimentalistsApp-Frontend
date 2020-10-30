@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Grid, Typography } from "@material-ui/core/";
+import { Grid, Typography, Button } from "@material-ui/core/";
 import BProgressBar from "../Progressbar/BProgressBar";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
@@ -62,6 +62,11 @@ function DisplayResults(props) {
               >
                 Analysing Media Sentiment Since 2020
               </Typography>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" disableElevation>
+                Back
+              </Button>
             </Grid>
           </Grid>
         </Grid>
