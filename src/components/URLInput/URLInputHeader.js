@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     fontSize: "22px",
     textAlign: "center",
     fontFamily: "Graduate, sans-serif",
+    marginBottom: "50px"
   },
   appDescription: {
     textAlign: "left",
@@ -47,14 +48,6 @@ function URLInputHeader() {
           Analysing Media
           <br />
           Sentiment Since 2020
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={8} md={6} lg={5}>
-        <Typography variant="body2" className={classes.appDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
         </Typography>
       </Grid>
     </Grid>

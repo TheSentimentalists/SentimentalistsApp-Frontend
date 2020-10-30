@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 
   innerContainer: {
     boxShadow: "8px 8px #d9d9d9",
-    background: "#ffffff"
+    background: "#ffffff",
   },
 
   errorDisplay: {
