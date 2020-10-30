@@ -7,7 +7,7 @@ function Loading() {
 
   const loadingMessages = [
     'Analysing underlying sentiment...',
-    'Converging opionated opions...',
+    'Converging opinionated opions...',
     'Evaluating controversial topics...',
     'Calculating trust vectors...',
     'Extrapolating emotion exertion...',
