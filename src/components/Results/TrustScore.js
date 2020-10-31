@@ -7,14 +7,16 @@ import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles({
   trustScoreHeader: {
-    textAlign: "center",
+    textAlign: "left",
     paddingBottom: "20px",
   },
   trustScoreTooltip: {
+
     fontSize: "30px",
   },
 
   trustScoreHelp: {
+    textAlign: "right",
     color: "#6bb26d",
   },
 
@@ -32,7 +34,7 @@ function TrustScore(props) {
     trustmoji = '🙁';
 
   } else if (percentage >= 30 && percentage < 70) {
-    fgcolor = "linear-gradient(to right, #e79b37, #ffcf53)";
+    fgcolor = "linear-gradient(to right, #ffcf53, #e79b37)";
     trustmoji = '😐';
 
   } else {
@@ -44,26 +46,30 @@ function TrustScore(props) {
     <div>
       <Grid container justify="center">
         <Grid item xs={10} sm={10} md={10} lg={10}>
-          <Typography variant="h5" className={classes.trustScoreHeader}>
-            Trust Indicator
-          </Typography>
-          <Grid item>
-          formatTextValue={trustmoji}
+        <Grid container justify ="left" >
+          <Grid >
             <Tooltip
-                placement="bottom"
+                placement="right"
                 arrow
                 className={classes.trustScoreTooltip}
                 title={
                   <p style={{ fontSize: "16px" }}>
-                    Indicating the TrustWorthiness of an article.
+                    Trust indicator breifly provides Trustworthiness of an article. It is calculated with equal weightage on Credibility, Objectivity and Polarity of the Article. A Green progress bar means article has higher Trustworthiness, a yellow bar means the article has medium Trustworthiness and a red bar means that the article has low Trustworthiness.
                   </p>
                 }
-              >
-                <HelpIcon className={classes.trustScoreHelp} />
+            >
+            <HelpIcon className={classes.trustScoreHelp} />
             </Tooltip>
-          </Grid>    
+          </Grid>
+        </Grid>
+          <Typography variant="h5" className={classes.trustScoreHeader}>
+            Trust Indicator
+          </Typography>
         </Grid>
         <Grid item xs={10} sm={10} md={10} lg={10}>
+        <Grid item  justify="center">
+            {trustmoji}
+        </Grid>    
           <ProgressBar
             percent={percentage}
             unfilledBackground="lightgrey"
