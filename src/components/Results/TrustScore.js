@@ -45,7 +45,7 @@ function TrustScore(props) {
       <Grid container justify="center">
         <Grid item xs={10} sm={10} md={10} lg={10}>
           <Typography variant="h5" className={classes.trustScoreHeader}>
-            Trust Score
+            Trust Indicator
           </Typography>
           <Grid item>
           formatTextValue={trustmoji}
