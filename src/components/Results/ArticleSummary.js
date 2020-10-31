@@ -69,6 +69,10 @@ function ArticleSummary(props) {
 
   truncateSummaryText();
 
+  let topicsPeople = topics.filter(element => element.type === "PERSON")
+  let topicsOrg = topics.filter(element => element.type === "ORG")
+  let topicsGPE = topics.filter(element => element.type === "GPE")
+
   return (
     <div>
       <Grid
@@ -96,9 +100,9 @@ function ArticleSummary(props) {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Topic topics={topics} type="PERSON" />
-              <Topic topics={topics} type="GPE" />
-              <Topic topics={topics} type="ORG" />
+              <Topic topics={topicsPeople} type="PERSON" />
+              <Topic topics={topicsGPE} type="GPE" />
+              <Topic topics={topicsOrg} type="ORG" />
             </Grid>
             <Grid item>
               <Tooltip
