@@ -63,7 +63,6 @@ function TrustScore(props) {
             </Tooltip>
           </Grid>    
         </Grid>
-          
         <Grid item xs={10} sm={10} md={10} lg={10}>
           <ProgressBar
             percent={percentage}
