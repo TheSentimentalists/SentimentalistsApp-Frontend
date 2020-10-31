@@ -7,9 +7,18 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   trustScoreHeader: {
-    textAlign: "center",
-    paddingBottom: "20px",
+    textAlign: "left",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    paddingBottom: "10px",
+    paddingTop: "20px"
   },
+
+  trustScore: {
+    paddingLeft: "30px",
+    paddingRight: "30px",
+    paddingBottom: "20px"
+  }
 });
 
 function BProgressBar(props) {
@@ -28,18 +37,19 @@ function BProgressBar(props) {
 
   return (
     <div>
-      <Grid container justify="center">
-        <Grid item xs={10} sm={10} md={10} lg={10}>
+      <Grid container justify="left">
+        <Grid item xs={12}>
           <Typography variant="h5" className={classes.trustScoreHeader}>
             Trust Score
           </Typography>
         </Grid>
-        <Grid item xs={10} sm={10} md={10} lg={10}>
+        <Grid item xs={12} className={classes.trustScore} >
           <ProgressBar
             percent={percentage}
             unfilledBackground="lightgrey"
             filledBackground={fgcolor}
             height={15}
+            width='100%'
           />
         </Grid>
       </Grid>

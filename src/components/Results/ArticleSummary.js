@@ -1,13 +1,14 @@
 import React from "react";
-import { Grid, Typography, makeStyles, Chip } from "@material-ui/core/";
+import { Grid, Typography, makeStyles, Tooltip } from "@material-ui/core/";
+import Topic from "./Topics"
+import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
   ArticleSummaryText: {
     fontFamily: "Roboto, sans-serif",
-    padding: "10px",
-    textAlign: "left",
-    marginBottom: "25px",
+    padding: "30px",
+    textAlign: "left"
   },
   ArticleTitle: {
     fontSize: "20px",
@@ -23,11 +24,19 @@ const useStyles = makeStyles({
     fontSize: "16px",
   },
 
-  keywordChip: {
-    backgroundColor: "#f8ce94",
+  blueChip: {
+    backgroundColor: "#c7e2fc",
     margin: "3px",
-    fontWeight: "700",
+    fontWeight: "700"
   },
+
+  Help: {
+    color: "#6bb26d"
+  },
+
+  HelpTooltip: {
+    fontSize: "30px"
+  }
 });
 
 function ArticleSummary(props) {
@@ -35,17 +44,17 @@ function ArticleSummary(props) {
 
   let articleTitle;
   let articleSummary;
-  let keywords;
+  let topics;
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
       articleTitle = "The Article Title could not be generated.";
       articleSummary = "The article summary could not be generated.";
-      keywords = "No keywords";
+      topics = "No topics";
     } else {
       articleTitle = props.displayArticle.header;
       articleSummary = props.displayArticle.summary;
-      keywords = props.displayArticle.keywords;
+      topics = props.displayArticle.topics;
     }
   };
   generateSummaryText();
@@ -79,20 +88,29 @@ function ArticleSummary(props) {
             {props.displayURL}
           </Typography>
         </Grid>
-        <Grid item xs={12} lg={9}>
+        <Grid item xs={12}>
           <Typography variant="body2" className={classes.SummaryText}>
             {articleSummary}
           </Typography>
         </Grid>
-        <Grid item xs={12} md={8}>
-          <Typography variant="body1">Keywords:</Typography>
-          {keywords.map((word, index) => (
-            <Chip
-              key={index}
-              label={word.charAt(0).toUpperCase() + word.slice(1)}
-              className={classes.keywordChip}
-            />
-          ))}
+        <Grid item xs={12}>
+          <Grid container>
+            <Grid item>
+              <Topic topics={topics} type="PERSON" />
+              <Topic topics={topics} type="GPE" />
+              <Topic topics={topics} type="ORG" />
+            </Grid>
+            <Grid item>
+              <Tooltip
+                placement="bottom"
+                arrow
+                title={<p style={{ fontSize: "16px" }}>Keywords!</p>}
+                className={classes.HelpTooltip}
+              >
+                <HelpIcon className={classes.Help} />
+              </Tooltip>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>
