@@ -55,63 +55,7 @@ function App() {
   const classes = useStyles();
 
   //request
-  const [request, setRequest] = useState({
-    "url": "https://www.theguardian.com/education/2020/oct/26/matt-hancock-defends-refusal-to-climb-down-on-free-school-meals",
-    "results": [
-      {
-        "type": "credibility",
-        "outcome": {
-          "score": 100.0,
-          "source": "Media Bias/Fact Check",
-          "category": "Left Center"
-        }
-      },
-      {
-        "type": "polarity",
-        "outcome": {
-          "score": 0.20466490299823636
-        }
-      },
-      {
-        "type": "objectivity",
-        "outcome": {
-          "score": 0.5157730746619635
-        }
-      },
-      {
-        "type": "bias",
-        "outcome": {
-          "score": 22.96306094454243
-        }
-      }
-    ],
-    "article": {
-      "header": "Free school meals: Johnson under renewed pressure from council leaders",
-      "summary": "Boris Johnson is facing renewed pressure to commit more money for free school meals after councils said a £63m fund which ministers have suggested could be used for this has already been spent on other Covid necessities.\nNo 10 under growing pressure to U-turn over free school meals Read moreRichard Watts, the Labour leader of Islington council, said the north London local authority’s share of the £63m was not enough to even cover free school meals over half-term and Christmas, as these cost £130,000 a week.\n“I think the government is trying to explain away their total failure to properly fund free school meals by pointing to some money, when they should have just recognised it was a problem and paid for it,” Watts said.\nWe will be trying to find it from other sources.”Both Johnson and Hancock praised the campaigning of Rashford, whose petition calling for an extension for free school meal coverage has reached almost 900,000 signatures.\n“I agree very strongly with the purpose of the campaign run by Marcus Rashford,” Hancock told Sky News.",
-      "keywords": [
-        "school",
-        "councils",
-        "support",
-        "63m",
-        "hancock",
-        "council",
-        "rashford",
-        "pressure",
-        "money",
-        "johnson",
-        "meals",
-        "leaders",
-        "renewed",
-        "free"
-      ],
-      "topics": [
-        {
-          "type": "PERSON",
-          "topic": "Watts"
-        }
-      ]
-    }
-  });
+  const [request, setRequest] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const ErrorComponent = ({ resetErrorBoundary }) => {
