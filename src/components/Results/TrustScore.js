@@ -10,8 +10,8 @@ const useStyles = makeStyles({
     textAlign: "left",
     paddingBottom: "20px",
   },
-  trustScoreTooltip: {
 
+  trustScoreTooltip: {
     fontSize: "30px",
   },
 
@@ -19,7 +19,6 @@ const useStyles = makeStyles({
     textAlign: "right",
     color: "#6bb26d",
   },
-
 });
 
 function TrustScore(props) {
@@ -46,25 +45,24 @@ function TrustScore(props) {
     <div>
       <Grid container justify="center">
         <Grid item xs={10} sm={10} md={10} lg={10}>
-        <Grid container justify ="left" >
-          <Grid >
-            <Tooltip
-                placement="right"
-                arrow
-                className={classes.trustScoreTooltip}
-                title={
-                  <p style={{ fontSize: "16px" }}>
-                    Trust indicator breifly provides Trustworthiness of an article. It is calculated with equal weightage on Credibility, Objectivity and Polarity of the Article. A Green progress bar means article has higher Trustworthiness, a yellow bar means the article has medium Trustworthiness and a red bar means that the article has low Trustworthiness.
-                  </p>
-                }
-            >
-            <HelpIcon className={classes.trustScoreHelp} />
-            </Tooltip>
-          </Grid>
-        </Grid>
+          <Grid container justify ="left" >
           <Typography variant="h5" className={classes.trustScoreHeader}>
             Trust Indicator
           </Typography>
+          <Grid>
+            <Tooltip
+                className={classes.trustScoreTooltip}
+                title={
+                  <p style={{ fontSize: "16px" }}>
+                    Trust indicator breifly provides Trustworthiness of an article. It is calculated with equal weightage on Credibility, Objectivity and Polarity of the Article. A Green progress bar means article has Trustworthiness greater than 70%, a yellow bar means the article has Trustworthiness between 30% to 70%  and a red bar means that the article has Trustworthiness less than 30%.
+                  </p>
+                }
+              >
+              <HelpIcon className={classes.trustScoreHelp} />
+            </Tooltip>
+          </Grid>
+          </Grid>
+
         </Grid>
         <Grid item xs={10} sm={10} md={10} lg={10}>
         <Grid item  justify="center">
