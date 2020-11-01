@@ -23,11 +23,23 @@ const useStyles = makeStyles({
     padding: "10px",
   },
 
+  goBack:{
+paddingTop: "28px",
+paddingBottom: "18px",
+
+  },
+
+  goBackText : {
+    marginBottom: "10px"
+  },
+
   backButton: {
     background: "#f8ce94",
     fontFamily: "Graduate, sans-serif",
-    padding: "10px",
-    fontSize: "20px",
+    paddingBottom: "10px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+    fontSize: "18px",
     borderRadius: "0"
   }
 
@@ -100,11 +112,12 @@ function DisplayResults(props) {
           <Polarity displayPolarity={polarityScore} />
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item xs={12} className={classes.goBack}>
+        <Typography variant="body2" className={classes.goBackText}></Typography>
               <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
                 props.setRequest("")
               }}>
-                Back
+                Analyse Again?
               </Button>
             </Grid>
     </div>
