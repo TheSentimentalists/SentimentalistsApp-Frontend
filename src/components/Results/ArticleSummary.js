@@ -21,10 +21,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "700",
     marginBottom: "18px",
   },
-  ArticleURL: {
-    fontSize: "14px",
-    marginBottom: "10px",
-  },
+
   SummaryText: {
     marginBottom: "12px",
     fontSize: "16px",
@@ -101,11 +98,7 @@ function ArticleSummary(props) {
           </Typography>
         </Grid>
 
-        <Grid item xs={12}>
-          <Typography variant="body1" className={classes.ArticleURL} noWrap>
-            {props.displayURL}
-          </Typography>
-        </Grid>
+
         <Grid item xs={12} lg={9}>
           <Typography variant="body2" className={classes.SummaryText}>
             {articleSummary}
