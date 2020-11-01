@@ -63,13 +63,20 @@ function ArticleSummary(props) {
   truncateSummaryText();
 
   let calculatedTopics = [];
-  calculatedTopics.push({"type":"PERSON", "topics":(topics.filter(element => element.type === "PERSON"))})
-  calculatedTopics.push({"type":"ORG", "topics":(topics.filter(element => element.type === "ORG"))})
-  calculatedTopics.push({"type":"GPE", "topics":(topics.filter(element => element.type === "GPE"))})
-  calculatedTopics.push({"type":"WORK_OF_ART", "topics":(topics.filter(element => element.type === "WORK_OF_ART"))})
-  calculatedTopics.push({"type":"EVENT", "topics":(topics.filter(element => element.type === "EVENT"))})
 
-  calculatedTopics = calculatedTopics.filter(element => element.topics.length > 0)
+  if(typeof topics === "object") { 
+    calculatedTopics.push({"type":"PERSON", "topics":(topics.filter(element => element.type === "PERSON"))})
+    calculatedTopics.push({"type":"ORG", "topics":(topics.filter(element => element.type === "ORG"))})
+    calculatedTopics.push({"type":"GPE", "topics":(topics.filter(element => element.type === "GPE"))})
+    calculatedTopics.push({"type":"WORK_OF_ART", "topics":(topics.filter(element => element.type === "WORK_OF_ART"))})
+    calculatedTopics.push({"type":"EVENT", "topics":(topics.filter(element => element.type === "EVENT"))})
+
+    calculatedTopics = calculatedTopics.filter(element => element.topics.length > 0)
+  } else {
+    topics = false
+  }
+
+  console.log(topics)
 
   return (
     <div>
@@ -95,6 +102,7 @@ function ArticleSummary(props) {
             {articleSummary}
           </Typography>
         </Grid>
+        {topics &&
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
@@ -114,6 +122,7 @@ function ArticleSummary(props) {
             </Grid>
           </Grid>
         </Grid>
+        }
       </Grid>
     </div>
   );
