@@ -4,12 +4,18 @@ import Topic from "./Topic"
 import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
-const useStyles = makeStyles({
-  ArticleSummaryText: {
+const useStyles = makeStyles(theme => ({
+  ArticleSummaryText: props => ({
     fontFamily: "Roboto, sans-serif",
+    textAlign: "left",
     padding: "30px",
-    textAlign: "left"
-  },
+    [theme.breakpoints.up('lg')]: {
+      background: `linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 85%), url(${props.articleImage})`,
+      backgroundSize: "auto 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right center"
+    },
+}),
   ArticleTitle: {
     fontSize: "20px",
     fontWeight: "700",
@@ -29,14 +35,20 @@ const useStyles = makeStyles({
   HelpTooltip: {
     fontSize: "30px"
   }
-});
+}));
 
 function ArticleSummary(props) {
-  const classes = useStyles();
 
   let articleTitle;
   let articleSummary;
+  let articleImage = "";
   let topics;
+
+  if(typeof props.displayArticle.image === 'string') {
+    articleImage = props.displayArticle.image
+  }
+
+  const classes = useStyles({articleImage});
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
