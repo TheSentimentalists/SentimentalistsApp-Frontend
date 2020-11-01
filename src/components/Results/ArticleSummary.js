@@ -23,13 +23,6 @@ const useStyles = makeStyles({
     marginBottom: "12px",
     fontSize: "16px",
   },
-
-  blueChip: {
-    backgroundColor: "#c7e2fc",
-    margin: "3px",
-    fontWeight: "700"
-  },
-
   Help: {
     color: "#6bb26d"
   },
