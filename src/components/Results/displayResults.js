@@ -24,34 +24,32 @@ const useStyles = makeStyles({
   },
   credibilityBox: {
     paddingLeft: "12px",
-    paddingTop: "18px"
+    paddingTop: "18px",
   },
 
-  
   credibilityText: {
     textAlign: "left",
     fontFamily: "Roboto, sans-serif",
     paddingLeft: "30px",
     marginTop: "10px",
-    marginBottom: "25px"
+    marginBottom: "25px",
   },
 
-  sentimentBox: { 
+  sentimentBox: {
     paddingLeft: "12px",
     paddingTop: "18px",
-
   },
   sentimentHeading: {
     fontFamily: "Graduate, sans-serif",
     textAlign: "left",
-    paddingLeft: "30px"
+    paddingLeft: "30px",
   },
 
   sentimentText: {
     textAlign: "left",
     fontFamily: "Roboto, sans-serif",
     paddingLeft: "30px",
-    marginBottom: "25px"
+    marginBottom: "25px",
   },
 });
 
@@ -109,35 +107,30 @@ function DisplayResults(props) {
             paddingBottom: "20px",
           }}
         >
-   <TrustScore Bscore={trustScore} />
-
+          <TrustScore Bscore={trustScore} />
         </Grid>
         <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
           <Grid
             container
             direction="column"
-  justify="flex-start"
-  alignItems="stretch"
-
-           className={classes.credibilityBox}
+            justify="flex-start"
+            alignItems="stretch"
+            className={classes.credibilityBox}
           >
             <Grid item xs={12}>
               <Credibility outcome={credibilityObj} />
             </Grid>
-            
-            
+
             <Grid item xs={10}>
               <Typography variant="body2" className={classes.credibilityText}>
-                <strong>What?</strong> The credibility of a website is very
-                important and we will tell you why.
+                <strong>What?</strong> This scores provides an indication of the credibility of the article
+                within the context of the website it appears on. 
                 <br />
-                <strong>Why?</strong> Article context is very important, if you
-                give us a chance we will tell you why. More text....MoreMore
-                text.... text....More text....More text....More text....More
-                
+                <strong>Why?</strong>
+                 A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
+                outlet may be politically biased.
               </Typography>
             </Grid>
-           
           </Grid>
         </Grid>
 
@@ -149,8 +142,7 @@ function DisplayResults(props) {
           md={8}
           className={classes.sentimentBox}
         >
-
-<Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6}>
             <Objectivity displayObjectivity={objectivityScore} />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -164,9 +156,7 @@ function DisplayResults(props) {
               Sentiment Analysis
             </Typography>
           </Grid>
-      
-          
-          
+
           <Grid item xs={10}>
             <Typography variant="body2" className={classes.sentimentText}>
               <strong>What?</strong> Sentiment Analysis the process of analysing
@@ -180,8 +170,6 @@ function DisplayResults(props) {
               fully factual.
             </Typography>
           </Grid>
-          
-         
         </Grid>
       </Grid>
     </div>
