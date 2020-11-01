@@ -6,11 +6,15 @@ import { Grid, Typography, Tooltip } from "@material-ui/core/";
 import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles({
+  trustScore: {
+    paddingLeft: "30px",
+    paddingRight: "30px"
+  },
   trustScoreHeader: {
     textAlign: "left",
     paddingBottom: "20px",
+    marginLeft: "0!important"
   },
-
   trustScoreTooltip: {
     fontSize: "30px",
   },
@@ -43,11 +47,11 @@ function TrustScore(props) {
 
   return (
     <div>
-      <Grid container justify="center">
-        <Grid item xs={10} sm={10} md={10} lg={10}>
-          <Grid container justify ="left" >
+      <Grid container justify="center" className={classes.trustScore}>
+        <Grid item xs={12}>
+          <Grid container justify="left">
           <Typography variant="h5" className={classes.trustScoreHeader}>
-            Trust Indicator
+            Trust Indicator {trustmoji} 
           </Typography>
           <Grid>
             <Tooltip
@@ -64,10 +68,7 @@ function TrustScore(props) {
           </Grid>
 
         </Grid>
-        <Grid item xs={10} sm={10} md={10} lg={10}>
-        <Grid item  justify="center">
-            {trustmoji}
-        </Grid>    
+        <Grid item xs={12}>  
           <ProgressBar
             percent={percentage}
             unfilledBackground="lightgrey"
