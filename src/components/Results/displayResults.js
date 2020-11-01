@@ -126,7 +126,9 @@ function DisplayResults(props) {
                 <strong>What?</strong> This scores provides an indication of the credibility of the article
                 within the context of the website it appears on. 
                 <br />
-                <strong>Why?</strong> 
+                <strong>Why?</strong>
+                 A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
+                outlet may be politically biased.
               </Typography>
             </Grid>
           </Grid>

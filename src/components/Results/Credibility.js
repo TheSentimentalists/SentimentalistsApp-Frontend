@@ -19,7 +19,6 @@ const useStyles = makeStyles({
     fontFamily: "Graduate, sans-serif",
   },
 
-
   categoryTitle: {
     fontFamily: "Roboto, sans-serif",
     textAlign: "left",
@@ -31,7 +30,7 @@ const useStyles = makeStyles({
   categoryChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
-    fontWeight: "600"
+    fontWeight: "600",
   },
 
   sourceChip: {
@@ -45,7 +44,6 @@ const useStyles = makeStyles({
   },
 
   categoryText: {
-    paddingLeft: "45px",
     textAlign: "left",
     paddingRight: "10px",
     marginBottom: "15px",
@@ -66,28 +64,28 @@ function Credibility(props) {
   let category;
   let source;
 
-  const handleError = () =>{
-    if (props.hasOwnProperty('error')){
+  const handleError = () => {
+    if (props.hasOwnProperty("error")) {
       score = 0;
-      category = 'No Category Available';
+      category = "No Category Available";
       source = "No Source Available";
-      } else {
-        score = props.outcome.score / 100;
-        category = props.outcome.category;
-        source = props.outcome.source;
-      }
-  }
-handleError()
+    } else {
+      score = props.outcome.score / 100;
+      category = props.outcome.category;
+      source = props.outcome.source;
+    }
+  };
+  handleError();
 
-const handleNoCredibilityScore = () => {
-  if (isNaN(score)){
-    score = 0;
-    category = 'No Category Available';
-    source = "No Source Available";
-  }
-}
+  const handleNoCredibilityScore = () => {
+    if (isNaN(score)) {
+      score = 0;
+      category = "No Category Available";
+      source = "No Source Available";
+    }
+  };
 
-handleNoCredibilityScore();
+  handleNoCredibilityScore();
 
   let categoryText = () => {
     switch (category) {
@@ -140,7 +138,7 @@ handleNoCredibilityScore();
   return (
     <div>
       <Grid container justify="center" direction="column">
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
@@ -150,10 +148,9 @@ handleNoCredibilityScore();
             nrOfLevels={3}
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
             needleColor="#d9d9d9"
-            
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={9}>
           <Typography variant="h5" className={classes.credibilityGaugeHeading}>
             Credibility
           </Typography>
@@ -163,25 +160,30 @@ handleNoCredibilityScore();
             container
             justify="flex-start"
             alignItems="flex-start"
-            style={{marginBottom: "7px"}}
+            style={{ marginBottom: "7px" }}
           >
-            <Grid item >
-              <Typography variant="subtitle2" className={classes.categoryTitle}>
-                Category:{" "}
-              </Typography>
-            </Grid>
-            <Grid item >
-              <Chip label={category} className={classes.categoryChip} />
-            </Grid>
-            <Grid item >
-              <Tooltip
-                placement="bottom"
-                arrow
-                title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
-                className={classes.credibilityTooltip}
-              >
-                <HelpIcon className={classes.credibilityHelp} />
-              </Tooltip>
+            <Grid item xs={12}>
+              <Grid container direction="row" alignItems="center">
+                <Typography
+                  variant="subtitle2"
+                  className={classes.categoryTitle}
+                >
+                  Category:{"  "}
+                </Typography>
+                <Grid item>
+                  <Chip label={category} className={classes.categoryChip} />
+                </Grid>
+                <Grid item>
+                  <Tooltip
+                    placement="bottom"
+                    arrow
+                    title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
+                    className={classes.credibilityTooltip}
+                  >
+                    <HelpIcon className={classes.credibilityHelp} />
+                  </Tooltip>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
