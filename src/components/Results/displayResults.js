@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Grid, Typography, Button } from "@material-ui/core/";
+import { Grid, Typography, Button, Box } from "@material-ui/core/";
 import TrustScore from "./TrustScore";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     borderBottom: "1px solid #efefef",
     backgroundColor: "#faf2e6"
   },
+
   logo: {
     display: "block",
     width: "100%",
@@ -41,6 +42,17 @@ paddingBottom: "18px",
     paddingBottom: "10px",
     paddingLeft: "12px",
     paddingRight: "12px",
+    fontSize: "18px",
+    borderRadius: "0"
+  },
+
+  backButtonHeader: {
+    background: "#f8ce94",
+    fontFamily: "Graduate, sans-serif",
+    paddingBottom: "10px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+    marginRight: "30px",
     fontSize: "18px",
     borderRadius: "0"
   },
@@ -108,7 +120,7 @@ function DisplayResults(props) {
                 className={classes.logo}
               />
             </Grid>
-            <Grid item xs={8} md={10} align="left">
+            <Grid item xs={8} md={8} align="left">
             <Typography
                 variant="h1"
                 style={{ fontSize: "24px", fontWeight: "700", fontFamily: "Graduate, sans-serif" }}
@@ -121,6 +133,15 @@ function DisplayResults(props) {
               >
                 Analysing Media Sentiment Since 2020
               </Typography>
+            </Grid>
+            <Grid item md={2} alight="right">
+            <Box display={{ xs: 'none', lg: 'block' }}>
+              <Button variant="contained" disableElevation className={classes.backButtonHeader} onClick={() => {
+                props.setRequest("")
+              }}>
+                Start Over
+              </Button>
+            </Box>
             </Grid>
             
           </Grid>
