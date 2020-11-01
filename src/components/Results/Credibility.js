@@ -19,9 +19,6 @@ const useStyles = makeStyles({
     fontFamily: "Graduate, sans-serif",
   },
 
-  categoryGauge: {
-    marginTop: "15px",
-  },
 
   categoryTitle: {
     fontFamily: "Roboto, sans-serif",
@@ -133,7 +130,7 @@ handleError()
   return (
     <div>
       <Grid container justify="center" direction="column">
-        <Grid item xs={12}>
+        <Grid item xs={12} >
           <GaugeChart
             className={classes.categoryGauge}
             id="main-gauge"
@@ -142,6 +139,8 @@ handleError()
             textColor="#000000"
             nrOfLevels={3}
             colors={["#ee445e", "#f8ce94", "#6bb26d"]}
+            needleColor="#d9d9d9"
+            
           />
         </Grid>
         <Grid item xs={12}>
