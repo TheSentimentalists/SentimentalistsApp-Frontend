@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 
   goBack:{
-paddingTop: "28px",
+paddingTop: "40px",
 paddingBottom: "18px",
 
   },
@@ -113,11 +113,11 @@ function DisplayResults(props) {
         </Grid>
       </Grid>
       <Grid item xs={12} className={classes.goBack}>
-        <Typography variant="body2" className={classes.goBackText}></Typography>
+        <Typography variant="body2" className={classes.goBackText}>Want to analyse another article?</Typography>
               <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
                 props.setRequest("")
               }}>
-                Analyse Again?
+                Click Here
               </Button>
             </Grid>
     </div>
