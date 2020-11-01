@@ -85,7 +85,7 @@ function App() {
                 <ErrorBoundary
                   FallbackComponent={ErrorComponent}
                   onReset={() => {
-                    setRequest("");
+                    setRequest(""); 
                   }}
                   resetKeys={[request]}
                 >

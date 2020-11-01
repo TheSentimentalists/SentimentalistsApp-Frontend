@@ -123,12 +123,10 @@ function DisplayResults(props) {
 
             <Grid item xs={10}>
               <Typography variant="body2" className={classes.credibilityText}>
-                <strong>What?</strong> The credibility of a website is very
-                important and we will tell you why.
+                <strong>What?</strong> This scores provides an indication of the credibility of the article
+                within the context of the website it appears on. 
                 <br />
-                <strong>Why?</strong> Article context is very important, if you
-                give us a chance we will tell you why. More text....MoreMore
-                text.... text....More text....More text....More text....More
+                <strong>Why?</strong> 
               </Typography>
             </Grid>
           </Grid>
