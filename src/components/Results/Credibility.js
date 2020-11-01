@@ -1,9 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
-import { Grid, Chip, Tooltip } from "@material-ui/core/";
+import { Grid, Chip } from "@material-ui/core/";
 import Typography from "@material-ui/core/Typography";
-import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
@@ -174,14 +173,7 @@ function Credibility(props) {
                   <Chip label={category} className={classes.categoryChip} />
                 </Grid>
                 <Grid item>
-                  <Tooltip
-                    placement="bottom"
-                    arrow
-                    title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
-                    className={classes.credibilityTooltip}
-                  >
-                    <HelpIcon className={classes.credibilityHelp} />
-                  </Tooltip>
+                  
                 </Grid>
               </Grid>
             </Grid>
