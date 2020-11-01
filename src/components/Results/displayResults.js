@@ -11,7 +11,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   header: {
-    background: "#d9d9d9",
+    borderBottom: "1px solid #efefef",
+    backgroundColor: "#faf2e6"
   },
   logo: {
     display: "block",
@@ -19,8 +20,9 @@ const useStyles = makeStyles({
     height: "auto",
     maxHeight: "110px",
     maxWidth: "113px",
-    margin: "auto",
-    padding: "10px",
+    paddingLeft: "30px",
+    marginBottom: "20px",
+    marginTop: "20px"
   },
   credibilityBox: {
     paddingLeft: "12px",
@@ -77,17 +79,23 @@ function DisplayResults(props) {
             alignItems="center"
             className={classes.header}
           >
-            <Grid item xs={6} sm={6} md={3} lg={2}>
+            <Grid item xs={4} md={2} align="left">
               <img
                 src={Logo}
                 alt="The Sentimentalists Logo"
                 className={classes.logo}
               />
             </Grid>
-            <Grid item xs={6} sm={6} md={3} lg={3}>
+            <Grid item xs={8} md={10} align="left">
+            <Typography
+                variant="h1"
+                style={{ fontSize: "24px", fontWeight: "700", fontFamily: "Graduate, sans-serif" }}
+              >
+                The Sentimentalists
+              </Typography>
               <Typography
                 variant="h1"
-                style={{ fontSize: "18px", fontFamily: "Graduate, sans-serif" }}
+                style={{ fontSize: "20px", fontFamily: "Graduate, sans-serif" }}
               >
                 Analysing Media Sentiment Since 2020
               </Typography>
