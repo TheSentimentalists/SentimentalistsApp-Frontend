@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
-import { Grid, Chip } from "@material-ui/core/";
+import { Grid, Chip, Tooltip } from "@material-ui/core/";
 import Typography from "@material-ui/core/Typography";
+import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
