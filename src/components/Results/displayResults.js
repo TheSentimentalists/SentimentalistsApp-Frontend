@@ -178,7 +178,7 @@ function DisplayResults(props) {
                 <strong>What?</strong> This scores provides an indication of the credibility of the article
                 within the context of the website it appears on. 
                 <br />
-                <strong>Why?</strong>
+                <strong>Why? </strong>
                  A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
                 outlet may be politically biased.
               </Typography>
@@ -224,7 +224,7 @@ function DisplayResults(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.goBack}>
+      <Grid item xs={12} className={classes.goBack} style={{ borderTop: "1px solid #efefef" }}>
         <Typography variant="body2" className={classes.goBackText}>Want to analyse another article?</Typography>
               <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
                 props.setRequest("")
