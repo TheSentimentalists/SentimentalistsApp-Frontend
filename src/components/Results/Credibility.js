@@ -174,14 +174,7 @@ function Credibility(props) {
                   <Chip label={category} className={classes.categoryChip} />
                 </Grid>
                 <Grid item>
-                  <Tooltip
-                    placement="bottom"
-                    arrow
-                    title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
-                    className={classes.credibilityTooltip}
-                  >
-                    <HelpIcon className={classes.credibilityHelp} />
-                  </Tooltip>
+                  
                 </Grid>
               </Grid>
             </Grid>
