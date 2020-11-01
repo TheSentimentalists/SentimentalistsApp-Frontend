@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GaugeChart from "react-gauge-chart";
 import { Grid, Chip, Tooltip } from "@material-ui/core/";
 import Typography from "@material-ui/core/Typography";
+import HelpIcon from "@material-ui/icons/Help";
 import "../../App.css";
 
 const useStyles = makeStyles({
@@ -39,7 +40,8 @@ const useStyles = makeStyles({
   },
 
   chipLink: {
-    textDecoration: "none",
+    textDecoration: "underline",
+    color: "#000000",
   },
 
   categoryText: {
@@ -54,6 +56,8 @@ const useStyles = makeStyles({
 
   credibilityTooltip: {
     fontSize: "30px",
+    color: "#6bb26d",
+    marginBottom: "5px",
   },
 });
 
@@ -150,9 +154,28 @@ function Credibility(props) {
           />
         </Grid>
         <Grid item xs={9}>
-          <Typography variant="h5" className={classes.credibilityGaugeHeading}>
-            Credibility
-          </Typography>
+          <Grid container direction="row" alignItems="center">
+            <Typography
+              variant="h5"
+              className={classes.credibilityGaugeHeading}
+            >
+              Credibility
+            </Typography>
+
+            <Tooltip
+              placement="bottom"
+              arrow
+              className={classes.credibilityTooltip}
+              title={
+                <p style={{ fontSize: "16px" }}>
+                  Measures the credibility of the website that the article is
+                  from.
+                </p>
+              }
+            >
+              <HelpIcon />
+            </Tooltip>
+          </Grid>
         </Grid>
         <Grid item xs={12}>
           <Grid
@@ -170,13 +193,16 @@ function Credibility(props) {
                   Category:{"  "}
                 </Typography>
                 <Grid item>
-                <Tooltip
+                  <Tooltip
                     placement="bottom"
                     arrow
                     title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
-                    className={classes.credibilityTooltip}
                   >
-                  <Chip label={category} style={{fontSize: "14px"}} className={classes.categoryChip} />
+                    <Chip
+                      label={category}
+                      style={{ fontSize: "14px" }}
+                      className={classes.categoryChip}
+                    />
                   </Tooltip>
                 </Grid>
               </Grid>
@@ -190,7 +216,7 @@ function Credibility(props) {
               href="https://mediabiasfactcheck.com/"
               className={classes.chipLink}
             >
-              <Chip label={source} className={classes.sourceChip} />
+              {source}
             </a>
           </Typography>
         </Grid>
