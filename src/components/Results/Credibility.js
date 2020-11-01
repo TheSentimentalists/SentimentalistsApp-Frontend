@@ -90,7 +90,7 @@ const handleNoCredibilityScore = () => {
 handleNoCredibilityScore();
 
   let categoryText = () => {
-    switch (props.category) {
+    switch (category) {
       case "Left Center":
         categoryText = `These media sources have a slight to moderate liberal bias. 
         They often publish factual information that utilizes loaded words 
@@ -132,7 +132,7 @@ handleNoCredibilityScore();
                  written in the reasoning section for that source.`;
         break;
       default:
-        categoryText = `Not enough about this source exists to calculate a score`;
+        categoryText = `Not enough information about this source exists to calculate a score`;
     }
   };
   categoryText();
