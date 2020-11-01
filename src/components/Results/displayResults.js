@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import { Grid, Typography } from "@material-ui/core/";
-import BProgressBar from "../Progressbar/BProgressBar";
+import TrustScore from "./TrustScore";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
 import Objectivity from "./Objectivity";
@@ -109,8 +109,8 @@ function DisplayResults(props) {
             paddingBottom: "20px",
           }}
         >
-          <BProgressBar Bscore={trustScore} />
-      
+   <TrustScore Bscore={trustScore} />
+
         </Grid>
         <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
           <Grid
