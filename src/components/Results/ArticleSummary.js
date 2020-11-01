@@ -116,7 +116,7 @@ function ArticleSummary(props) {
               <Tooltip
               placement="bottom"
               arrow
-              title={<p style={{ fontSize: "16px" }}>Keywords!</p>}
+              title={<p style={{ fontSize: "16px" }}>Topics that have been identified in the article - hover over the category to see more!</p>}
               className={classes.HelpTooltip}
               >
                 <HelpIcon className={classes.Help} />

@@ -33,23 +33,23 @@ let category;
 switch (type) {
     case "PERSON":
         icon = <FaceIcon />;
-        category = 'People';
+        category = 'People ▾';
         break;
     case "GPE":
         icon = <PublicIcon />;
-        category = 'Locations';
+        category = 'Locations ▾';
         break;
     case "ORG":
         icon = <BusinessIcon />;
-        category = 'Organisations';
+        category = 'Organisations ▾';
         break;
     case "EVENT":
         icon = <EventIcon />;
-        category = 'Events';
+        category = 'Events ▾';
         break;
     case "WORK_OF_ART":
         icon = <BrushIcon />;
-        category = 'Works of Art';
+        category = 'Works of Art ▾';
         break;
     default:
         icon = <PublicIcon />;
