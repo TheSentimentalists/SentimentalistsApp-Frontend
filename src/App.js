@@ -90,7 +90,7 @@ function App() {
                   resetKeys={[request]}
                 >
                   <DisplayResults
-                    displayResults={request}
+                    displayResults={request} setRequest={setRequest}
                   />
                 </ErrorBoundary>
                 <p>{request.error}</p>

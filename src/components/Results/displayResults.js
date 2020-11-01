@@ -90,7 +90,7 @@ function DisplayResults(props) {
         >
           <BProgressBar Bscore={trustScore} />
         </Grid>
-        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
+        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}> 
           <Credibility outcome={credibilityObj} />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -101,7 +101,9 @@ function DisplayResults(props) {
         </Grid>
       </Grid>
       <Grid item>
-              <Button variant="contained" disableElevation className={classes.backButton}>
+              <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
+                props.setRequest("")
+              }}>
                 Back
               </Button>
             </Grid>
