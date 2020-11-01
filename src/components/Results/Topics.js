@@ -3,18 +3,22 @@ import { Chip, Tooltip, List, ListItemText, ListItem, ListItemIcon, makeStyles }
 import FaceIcon from '@material-ui/icons/Face';
 import PublicIcon from '@material-ui/icons/Public';
 import BusinessIcon from '@material-ui/icons/Business';
+import EventIcon from '@material-ui/icons/Event';
+import BrushIcon from '@material-ui/icons/Brush';
 import "../../App.css";
 
 const useStyles = makeStyles({
-  blueChip: {
-    backgroundColor: "#c7e2fc",
+  yellowChip: {
+    backgroundColor: "#f8ce94",
     margin: "3px",
     fontWeight: "700",
   },
-  greyChip: {
-    backgroundColor: "lightgrey",
-    margin: "3px",
-    fontWeight: "700",
+  lightTooltip: {
+    color: "black",
+    backgroundColor: "#fff0db",
+  },
+  lightTooltipArrow: {
+    color: "#fff0db",
   }
 });
 
@@ -39,6 +43,14 @@ switch (type) {
         icon = <BusinessIcon />;
         category = 'Organisations';
         break;
+    case "EVENT":
+        icon = <EventIcon />;
+        category = 'Events';
+        break;
+    case "WORK_OF_ART":
+        icon = <BrushIcon />;
+        category = 'Works of Art';
+        break;
     default:
         icon = <PublicIcon />;
 }
@@ -46,6 +58,7 @@ switch (type) {
     return (  
             <Tooltip
             arrow
+            classes={{ tooltip: classes.lightTooltip, arrow: classes.lightTooltipArrow }}
             placement="bottom-start"
             title={
             <React.Fragment>
@@ -61,11 +74,11 @@ switch (type) {
                 </List>
             </React.Fragment>
             }>
-            <Chip
-                icon={icon}
-                label={category}
-                className={classes.blueChip}
-            /> 
+                <Chip
+                    icon={icon}
+                    label={category}
+                    className={classes.yellowChip}
+                /> 
             </Tooltip>
             
     );

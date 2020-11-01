@@ -69,9 +69,14 @@ function ArticleSummary(props) {
 
   truncateSummaryText();
 
-  let topicsPeople = topics.filter(element => element.type === "PERSON")
-  let topicsOrg = topics.filter(element => element.type === "ORG")
-  let topicsGPE = topics.filter(element => element.type === "GPE")
+  let calculatedTopics = [];
+  calculatedTopics.push({"type":"PERSON", "topics":(topics.filter(element => element.type === "PERSON"))})
+  calculatedTopics.push({"type":"ORG", "topics":(topics.filter(element => element.type === "ORG"))})
+  calculatedTopics.push({"type":"GPE", "topics":(topics.filter(element => element.type === "GPE"))})
+  calculatedTopics.push({"type":"WORK_OF_ART", "topics":(topics.filter(element => element.type === "WORK_OF_ART"))})
+  calculatedTopics.push({"type":"EVENT", "topics":(topics.filter(element => element.type === "EVENT"))})
+
+  calculatedTopics = calculatedTopics.filter(element => element.topics.length > 0)
 
   return (
     <div>
@@ -100,9 +105,9 @@ function ArticleSummary(props) {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Topic topics={topicsPeople} type="PERSON" />
-              <Topic topics={topicsGPE} type="GPE" />
-              <Topic topics={topicsOrg} type="ORG" />
+            {calculatedTopics.map((element) => (
+              <Topic type={element.type} topics={element.topics} />
+            ))}
             </Grid>
             <Grid item>
               <Tooltip
