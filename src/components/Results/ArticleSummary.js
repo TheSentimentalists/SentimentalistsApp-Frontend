@@ -1,21 +1,20 @@
 import React from "react";
-import { Grid, Typography, makeStyles, Chip, Card, CardContent } from "@material-ui/core/";
+import { Grid, Typography, makeStyles, Chip } from "@material-ui/core/";
 import "../../App.css";
 
-let imgUrl_1 = "https://www.thesun.co.uk/wp-content/uploads/2020/11/COMPS-JS-COVID.jpg"
-
-const useStyles = makeStyles({
-  ArticleSummaryText: {
+const useStyles = makeStyles(theme => ({
+  ArticleSummaryText: props => ({
     fontFamily: "Roboto, sans-serif",
     padding: "10px",
     textAlign: "left",
     paddingBottom: "25px",
-    background: "linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 85%), url("+imgUrl_1+")",
-    backgroundSize: "auto 100%",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "right center"
-
-  },
+    [theme.breakpoints.up('lg')]: {
+      background: `linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 85%), url(${props.articleImage})`,
+      backgroundSize: "auto 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right center"
+    },
+}),
   ArticleTitle: {
     fontSize: "20px",
     fontWeight: "700",
@@ -35,14 +34,20 @@ const useStyles = makeStyles({
     margin: "3px",
     fontWeight: "700",
   },
-});
+}));
 
 function ArticleSummary(props) {
-  const classes = useStyles();
 
   let articleTitle;
   let articleSummary;
+  let articleImage = "";
   let keywords;
+
+  if(typeof props.displayArticle.image === 'string') {
+    articleImage = props.displayArticle.image
+  }
+
+  const classes = useStyles({articleImage});
 
   const generateSummaryText = () => {
     if (props.displayArticle.hasOwnProperty("error")) {
