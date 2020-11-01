@@ -8,8 +8,7 @@ const useStyles = makeStyles(theme => ({
   ArticleSummaryText: props => ({
     fontFamily: "Roboto, sans-serif",
     textAlign: "left",
-    paddingLeft: "30px",
-    paddingBottom: "25px",
+    padding: "30px",
     [theme.breakpoints.up('lg')]: {
       background: `linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 85%), url(${props.articleImage})`,
       backgroundSize: "auto 100%",
