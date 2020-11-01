@@ -92,20 +92,20 @@ function ArticleSummary(props) {
         direction="column"
         className={classes.ArticleSummaryText}
       >
-        <Grid item xs={12}>
+        <Grid item xs={12} lg={8}>
           <Typography variant="h4" className={classes.ArticleTitle}>
             {articleTitle}
           </Typography>
         </Grid>
 
 
-        <Grid item xs={12} lg={9}>
+        <Grid item xs={12} lg={8}>
           <Typography variant="body2" className={classes.SummaryText}>
             {articleSummary}
           </Typography>
         </Grid>
         {topics &&
-        <Grid item xs={12}>
+        <Grid item xs={12} lg={8}>
           <Grid container>
             <Grid item>
               {calculatedTopics.map((element) => (
