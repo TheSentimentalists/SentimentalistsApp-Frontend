@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Grid, Typography, Button } from "@material-ui/core/";
+import { Grid, Typography, Button, Box } from "@material-ui/core/";
 import TrustScore from "./TrustScore";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
@@ -11,16 +11,19 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   header: {
-    background: "#d9d9d9",
+    borderBottom: "1px solid #efefef",
+    backgroundColor: "#faf2e6"
   },
+
   logo: {
     display: "block",
     width: "100%",
     height: "auto",
     maxHeight: "110px",
     maxWidth: "113px",
-    margin: "auto",
-    padding: "10px",
+    paddingLeft: "30px",
+    marginBottom: "20px",
+    marginTop: "20px"
   },
 
   goBack:{
@@ -39,6 +42,17 @@ paddingBottom: "18px",
     paddingBottom: "10px",
     paddingLeft: "12px",
     paddingRight: "12px",
+    fontSize: "18px",
+    borderRadius: "0"
+  },
+
+  backButtonHeader: {
+    background: "#f8ce94",
+    fontFamily: "Graduate, sans-serif",
+    paddingBottom: "10px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+    marginRight: "30px",
     fontSize: "18px",
     borderRadius: "0"
   },
@@ -99,20 +113,35 @@ function DisplayResults(props) {
             alignItems="center"
             className={classes.header}
           >
-            <Grid item xs={6} sm={6} md={3} lg={2}>
+            <Grid item xs={4} md={2} align="left">
               <img
                 src={Logo}
                 alt="The Sentimentalists Logo"
                 className={classes.logo}
               />
             </Grid>
-            <Grid item xs={6} sm={6} md={3} lg={3}>
+            <Grid item xs={8} md={8} align="left">
+            <Typography
+                variant="h1"
+                style={{ fontSize: "24px", fontWeight: "700", fontFamily: "Graduate, sans-serif" }}
+              >
+                The Sentimentalists
+              </Typography>
               <Typography
                 variant="h1"
-                style={{ fontSize: "18px", fontFamily: "Graduate, sans-serif" }}
+                style={{ fontSize: "20px", fontFamily: "Graduate, sans-serif" }}
               >
                 Analysing Media Sentiment Since 2020
               </Typography>
+            </Grid>
+            <Grid item md={2} alight="right">
+            <Box display={{ xs: 'none', lg: 'block' }}>
+              <Button variant="contained" disableElevation className={classes.backButtonHeader} onClick={() => {
+                props.setRequest("")
+              }}>
+                Start Over
+              </Button>
+            </Box>
             </Grid>
             
           </Grid>
