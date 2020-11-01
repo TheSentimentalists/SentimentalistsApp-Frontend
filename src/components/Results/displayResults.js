@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Grid, Typography } from "@material-ui/core/";
+import { Grid, Typography, Button } from "@material-ui/core/";
 import TrustScore from "./TrustScore";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
@@ -24,6 +24,27 @@ const useStyles = makeStyles({
     marginBottom: "20px",
     marginTop: "20px"
   },
+
+  goBack:{
+paddingTop: "40px",
+paddingBottom: "18px",
+
+  },
+
+  goBackText : {
+    marginBottom: "10px"
+  },
+
+  backButton: {
+    background: "#f8ce94",
+    fontFamily: "Graduate, sans-serif",
+    paddingBottom: "10px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+    fontSize: "18px",
+    borderRadius: "0"
+  },
+
   credibilityBox: {
     paddingLeft: "12px",
     paddingTop: "18px",
@@ -32,7 +53,7 @@ const useStyles = makeStyles({
   credibilityText: {
     textAlign: "left",
     fontFamily: "Roboto, sans-serif",
-    paddingLeft: "30px",
+    paddingLeft: "45px",
     marginTop: "10px",
     marginBottom: "25px",
   },
@@ -53,6 +74,7 @@ const useStyles = makeStyles({
     paddingLeft: "30px",
     marginBottom: "25px",
   },
+
 });
 
 function DisplayResults(props) {
@@ -100,6 +122,7 @@ function DisplayResults(props) {
                 Analysing Media Sentiment Since 2020
               </Typography>
             </Grid>
+            
           </Grid>
         </Grid>
 
@@ -180,6 +203,14 @@ function DisplayResults(props) {
           </Grid>
         </Grid>
       </Grid>
+      <Grid item xs={12} className={classes.goBack}>
+        <Typography variant="body2" className={classes.goBackText}>Want to analyse another article?</Typography>
+              <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
+                props.setRequest("")
+              }}>
+                Click Here
+              </Button>
+            </Grid>
     </div>
   );
 }
