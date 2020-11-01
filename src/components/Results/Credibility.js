@@ -79,6 +79,16 @@ function Credibility(props) {
   }
 handleError()
 
+const handleNoCredibilityScore = () => {
+  if (isNaN(score)){
+    score = 0;
+    category = 'No Category Available';
+    source = "No Source Available";
+  }
+}
+
+handleNoCredibilityScore();
+
   let categoryText = () => {
     switch (props.category) {
       case "Left Center":
