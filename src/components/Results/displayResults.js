@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import { Grid, Typography, Button } from "@material-ui/core/";
-import BProgressBar from "../Progressbar/BProgressBar";
+import TrustScore from "./TrustScore";
 import ArticleSummary from "./ArticleSummary";
 import Credibility from "./Credibility";
 import Objectivity from "./Objectivity";
@@ -41,7 +41,37 @@ paddingBottom: "18px",
     paddingRight: "12px",
     fontSize: "18px",
     borderRadius: "0"
-  }
+  },
+
+  credibilityBox: {
+    paddingLeft: "12px",
+    paddingTop: "18px",
+  },
+
+  credibilityText: {
+    textAlign: "left",
+    fontFamily: "Roboto, sans-serif",
+    paddingLeft: "30px",
+    marginTop: "10px",
+    marginBottom: "25px",
+  },
+
+  sentimentBox: {
+    paddingLeft: "12px",
+    paddingTop: "18px",
+  },
+  sentimentHeading: {
+    fontFamily: "Graduate, sans-serif",
+    textAlign: "left",
+    paddingLeft: "30px",
+  },
+
+  sentimentText: {
+    textAlign: "left",
+    fontFamily: "Roboto, sans-serif",
+    paddingLeft: "30px",
+    marginBottom: "25px",
+  },
 
 });
 
@@ -100,16 +130,69 @@ function DisplayResults(props) {
             paddingBottom: "20px",
           }}
         >
-          <BProgressBar Bscore={trustScore} />
+          <TrustScore Bscore={trustScore} />
         </Grid>
-        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}> 
-          <Credibility outcome={credibilityObj} />
+        <Grid item xs={12} md={4} style={{ borderRight: "1px solid #efefef" }}>
+          <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="stretch"
+            className={classes.credibilityBox}
+          >
+            <Grid item xs={12}>
+              <Credibility outcome={credibilityObj} />
+            </Grid>
+
+            <Grid item xs={10}>
+              <Typography variant="body2" className={classes.credibilityText}>
+                <strong>What?</strong> This scores provides an indication of the credibility of the article
+                within the context of the website it appears on. 
+                <br />
+                <strong>Why?</strong>
+                 A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
+                outlet may be politically biased.
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Objectivity displayObjectivity={objectivityScore} />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Polarity displayPolarity={polarityScore} />
+
+        <Grid
+          container
+          justify="flex-start"
+          direction="row"
+          alignItems="flex-start"
+          md={8}
+          className={classes.sentimentBox}
+        >
+          <Grid item xs={12} md={6}>
+            <Objectivity displayObjectivity={objectivityScore} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Polarity displayPolarity={polarityScore} />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography
+              variant="subtitle1"
+              className={classes.sentimentHeading}
+            >
+              Sentiment Analysis
+            </Typography>
+          </Grid>
+
+          <Grid item xs={10}>
+            <Typography variant="body2" className={classes.sentimentText}>
+              <strong>What?</strong> Sentiment Analysis the process of analysing
+              online pieces of writing to determine the tone they carry.
+              <br />
+              <strong>Why?</strong> When consuming content it’s important to
+              know the author’s attitude to something. They might have negative
+              views about something you feel positively about, and vice versa.
+              Knowing that this can influence what you are reading provides you
+              with powerful insight when assessing whether or an article is
+              fully factual.
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} className={classes.goBack}>

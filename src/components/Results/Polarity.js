@@ -13,9 +13,6 @@ const useStyles = makeStyles({
     paddingBottom: "10px",
   },
 
-  polarityGauge: {
-    marginTop: "15px",
-  },
 
   polarityText: {
     textAlign: "left",
@@ -61,9 +58,11 @@ function Polarity(props) {
             percent={polscore}
             hideText={false}
             nrOfLevels={3}
-            colors={["#e62a4c", "#d1d1d1", "#f4c583"]}
+            colors={["#e62a4c", "#d1d1d1", "#6bb26d"]}
             formatTextValue={() => polemoji}
             arcsLength={[0.45, 0.1, 0.45]}
+            needleColor="#d9d9d9"
+            
           />
         </Grid>
         <Grid item xs={12}>

@@ -55,7 +55,7 @@ function App() {
   const classes = useStyles();
 
   //request
-  const [request, setRequest] = useState("");
+  const [request, setRequest] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const ErrorComponent = ({ resetErrorBoundary }) => {
@@ -85,7 +85,7 @@ function App() {
                 <ErrorBoundary
                   FallbackComponent={ErrorComponent}
                   onReset={() => {
-                    setRequest("");
+                    setRequest(""); 
                   }}
                   resetKeys={[request]}
                 >
