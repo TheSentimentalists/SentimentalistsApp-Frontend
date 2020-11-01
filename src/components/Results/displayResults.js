@@ -51,7 +51,7 @@ paddingBottom: "18px",
   credibilityText: {
     textAlign: "left",
     fontFamily: "Roboto, sans-serif",
-    paddingLeft: "30px",
+    paddingLeft: "45px",
     marginTop: "10px",
     marginBottom: "25px",
   },
