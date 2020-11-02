@@ -104,7 +104,7 @@ function DisplayResults(props) {
 
   return (
     <div>
-      <Grid container>
+    <Grid container>
         <Grid item xs={12}>
           <Grid
             container
@@ -113,14 +113,15 @@ function DisplayResults(props) {
             alignItems="center"
             className={classes.header}
           >
-            <Grid item xs={4} md={2} align="left">
+            <Grid item xs={6} md={2} align="left">
               <img
                 src={Logo}
                 alt="The Sentimentalists Logo"
                 className={classes.logo}
               />
             </Grid>
-            <Grid item xs={8} md={8} align="left">
+            <Grid item xs={0} md={6} align="left">
+            <Box display={{ xs: 'none', md: 'block' }}>
             <Typography
                 variant="h1"
                 style={{ fontSize: "24px", fontWeight: "700", fontFamily: "Graduate, sans-serif" }}
@@ -133,15 +134,14 @@ function DisplayResults(props) {
               >
                 Analysing Media Sentiment Since 2020
               </Typography>
+              </Box>
             </Grid>
-            <Grid item md={2} alight="right">
-            <Box display={{ xs: 'none', lg: 'block' }}>
+            <Grid item xs={6} md={4} align="right">
               <Button variant="contained" disableElevation className={classes.backButtonHeader} onClick={() => {
                 props.setRequest("")
               }}>
                 Start Over
               </Button>
-            </Box>
             </Grid>
             
           </Grid>
@@ -178,7 +178,7 @@ function DisplayResults(props) {
                 <strong>What?</strong> This scores provides an indication of the credibility of the article
                 within the context of the website it appears on. 
                 <br />
-                <strong>Why?</strong>
+                <strong>Why? </strong>
                  A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
                 outlet may be politically biased.
               </Typography>
@@ -224,7 +224,7 @@ function DisplayResults(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.goBack}>
+      <Grid item xs={12} className={classes.goBack} style={{ borderTop: "1px solid #efefef" }}>
         <Typography variant="body2" className={classes.goBackText}>Want to analyse another article?</Typography>
               <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
                 props.setRequest("")
