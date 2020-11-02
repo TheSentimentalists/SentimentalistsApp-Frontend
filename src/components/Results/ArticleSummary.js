@@ -63,7 +63,7 @@ function ArticleSummary(props) {
   const truncateSummaryText = () => {
     let truncatedSummary;
     if (articleSummary.length > 350) {
-      truncatedSummary = articleSummary.slice(0, 350) + "...";
+      truncatedSummary = articleSummary.slice(0, 500) + "...";
     }
     articleSummary = truncatedSummary;
   };
