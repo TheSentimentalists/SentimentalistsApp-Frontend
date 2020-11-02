@@ -22,6 +22,7 @@ const useStyles = makeStyles({
   trustScoreHelp: {
     textAlign: "right",
     color: "#6bb26d",
+    cursor: "pointer"
   },
 });
 

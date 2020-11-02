@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
     fontSize: "16px",
   },
   Help: {
-    color: "#6bb26d"
+    color: "#6bb26d",
+    cursor: "pointer"
   },
   HelpTooltip: {
     fontSize: "30px"
@@ -109,7 +110,7 @@ function ArticleSummary(props) {
           <Grid container>
             <Grid item>
               {calculatedTopics.map((element) => (
-                <Topic type={element.type} topics={element.topics} />
+                <Topic type={element.type} topics={element.topics}/>
               ))}
             </Grid>
             <Grid item>

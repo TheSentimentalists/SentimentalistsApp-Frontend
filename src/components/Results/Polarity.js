@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 
   polarityHelp: {
     color: "#6bb26d",
+    cursor: "pointer"
   },
 });
 
