@@ -159,7 +159,7 @@ function Credibility(props) {
               variant="h5"
               className={classes.credibilityGaugeHeading}
             >
-              Credibility 
+              Credibility
             </Typography>
 
             <Tooltip
@@ -190,16 +190,16 @@ function Credibility(props) {
                   variant="subtitle2"
                   className={classes.categoryTitle}
                 >
-                  Category: {"  "} 
+                  Category: {"  "}
                 </Typography>
-                <Grid item> 
+                <Grid item>
                   <Tooltip
                     placement="bottom"
                     arrow
                     title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
                   >
                     <Chip
-                      label={category + ' ▾'}
+                      label={category + " ▾"}
                       style={{ fontSize: "14px" }}
                       className={classes.categoryChip}
                     />
@@ -214,6 +214,8 @@ function Credibility(props) {
             Source:{" "}
             <a
               href="https://mediabiasfactcheck.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={classes.chipLink}
             >
               {source}
