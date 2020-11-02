@@ -134,7 +134,7 @@ function Credibility(props) {
                  written in the reasoning section for that source.`;
         break;
       default:
-        categoryText = `Not enough information about this source exists to calculate a score`;
+        categoryText = false;
     }
   };
   categoryText();
@@ -178,6 +178,7 @@ function Credibility(props) {
             </Tooltip>
           </Grid>
         </Grid>
+        {categoryText && 
         <Grid item xs={12}>
           <Grid
             container
@@ -210,6 +211,7 @@ function Credibility(props) {
             </Grid>
           </Grid>
         </Grid>
+        }
         <Grid item xs={12}>
           <Typography variant="subtitle2" className={classes.categoryTitle}>
             Source:{" "}
