@@ -7,9 +7,6 @@ import "./URLinput.css";
 import URLInputHeader from "./URLInputHeader";
 import Tooltip from "@material-ui/core/Tooltip";
 import HelpIcon from "@material-ui/icons/Help";
-/* resolve CSS */
-/*error toggle needs implementing*/
-/*Button onClick needs to hide input and open results*/
 
 const useStyles = makeStyles(() => ({
   inputURLArea: {
@@ -31,15 +28,14 @@ const useStyles = makeStyles(() => ({
   },
 
   infoText: {
-    fontSize: "16px"
+    fontSize: "16px",
   },
 
   info: {
     color: "#6bb26d",
     fontSize: "25px",
+    cursor: "pointer"
   },
-
-  
 }));
 
 function URLInput(props) {
@@ -66,9 +62,7 @@ function URLInput(props) {
       .then(async (response) => {
         const data = await response.json();
 
-        // check for error response
         if (!response.ok) {
-          // get error message from body or default to response status
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
@@ -117,10 +111,21 @@ function URLInput(props) {
                 <Tooltip
                   arrow
                   placement="bottom"
-                  title={<p style={{ fontSize: "16px "}}>Have you ever wondered if you can trust what you read in the news?<br/>
-                        Are you ever baffled by bias and puzzled by politics?<br/>
-                        The Sentimentalists App is designed to help you make informed judgments/decisions/conclusions about the news content you consume online.<br/>
-                        To find out if what you’ve been reading is a worthwhile source, just enter a URL and click Analyse.</p>}
+                  title={
+                    <p style={{ fontSize: "16px " }}>
+                      Have you ever wondered if you can trust what you read in
+                      the news?
+                      <br />
+                      Are you ever baffled by bias and puzzled by politics?
+                      <br />
+                      The Sentimentalists App is designed to help you make
+                      informed judgments/decisions/conclusions about the news
+                      content you consume online.
+                      <br />
+                      To find out if what you’ve been reading is a worthwhile
+                      source, just enter a URL and click Analyse.
+                    </p>
+                  }
                 >
                   <HelpIcon className={classes.info} />
                 </Tooltip>
