@@ -14,14 +14,15 @@ const useStyles = makeStyles({
     maxHeight: "270px",
     maxWidth: "273px",
     margin: "auto",
-
   },
+
   mainHeading: {
     fontSize: "22px",
     textAlign: "center",
     fontFamily: "Graduate, sans-serif",
-    marginBottom: "50px"
+    marginBottom: "50px",
   },
+
   appDescription: {
     textAlign: "left",
     fontFamily: "Roboto, sans-serif",

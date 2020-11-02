@@ -25,6 +25,7 @@ const useStyles = makeStyles({
 
   objectivityHelp: {
     color: "#6bb26d",
+    cursor: "pointer"
   },
 });
 

@@ -12,11 +12,11 @@ const useStyles = makeStyles({
     textAlign: "left",
     fontSize: "18px",
     paddingLeft: "35px",
-    paddingBottom: "10px",
+    paddingBottom: "10px"
   },
 
   resultsHeading: {
-    fontFamily: "Graduate, sans-serif",
+    fontFamily: "Graduate, sans-serif"
   },
 
   categoryTitle: {
@@ -24,40 +24,41 @@ const useStyles = makeStyles({
     textAlign: "left",
     paddingLeft: "45px",
     fontWeight: "600",
-    marginBottom: "5px  ",
+    marginBottom: "5px  "
   },
 
   categoryChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
-    fontWeight: "600",
+    fontWeight: "600"
   },
 
   sourceChip: {
     background: "#f8ce94",
     fontFamily: "Roboto, sans-serif",
-    cursor: "pointer",
+    cursor: "pointer"
   },
 
   chipLink: {
     textDecoration: "underline",
-    color: "#000000",
+    color: "#000000"
   },
 
   categoryText: {
     textAlign: "left",
     paddingRight: "10px",
-    marginBottom: "15px",
+    marginBottom: "15px"
   },
 
   credibilityHelp: {
-    color: "#6bb26d",
+    color: "#6bb26d"
   },
 
   credibilityTooltip: {
     fontSize: "30px",
     color: "#6bb26d",
     marginBottom: "5px",
+    cursor: "pointer"
   },
 });
 
@@ -159,7 +160,7 @@ function Credibility(props) {
               variant="h5"
               className={classes.credibilityGaugeHeading}
             >
-              Credibility 
+              Credibility
             </Typography>
 
             <Tooltip
@@ -190,16 +191,16 @@ function Credibility(props) {
                   variant="subtitle2"
                   className={classes.categoryTitle}
                 >
-                  Category: {"  "} 
+                  Category: {"  "}
                 </Typography>
-                <Grid item> 
+                <Grid item>
                   <Tooltip
                     placement="bottom"
                     arrow
                     title={<p style={{ fontSize: "16px" }}>{categoryText}</p>}
                   >
                     <Chip
-                      label={category + ' ▾'}
+                      label={category + " ▾"}
                       style={{ fontSize: "14px" }}
                       className={classes.categoryChip}
                     />
@@ -214,6 +215,8 @@ function Credibility(props) {
             Source:{" "}
             <a
               href="https://mediabiasfactcheck.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={classes.chipLink}
             >
               {source}

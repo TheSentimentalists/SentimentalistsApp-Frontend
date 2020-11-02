@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 
   innerContainer: {
     boxShadow: "8px 8px #d9d9d9",
-    background: "#ffffff",
+    background: "#ffffff"
   },
 
   errorDisplay: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 
   errorText: {
-    fontSize: "25px"
+    fontSize: "25px",
   },
 
   tryAgainButton: {
@@ -40,16 +40,15 @@ const useStyles = makeStyles({
 
   loading: {
     zIndex: 999,
-    color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)'
-
+    color: "#fff",
+    backgroundColor: "rgba(0, 0, 0, 0.8)"
   },
 
   footer: {
     background: "#6bb26d",
     padding: "7px"
-  }
-  });
+  },
+});
 
 function App() {
   const classes = useStyles();
@@ -76,8 +75,7 @@ function App() {
     <div className="App">
       <Container fixed>
         <div className={classes.containerStyle}>
-         
-             <div className={classes.innerContainer}>
+          <div className={classes.innerContainer}>
             {!request ? (
               <URLInput setRequest={setRequest} setLoading={setLoading} />
             ) : (
@@ -85,15 +83,15 @@ function App() {
                 <ErrorBoundary
                   FallbackComponent={ErrorComponent}
                   onReset={() => {
-                    setRequest(""); 
+                    setRequest("");
                   }}
                   resetKeys={[request]}
                 >
                   <DisplayResults
-                    displayResults={request} setRequest={setRequest}
+                    displayResults={request}
+                    setRequest={setRequest}
                   />
                 </ErrorBoundary>
-                <p>{request.error}</p>
               </div>
             )}
 
@@ -108,7 +106,6 @@ function App() {
           <Loading />
         </Backdrop>
       </Container>
-
     </div>
   );
 }
