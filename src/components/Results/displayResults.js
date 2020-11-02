@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   header: {
     borderBottom: "1px solid #efefef",
-    backgroundColor: "#faf2e6"
+    backgroundColor: "#faf2e6",
   },
 
   logo: {
@@ -23,17 +23,16 @@ const useStyles = makeStyles({
     maxWidth: "113px",
     paddingLeft: "30px",
     marginBottom: "20px",
-    marginTop: "20px"
+    marginTop: "20px",
   },
 
-  goBack:{
-paddingTop: "40px",
-paddingBottom: "18px",
-
+  goBack: {
+    paddingTop: "40px",
+    paddingBottom: "18px",
   },
 
-  goBackText : {
-    marginBottom: "10px"
+  goBackText: {
+    marginBottom: "10px",
   },
 
   backButton: {
@@ -43,7 +42,7 @@ paddingBottom: "18px",
     paddingLeft: "12px",
     paddingRight: "12px",
     fontSize: "18px",
-    borderRadius: "0"
+    borderRadius: "0",
   },
 
   backButtonHeader: {
@@ -54,7 +53,7 @@ paddingBottom: "18px",
     paddingRight: "12px",
     marginRight: "30px",
     fontSize: "18px",
-    borderRadius: "0"
+    borderRadius: "0",
   },
 
   credibilityBox: {
@@ -86,7 +85,6 @@ paddingBottom: "18px",
     paddingLeft: "30px",
     marginBottom: "25px",
   },
-
 });
 
 function DisplayResults(props) {
@@ -104,7 +102,7 @@ function DisplayResults(props) {
 
   return (
     <div>
-    <Grid container>
+      <Grid container>
         <Grid item xs={12}>
           <Grid
             container
@@ -121,29 +119,40 @@ function DisplayResults(props) {
               />
             </Grid>
             <Grid item xs={0} md={6} align="left">
-            <Box display={{ xs: 'none', md: 'block' }}>
-            <Typography
-                variant="h1"
-                style={{ fontSize: "24px", fontWeight: "700", fontFamily: "Graduate, sans-serif" }}
-              >
-                The Sentimentalists
-              </Typography>
-              <Typography
-                variant="h1"
-                style={{ fontSize: "20px", fontFamily: "Graduate, sans-serif" }}
-              >
-                Analysing Media Sentiment Since 2020
-              </Typography>
+              <Box display={{ xs: "none", md: "block" }}>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "700",
+                    fontFamily: "Graduate, sans-serif",
+                  }}
+                >
+                  The Sentimentalists
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "20px",
+                    fontFamily: "Graduate, sans-serif",
+                  }}
+                >
+                  Analysing Media Sentiment Since 2020
+                </Typography>
               </Box>
             </Grid>
             <Grid item xs={6} md={4} align="right">
-              <Button variant="contained" disableElevation className={classes.backButtonHeader} onClick={() => {
-                props.setRequest("")
-              }}>
+              <Button
+                variant="contained"
+                disableElevation
+                className={classes.backButtonHeader}
+                onClick={() => {
+                  props.setRequest("");
+                }}
+              >
                 Start Over
               </Button>
             </Grid>
-            
           </Grid>
         </Grid>
 
@@ -175,18 +184,19 @@ function DisplayResults(props) {
 
             <Grid item xs={10}>
               <Typography variant="body2" className={classes.credibilityText}>
-                <strong>What?</strong> This scores provides an indication of the credibility of the article
-                within the context of the website it appears on. 
+                <strong>What?</strong> This scores provides an indication of the
+                credibility of the article within the context of the website it
+                appears on.
                 <br />
-                <strong>Why? </strong>
-                 A credible source presents factually accurate and unbiased information. The Category indicator shows how each media
-                outlet may be politically biased.
+                <strong>Why? </strong>A credible source presents factually
+                accurate and unbiased information. The Category indicator shows
+                how each media outlet may be politically biased.
               </Typography>
             </Grid>
           </Grid>
         </Grid>
-
         <Grid
+
           container
           justify="flex-start"
           direction="row"
@@ -224,14 +234,26 @@ function DisplayResults(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.goBack} style={{ borderTop: "1px solid #efefef" }}>
-        <Typography variant="body2" className={classes.goBackText}>Want to analyse another article?</Typography>
-              <Button variant="contained" disableElevation className={classes.backButton} onClick={() => {
-                props.setRequest("")
-              }}>
-                Click Here
-              </Button>
-            </Grid>
+      <Grid
+        item
+        xs={12}
+        className={classes.goBack}
+        style={{ borderTop: "1px solid #efefef" }}
+      >
+        <Typography variant="body2" className={classes.goBackText}>
+          Want to analyse another article?
+        </Typography>
+        <Button
+          variant="contained"
+          disableElevation
+          className={classes.backButton}
+          onClick={() => {
+            props.setRequest("");
+          }}
+        >
+          Click Here
+        </Button>
+      </Grid>
     </div>
   );
 }
