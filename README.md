@@ -1,4 +1,6 @@
 ### SentimentalistsApp-Frontend
+![Node.js CI](https://github.com/TheSentimentalists/SentimentalistsApp-Frontend/workflows/Node.js%20CI/badge.svg?branch=master&event=push)
+
 The frontend react app for *The Sentimentalists* article analysis service.
 
 ![Screenshot of frontend](https://github.com/TheSentimentalists/SentimentalistsApp-Frontend/blob/master/docs/screenshot.png?raw=true)
